@@ -1,14 +1,14 @@
-title: Rudolf Hilferding
+title: Philip Snowden
 is-pinned-card: true
 tags: advisor, centrist
-card-image: img/portraits/HilferdingRudolf.jpg
+card-image: img/portraits/Lord_Snowden_Chancellor.jpg
 view-if: hilferding_advisor = 1
 new-page: true
-#face-image: img/portraits/HilferdingRudolf.jpg
+#face-image: img/portraits/Lord_Snowden_Chancellor.jpg
 
 = Rudolf Hilferding
 
-Hilferding is an economist and a disciple of Karl Kautsky. Originating from Vienna, Austria, he trained as a medical doctor, but later became involved in Marxist economics as a discipline. He has been the lead ideologist of our party since the Heidelberg Program of 1925.
+Snowden is a christian socalist. A former liberal mp, he's also a strict adeherent of economic orthadoxy and believes in the importance of a balanced budget.
 
 - @against_right_and_left
 - @toleration
@@ -27,7 +27,7 @@ We have reduced the strength of the dissident factions in the party.
 
 @toleration
 title: Defending Toleration
-subtitle: Hilferding supports cooperation with the bourgeois parties.
+subtitle: Snowden supports cooperation with the bourgeois parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The SPD is not in toleration. ?]
 choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; center_dissent -= 5
@@ -36,7 +36,7 @@ We have reduced dissent among the anti-toleration factions.
 
 @finance_ministry_
 title: Fiscal Policy
-subtitle: As Finance Minister, Hilferding can enact tax policies.
+subtitle: As Finance Minister, Snowden can enact tax policies.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if finance_minister_party != "SPD" : The SPD does not control the finance ministry. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
