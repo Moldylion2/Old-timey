@@ -331,9 +331,9 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
+Q.King = "George V";
+// starting prime minister: Stanley Baldwin
+Q.prime_minister = "Baldwin";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
@@ -540,7 +540,7 @@ Q.macdonald_advisor = 1; // Ramsay MacDonald
 Q.macdonald_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.snowden_advisor = 1; // Philip Snowden
 
 // left advisors
 Q.sender_advisor = 0; // Toni Sender
