@@ -1,13 +1,13 @@
-title: Carl Severing
+title: Arthur Henderson
 is-pinned-card: true
 tags: advisor, reformist
-card-image: img/portraits/SeveringCarl.jpg
-view-if: severing_advisor = 1
+card-image: img/portraits/HendersonArthur.jpg
+view-if: Henderson_advisor = 1
 new-page: true 
 
-= Carl Severing
+= Arthur Henderson
 
-Severing has been Interior Minister for both the German Republic and for the state of Prussia, and his priority is using the security services to target the enemies of the republic.
+A preivious Labour party leader, Henderson is popular within the party and well known for his integrity.
 
 - @prussian_bulwark
 - @police_affairs
@@ -15,7 +15,7 @@ Severing has been Interior Minister for both the German Republic and for the sta
 
 @prussian_bulwark
 title: Prussian Bulwark
-subtitle: Severing has influence over Prussian politics.
+subtitle: Henderson has influence over Prussian politics.
 choose-if: advisor_action_timer <= 0 and spd_prussia = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_prussia : The SPD is not in control of Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
