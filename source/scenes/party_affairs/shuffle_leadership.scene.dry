@@ -329,17 +329,17 @@ view-if: n_advisors < 3
 
 - #nonfactional_advisor
 
-@add_hilferding
-title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+@add_snowden
+title: Philip Snowden
+subtitle: Snowden is a strict adeherent of economic orthadoxy and believes in the importance of a balanced budget. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
-card-image: img/portraits/HilferdingRudolf.jpg
+card-image: img/portraits/SnowdenPhilip.jpg
 tags: center_advisor
 view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: hilferding_advisor = 1; n_advisors += 1
+on-arrival: snowden_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Rudolf Hilferding is now an advisor.
+Philip Snowden is now an advisor.
 
 @add_wels
 title: Otto Wels
@@ -365,32 +365,32 @@ go-to: advisor_menu
 
 Hermann Müller is now an advisor.
 
-@add_breitscheid
-title: Rudolf Breitscheid
-subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+@add_macdonald
+title: Ramsay MacDonald
+subtitle: MacDonald is the current Labour Party leader, and is a long-time Socialist leader. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
-card-image: img/portraits/BreitscheidRudolf.jpg
+card-image: img/portraits/MacDonaldRamsay.jpg
 view-if: breitscheid_advisor = 0 and n_advisors < 3
-on-arrival: breitscheid_advisor = 1; n_advisors += 1
+on-arrival: macdonald_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
 
-Rudolf Breitscheid is now an advisor.
+Ramsay MacDonald is now an advisor.
 
 # reformist
 
 
-@add_severing
-title: Carl Severing
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
+@add_henderson
+title: Arthur Henderson
+subtitle: A previous Labour party leader, Henderson is popular within the party and well known for his integrity. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
 is-card: true
-card-image: img/portraits/SeveringCarl.jpg
+card-image: img/portraits/HendersonArthur.jpg
 tags: reformist_advisor
-view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5
+view-if: henderson_advisor = 0 and n_advisors < 3
+on-arrival: henderson_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Carl Severing is now an advisor.
+Arthur Henderson is now an advisor.
 
 @add_braun
 title: Otto Braun
