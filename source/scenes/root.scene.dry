@@ -571,6 +571,8 @@ Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
+set-bg: img/portraits/Britain1922map.jpg
+
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
