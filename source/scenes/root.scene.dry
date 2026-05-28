@@ -101,20 +101,20 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
+Q.liberals_relation = 60;
+Q.tories_relation = 50;
+Q.cpgb_relation = 25;
 Q.dvp_relation = 35;
 // DNVP and NSDAP are invariably hostile
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
-Q.kpd_leader = "Thälmann";
+Q.cpgb_leader = "Inkpin";
 // alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
-Q.z_leader = "Brüning";
+Q.cpgb_party_leader = "Inkpin";
+Q.Tories_leader = "Baldwin";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
+Q.tories_party_leader = "Baldwin";
 Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
@@ -291,19 +291,19 @@ Q.catholics_other = 12;
 
 
 // Current Reichstag composition
-// % of Reichstag in Jan 1928
+// % of Reichstag in July 1923
 // source: wikipedia
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26;
-Q.kpd_r = 9;
-Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
-Q.other_r = 9;
+Q.labour_r = 23;
+Q.liberals_r = 19;
+Q.tories_r = 56;
+Q.kpd_r = 0;
+Q.dvp_r = 0;
+Q.dnvp_r = 0;
+Q.nsdap_r = 0;
+Q.other_r = 2;
 
 // diff from prev
 Q.old_spd_r = 26;
@@ -319,9 +319,6 @@ Q.old_other_r = 9;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
-// for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
-
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
@@ -334,13 +331,13 @@ Q.economic_records = [];
 Q.King = "George V";
 // starting prime minister: Stanley Baldwin
 Q.prime_minister = "Baldwin";
-Q.chancellor_party = 'Z';
-Q.spd_in_government = 0;
-Q.z_in_government = 1;
-Q.ddp_in_government = 0;
+Q.chancellor_party = 'tories';
+Q.labour_in_government = 0;
+Q.tories_in_government = 1;
+Q.liberals_in_government = 0;
 Q.dvp_in_government = 1;
 Q.dnvp_in_government = 1;
-Q.kpd_in_government = 0;
+Q.cpgb_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_right_coalition = 0;
