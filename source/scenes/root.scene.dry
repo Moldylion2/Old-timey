@@ -451,6 +451,47 @@ Q.spd_no_confidence = 0;
 // was the last SPD government taken down in a vote of no confidence by right-wing coalition partners?
 Q.no_confidence_against_spd = 0;
 
+const PARTY_KEYS = ['Labour', 'Tories', 'Liberals', 'Other']
+
+function sum(arr) {
+    return arr.reduce((a, b) => a + b, 0)
+}
+
+function assignSeats(seatPercentages) {
+    const TOTAL_SEATS = 605
+
+    // Convert percentages into decimal seat values
+    const exactSeats = PARTY_KEYS.map(
+        k => ((seatPercentages[k] || 0) / 100) * TOTAL_SEATS
+    )
+
+    // Whole seats first
+    const seats = exactSeats.map(Math.floor)
+
+    // Fractional remainders
+    const remainders = exactSeats.map((x, i) => x - seats[i])
+
+    // Seats still left to assign
+    let remaining = TOTAL_SEATS - sum(seats)
+
+    // Assign remaining seats by largest remainder
+    while (remaining > 0) {
+        const idx = remainders.reduce(
+            (best, curr, i, arr) =>
+                curr > arr[best] ? i : best,
+            0
+        )
+
+        seats[idx]++
+        remainders[idx] = -1
+        remaining--
+    }
+
+    return Object.fromEntries(
+        PARTY_KEYS.map((k, i) => [k, seats[i]])
+    )
+}
+
 // Advisors/Leaders
 Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
