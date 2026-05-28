@@ -33,14 +33,14 @@ go-to: root
 tags: remove_advisor
 
 
-@remove_hilferding
-title: Remove Hilferding
-view-if: hilferding_advisor = 1
-on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
+@remove_snowden
+title: Remove Snowden
+view-if: snowden_advisor = 1
+on-arrival: snowden_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+Snowden has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_wels
 title: Remove Wels
@@ -61,26 +61,26 @@ go-to: rm_main
 Müller has been removed as an advisor. The Centrist faction disapproves.
 
 
-@remove_breitscheid
-title: Remove Breitscheid
-view-if: breitscheid_advisor = 1
+@remove_macdonald
+title: Remove MacDonald
+view-if: macdonald_advisor = 1
 tags: remove_advisor
-on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: macdonald_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+MacDonald has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
 
-@remove_severing
-title: Remove Severing
-view-if: severing_advisor = 1
+@remove_henderson
+title: Remove Henderson
+view-if: henderson_advisor = 1
 tags: remove_advisor
-on-arrival: severing_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: henderson_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+Henderson has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_braun
 title: Remove Braun
