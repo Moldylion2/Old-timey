@@ -328,7 +328,7 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.King = "George V";
+Q.king = "George V";
 // starting prime minister: Stanley Baldwin
 Q.prime_minister = "Baldwin";
 Q.chancellor_party = 'tories';
