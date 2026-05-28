@@ -2,7 +2,7 @@ title: Arthur Henderson
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/HendersonArthur.jpg
-view-if: Henderson_advisor = 1
+view-if: henderson_advisor = 1
 new-page: true 
 
 = Arthur Henderson
