@@ -504,9 +504,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1927;
+Q.next_election_month = 11;
+Q.next_election_time = 11;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -551,7 +551,7 @@ Q.seydewitz_advisor = 0; // Max Seydewitz
 
 // centrist alternate advisors
 Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+
 
 // Reformist advisors
 Q.henderson_advisor = 0; // Arthur Henderson
@@ -629,6 +629,6 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a rocky time for British democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
 
-Now, the task of Social Democracy is to prepare for the next election. Unfortunately the Conservatives won a majority in last years election, though Labour coming second, means we are now the opposition. Perhaps the next government will have a socialist majority.
+Now, the task of Social Democracy is to prepare for the next election. Unfortunately the Conservatives won a majority in last years election. Though Labour coming in second, means we are now the opposition. Perhaps the next government will have a socialist majority.
 
 
