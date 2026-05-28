@@ -554,7 +554,7 @@ Q.pfulf_advisor = 0; // Antonie Pfülf
 Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
+Q.henderson_advisor = 0; // Arthur Henderson
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
