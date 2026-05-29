@@ -1,4 +1,4 @@
-title: Reichstag Elections
+title: General Election
 new-page: true
 tags: event
 priority: -1
@@ -13,7 +13,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Reichstag elections are to be held now.
+The General elections are to be held now.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
@@ -1405,3 +1405,91 @@ view-if: reichswehr_minister_party = "SPD"
 on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries
+
+var new_party_sum = 0;
+for (var party of Q.parties) {
+    Q['old_' + party + '_votes'] = Q[party + '_election_votes'];
+    Q['old_' + party + '_seats'] = Q[party + '_seats'];
+    Q['old_' + party + '_r'] = Q[party + '_r'];
+
+    Q[party + '_r'] = 0;
+    Q[party + '_seats'] = 0;
+    if (Q[party + '_banned']) {
+        Q[party + '_election_votes'] = 0;
+    } else {
+        Q[party + '_election_votes'] = parseFloat((Q[party+'_votes']).toFixed(1));
+    }
+    new_party_sum += Q[party + '_election_votes'];
+}
+
+var other_votes_fix = Q.other_election_votes
+Q.other_election_votes = parseFloat((Q.other_election_votes * 0.4).toFixed(1));
+var new_new_party_sum = new_party_sum + Q.other_election_votes - other_votes_fix;
+
+// calculate new party sum
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        if (Q[party + '_election_votes'] > 0 && !(Q[party + '_election_votes'] < Q.electoral_threshold) && !(Q.electoral_threshold > 1 && party == 'other')) {
+            Q[party + '_r'] = parseFloat((Q[party + '_election_votes']*100/new_new_party_sum).toFixed(1));
+            Q[party + '_election_votes'] = parseFloat((Q[party + '_election_votes']*100/new_party_sum).toFixed(1));
+        } else {
+            Q[party + '_election_votes'] = parseFloat((Q[party + '_election_votes']*100/new_party_sum).toFixed(1));
+            Q[party + '_r'] = 0;
+        }
+        Q[party + '_r'] = parseFloat((Q[party+'_r']).toFixed(1));
+    }
+}
+
+Q.other_election_votes = other_votes_fix;
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_r'] * Q.reichstag_size;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = (Q.reichstag_size*100) - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats'] += 1;
+}
+
+
+for (var party of Q.parties) {
+    Q[party + '_r'] = parseFloat((Q[party + '_seats']/Q.reichstag_size).toFixed(1));
+
+    Q['change_' + party + '_votes'] = Q[party + '_election_votes'] - Q['old_' + party + '_votes'];
+    var sign2 = Q['change_' + party + '_votes'] > 0 
+            ? '<img src="img/arrowup.png"> ' 
+            : Q['change_' + party + '_votes'] < 0 
+                    ? '<img src="img/arrowdown.png"> ' 
+                    : '<img src="img/steady.png"> ';
+    Q['votes_change_' + party] = sign2 + Math.abs(parseFloat(Q['change_' + party + '_votes'])).toFixed(1);
+
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 
+            ? '<img src="img/arrowup.png"> ' 
+            : Q['change_' + party + '_r'] < 0 
+                    ? '<img src="img/arrowdown.png"> ' 
+                    : '<img src="img/steady.png"> ';
+    Q['str_change_' + party] = sign + Math.abs(parseFloat(Q['change_' + party + '_r'])).toFixed(1);
+
+    Q['change_' + party + '_seats'] = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    var sign = Q['change_' + party + '_seats'] > 0 
+            ? '<img src="img/arrowup.png"> ' 
+            : Q['change_' + party + '_seats'] < 0 
+                    ? '<img src="img/arrowdown.png"> ' 
+                    : '<img src="img/steady.png"> ';
+    Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
