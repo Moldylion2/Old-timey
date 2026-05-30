@@ -14,6 +14,6 @@ The King has dissolved parliament, and new elections are scheduled for next mont
 - @good: Great!
 
 @good
-on-arrival: next_election_month = 12; next_election_time = 12
+on-arrival: next_election_year = 1923; next_election_time = 12
 
 Hopefully we've organised enough in this little time and stand to make gains.
