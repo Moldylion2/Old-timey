@@ -68,17 +68,6 @@ Inflation: [+ inflation_2 +]%
 Economic growth: [+ economic_growth_2 +]%
 
 
-PARTY_KEYS.forEach(party => {
-  const percent = partyPercentages[party]
-  const seatCount = seats[party]
-
-  const item = document.createElement('div')
-  item.textContent = `${party}: ${percent}% (${seatCount} seats)`
-  sidebarContainer.appendChild(item)
-})
-
-
-
 # = Public Opinion
 
 @politics
