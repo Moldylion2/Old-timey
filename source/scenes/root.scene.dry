@@ -15,9 +15,9 @@ go-to: start_menu_2
 - @credits: Credits
 - @game_over.achievements
 
+set-bg: img/map_2.jpg
 
 @start
-set-bg: img/map_2.jpg
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
@@ -576,7 +576,7 @@ Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer 
 
-{!};
+!}
 
 
 
