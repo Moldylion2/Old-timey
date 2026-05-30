@@ -15,7 +15,7 @@ go-to: start_menu_2
 - @credits: Credits
 - @game_over.achievements
 
-set-bg: img/map_2.jpg
+
 
 @start
 on-arrival: {!
