@@ -1,7 +1,7 @@
 title: <span style="color: #000000;">Bourgeois</span>-<span style="color: #3E88B3;">Right</span> Government Collapses!
 subtitle: New elections scheduled
 new-page: true
-view-if: year = 1923 and month >= 11
+view-if: year = 1923 and month >= 12
 tags: event
 max-visits: 1
 
@@ -14,6 +14,6 @@ The King has dissolved parliament, and new elections are scheduled for next mont
 - @good: Great!
 
 @good
-on-arrival: next_election_year = 1923; next_election_time = 12
+on-arrival: next_election_year = 1924; next_election_time = 1
 
 Hopefully we've organised enough in this little time and stand to make gains.
