@@ -1,0 +1,19 @@
+title: <span style="color: #000000;">Bourgeois</span>-<span style="color: #3E88B3;">Right</span> Government Collapses!
+subtitle: New elections scheduled
+new-page: true
+view-if: year = 1923 and month >= 11
+tags: event
+max-visits: 1
+
+=Baldwin Calls Snap Election
+
+Feeling he needs to break from Bonar Law's free trade election pledge, and facing conflict within his cabinet. The Prime Minister has called a snap election to persue a more protectionist mandate under his own name. 
+
+The King has dissolved parliament, and new elections are scheduled for next month, in December.
+
+- @good: Great!
+
+@good
+on-arrival: next_election_month = 12; next_election_time = 12
+
+Our task is to prepare for the next elections where we stand to gain.
