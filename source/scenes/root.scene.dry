@@ -16,8 +16,8 @@ go-to: start_menu_2
 - @game_over.achievements
 
 
-
 @start
+set-bg: img/portraits/Britain1922map.jpg;
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
@@ -532,8 +532,6 @@ Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
-set-bg: img/portraits/Britain1922map.jpg;
-
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
@@ -633,5 +631,7 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 It is a rocky time for British democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
 
 Now, the task of Social Democracy is to prepare for the next election. Unfortunately the Conservatives won a majority in last years election. Though Labour coming in second, means we are now the opposition. Perhaps the next government will have a socialist majority.
+
+
 
 
