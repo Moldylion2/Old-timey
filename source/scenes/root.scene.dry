@@ -17,7 +17,7 @@ go-to: start_menu_2
 
 
 @start
-set-bg: img/map_2.jpg
+set-bg: img/portraits/Britain1922map.jpg;
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
@@ -532,8 +532,6 @@ Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
-set-bg: img/portraits/Britain1922map.jpg;
-
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
@@ -576,7 +574,7 @@ Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer 
 
-{!};
+!}
 
 
 
