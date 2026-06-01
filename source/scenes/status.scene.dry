@@ -103,7 +103,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 Tories: [+ tories_ideology +] ([+ tories_leader +])
 # 1928: 10, 1930: 13
+
 Liberals: [+ liberals_ideology +] ([+ liberals_leader +])
+
 # 1928: 9, 1930: 5
 CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
 
