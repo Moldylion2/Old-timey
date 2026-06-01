@@ -112,7 +112,7 @@ Q.NSDAP_relation = 0;
 
 Q.liberals_leader = "Asquith";
 Q.liberals_ideology = "New Liberalism"
-Q.cpgb_party_leader = "Inkpin";
+Q.cpgb_leader = "Inkpin";
 Q.cpgb_ideology = "Leninism"
 Q.tories_leader = "Baldwin";
 Q.tories_ideology = "One Nation Conservatism"
