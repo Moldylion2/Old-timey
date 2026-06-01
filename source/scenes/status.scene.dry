@@ -40,13 +40,7 @@ Parliament composition:
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="The Labour Party">Labour</span>!}: [+ labour_r +]%
 
-# 1928: 15, 1930: 15, 1932: 
 
-Tories: [+ tories_ideology +] ([+ tories_leader +])
-# 1928: 10, 1930: 13
-Liberals: [+ liberals_ideology +] ([+ liberals_leader +])
-# 1928: 9, 1930: 5
-CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
 #
 {!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_r +]%
 # 1928: 14, 1930: 7
@@ -103,21 +97,13 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Party Leadership
 
-[? if not tories_name: UNINITIALIZED ?][? if tories_name != 0: [? if tories_party_name != "CVP": <span class="tooltip-text" title="The Conservative Party" style="color: #000000;">**[+ tories_party_name +]**</span>?][? if tories_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ tories_party_name +]**</span>?]: [? if not cvp_formed: [? if tories_ideology == "Right" and not cvp_kvp_formed and tories_leader != "Baldwin" and tories_leader != "Bracht": Center to Center-Right?][? if tories_ideology == "Right" and cvp_kvp_formed: Christian Democracy?][? if tories_leader == "Baldwin": One Nation Conservatism?][? if tories_leader == "Kaiser": Center-Left to Center?][? if tories_leader == "Bracht": Catholic Conservatism?]?][? if cvp_formed: [? if cvp_leader == "Lambach": Christian Corporatism?][? if cvp_leader == "Stegerwald": Paternalistic Conservatism?][? if cvp_leader == "Gereke": Agrarian Conservatism?][? if cvp_leader == "Westarp" or cvp_leader == "Goerdeler" or cvp_leader = "Lejeune-Jung" or cvp_leader == "Lettow-Vorbeck": National Conservatism?][? if cvp_leader == "Adenauer": Christian Democracy?][? if cvp_leader == "Bolz": Christian Conservatism?][? if cvp_leader == "Treviranus": Tory Democracy?]?] ([? if not cvp_formed:[+ tories_leader +]?][? if cvp_formed:[+ cvp_leader +]?])?]
+# 1928: 15, 1930: 15, 1932: 
 
-[? if not liberals_name and not lvp_formed: UNINITIALIZED ?][? if not lvp_formed and liberals_name != 0 and not dstp_dnef: [? if liberals_name = "Liberals" and liberals_ideology == "Right":<span class="tooltip-text" title="The Liberal Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: Classical Liberalism ([+ ddp_leader +])?][? if liberals_name = "Liberals" and liberals_ideology == "Moderate":<span class="tooltip-text" title="The Liberal Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: Left Liberalism ([+ liberals_leader +])?][? if liberals_name = "Liberals" and liberals_ideology == "Left":<span class="tooltip-text" title="The Liberal Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: Progressive Liberalism ([+ liberals_leader +])?]?][? if not lvp_formed and liberals_name = "Liberals" and dstp_dnef: <span class="tooltip-text" title="The Liberal Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: Liberal Corporatism ([+ liberals_leader +])?]
-
-[? if liberals_name = "DStP" and not lvp_formed and (not dstp_collapsed or dstp_dnef):<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: Liberal Corporatism ([+ liberals_leader +])?][? if liberals_name = "DStP" and not lvp_formed and dstp_collapsed and not dstp_dnef:<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ liberals_name +]**</span>: [? if liberals_ideology == "Right": Statist Liberalism ?][? if liberals_ideology == "Moderate": Classical Liberalism ?][? if liberals_ideology == "Left": Left Liberalism?] ([+ liberals_leader +])?]
-
-[? if lvp_formed and not lvp_dnef: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [? if lvp_ideology == "Left": Left Liberalism ([+ lvp_leader +])?][? if lvp_ideology == "Moderate": Classical Liberalism ([+ lvp_leader +])?][? if lvp_ideology == "Right": National Liberalism ([+ lvp_leader +])?]?]
-
-[? if lvp_formed and lvp_dnef: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: Liberal Corporatism ([+ lvp_leader +])?]
-
-[? if not liberals_name and not lvp_formed: UNINITIALIZED ?][? if not lvp_formed and dvp_exist and liberals_name != 0 and not dvp_dnef: [? if liberals_name != 0 and dvp_leader != "Thiel" and dvp_leader != "Glatzel": <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical Liberalism ?][? if dvp_ideology = "Moderate": Conservative Liberalism?][? if dvp_ideology = "Right" and (dvp_right - dvp_left < 10 or dvp_leader == "Stresemann"): National Liberalism?][? if dvp_ideology = "Right" and dvp_right - dvp_left >= 10 and dvp_leader != "Stresemann": National Capitalism?] ([+ dvp_leader +])?][? if liberals_name != 0 and (dvp_leader == "Thiel" or dvp_leader == "Glatzel"): <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: Paternalistic Liberalism ([+ dvp_leader +])?]?]
-
-[? if not lvp_formed and dvp_exist and liberals_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
-
-[? if not liberals_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Great Britain" style="color: #700000;">**CPGB**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if cpgb_leader = "Inkpin": Leninism?] ([+ cpgb_leader +])?]
+Tories: [+ tories_ideology +] ([+ tories_leader +])
+# 1928: 10, 1930: 13
+Liberals: [+ liberals_ideology +] ([+ liberals_leader +])
+# 1928: 9, 1930: 5
+CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
 
 
 @paramilitaries
