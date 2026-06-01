@@ -41,7 +41,8 @@ Parliament composition:
 {!<span class="tooltip-text" title="The Labour Party">Labour</span>!}: [+ labour_r +]%
 
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="The Conservative Party">Tories</span>!}: [+ tories_r +]%
+
+Tories: [+ one_nation_conservatism +] ([+ baldwin +])
 # 1928: 10, 1930: 13
 {!<span class="tooltip-text" title="The Liberal Party">!}[? if not liberals_name: Liberals?][? if liberals_name != 0 : [+ liberals_name +]?]{!</span>!}: [+ liberals_r +]%
 # 1928: 9, 1930: 5
