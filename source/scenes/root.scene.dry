@@ -110,10 +110,12 @@ Q.dvp_relation = 35;
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
-Q.cpgb_leader = "Inkpin";
-// alternative is the Conciliators as party leader
+Q.liberals_leader = "Asquith";
+Q.liberals_ideology = "New Liberalism"
 Q.cpgb_party_leader = "Inkpin";
-Q.Tories_leader = "Baldwin";
+Q.cpgb_ideology = "Leninism"
+Q.tories_leader = "Baldwin";
+Q.tories_ideology = "One Nation Conservatism"
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 Q.tories_party_leader = "Baldwin";
 Q.nsdap_leader = "Hitler";
