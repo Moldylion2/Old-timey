@@ -19,19 +19,19 @@ Labour cannot govern by itself yet. Because we do not have an electoral majority
 - @easy_discard
 
 
-@kpd
+@cpgb
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; cpgb_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; cpgb_1 if blutmai = 0 and cpgb_coalition_success = 0 and (cpgb_relation < 40 or cpgb_rectified_history = 1); cpgb_rectification_of_history if cpgb_relation >= 40 and cpgb_rectified_history = 0; cpgb_2 if cpgb_coalition_success = 1 and cpgb_rectified_history = 1
+go-to: cpgb_blutmai if blutmai = 1; cpgb_1 if blutmai = 0 and cpgb_coalition_success = 0 and (cpgb_relation < 40 or cpgb_rectified_history = 1); cpgb_rectification_of_history if cpgb_relation >= 40 and cpgb_rectified_history = 0; cpgb_2 if cpgb_coalition_success = 1 and cpgb_rectified_history = 1
 
 @cpgb_1
 on-arrival: cpgb_relation += 6*(1 - dissent); communist_coalition += 1 if cpgb_inter_party_seen <= 1; reformist_dissent += 2; tories_relation -= 2; dvp_relation -= 3
 
 The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
 
-@kpd_rectification_of_history
+@cpgb_rectification_of_history
 
 One stumbling block for our relations with the KPD is our history of conflict, dating back to 1918 and 1919. The KPD is especially contemptuous of Gustav Noske, the SPD "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other KPD revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
 
