@@ -42,7 +42,7 @@ on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10
 
 The values of the Independent Labour Party, the old guard of the party, who support a middle course of rejecting revolution but staying true to the parties socialist roots.
 
-@labor
+@labour
 on-arrival: {!
 if (Q.ideology && Q.ideology != "labour") {
     Q.changed = 1;
