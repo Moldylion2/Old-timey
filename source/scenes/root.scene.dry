@@ -17,7 +17,7 @@ go-to: start_menu_2
 
 
 @start
-set-bg: img/map_of_England_and_Wales.jpg
+set-bg: img/Map_Eng_Wales.png
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
