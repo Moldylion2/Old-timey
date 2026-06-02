@@ -344,16 +344,16 @@ Q.cpgb_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = SPD + Z + DDP
+// Weimar coalition = Labour + Tories + Liberals
 Q.in_weimar_coalition = 0;
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
+// Grand coalition = Labour + tories + BVP + Liberals + DVP
+// also includes the "new grand coalition" of Labour + Tories + BVP + Liberals + DVP + Others
 Q.in_grand_coalition = 0;
-// Popular front = SPD + KPD + Z + DDP
+// Popular front = Labour + CPGB + Tories + Liberals
 Q.in_popular_front = 0;
-// left coalition = SPD + KPD + left-splinters
+// left coalition = Labour + CPGB + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the SPD: only president Braun can do this.
+// emergency government containing Labour: only president Braun can do this.
 Q.in_emergency_government = 0;
 Q.in_labour_majority = 0;
 Q.grand_coalition_failed = 0;
@@ -363,11 +363,11 @@ Q.in_minority_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
-// dissent from the KPD, in a popular front or left front government
-Q.kpd_coalition_dissent = 0;
+// dissent from the CPGB, in a popular front or left front government
+Q.cpgb_coalition_dissent = 0;
 
-// does the SPD tolerate the government even if it is not a participant?
-Q.spd_toleration = 0;
+// does Labour tolerate the government even if it is not a participant?
+Q.labour_toleration = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
