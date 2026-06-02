@@ -299,8 +299,6 @@ Bourgeois Coalition (Tories + BVP + [+ liberals_name +] + DVP + Others): [+ bour
 
 Right-wing Coalition (Tories + BVP + DVP + Others + DNVP): [+ right_coalition +]%
 
-[? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
-
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic CPGB, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
@@ -433,10 +431,10 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; 
 Even though the DNVP is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
 
 
-@no_majority_spd
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
+@no_majority_labour
+on-arrival: chancellor = "Brüning"; chancellor_party = "T"
 
-There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker SPD government, his preferred chancellor is Heinrich Brüning of the Center Party, who could lead a "presidential" government.
+There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker Labour government, his preferred chancellor is Heinrich Brüning of the Center Party, who could lead a "presidential" government.
 
 - @toleration_bruning: We will tolerate Brüning.
 - @new_grand_coalition: We will try to form a new grand coalition.
