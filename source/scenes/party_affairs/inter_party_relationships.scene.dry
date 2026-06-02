@@ -68,7 +68,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; tories_relation += 2 if tories_party_leader == "Joos"
-go-to: tories_op if tories_in_government = 1 and labour_in_government = 0 and chancellor != "Brüning"; center_coalition if labour_in_government = 1 and tories_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: tories_op if tories_in_government = 1 and labour_in_government = 0 and chancellor != "Brüning"; tories_coalition if labour_in_government = 1 and tories_in_government = 1; tories_bruning if chancellor = "Brüning"
 
 @tories_op
 on-arrival: tories_relation += 5*(1 - dissent)
