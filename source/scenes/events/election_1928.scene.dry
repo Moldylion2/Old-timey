@@ -431,7 +431,7 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; 
 Even though the DNVP is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
 
 
-@no_majority_labour
+@no_majority
 on-arrival: chancellor = "Brüning"; chancellor_party = "T"
 
 There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker Labour government, his preferred chancellor is Heinrich Brüning of the Center Party, who could lead a "presidential" government.
