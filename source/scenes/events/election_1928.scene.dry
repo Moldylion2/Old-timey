@@ -88,45 +88,45 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 // get change arrows and signs
 
 
-// The largest party can only be the NSDAP or the SPD.
-Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
+// The largest party can only be the NSDAP or Labour.
+Q.largest_party = 'Labour';
+if (Q.nsdap_r >= Q.labour_r && Q.nsdap_r >= Q.cpgb_r) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
-    Q.largest_party = 'KPD';
+if (Q.cpgb_r >= Q.labour_r && Q.cpgb_r >= Q.nsdap_r) {
+    Q.largest_party = 'CPGB';
 }
 
 // coalitions
-Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
-Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
-Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
+Q.weimar_coalition = Q.labour_r + Q.liberals_r + Q.tories_r - 3;
+Q.grand_coalition = Q.labour_r + Q.liberals_r + Q.tories_r + Q.dvp_r;
+Q.bourgeois_coalition = Q.liberals_r + Q.tories_r + Q.dvp_r + Q.other_r;
+Q.center_right_coalition = Q.tories_r + Q.liberals_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
+Q.right_coalition = Q.tories_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
-Q.left_coalition = Q.spd_r + Q.kpd_r + Q.sapd_r;
+Q.left_coalition = Q.labour_r + Q.cpgb_r + Q.sapd_r;
 // this is an absurd concept lol
-Q.popular_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
-Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r + Q.dnvp_r;
-// aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-// Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
-Q.hitler_right_coalition = Q.z_r + Q.dnvp_r + Q.nsdap_r;
+Q.popular_front_coalition = Q.labour_r + Q.cpgb_r + Q.tories_r + Q.liberals_r - 3 + Q.sapd_r;
+Q.anti_democratic_coalition = Q.cpgb_r + Q.nsdap_r + Q.dnvp_r;
+// aka everyone except nazi, cpgb, dnvp
+Q.neo_weimar_coalition = Q.labour_r + Q.liberals_r + Q.tories_r + Q.dvp_r + Q.other_r;
+// Hitler + Right-wing parties (only comes into effect if you've alienated tories too badly)
+Q.hitler_right_coalition = Q.tories_r + Q.dnvp_r + Q.nsdap_r;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r;
+Q.progressive_coalition = Q.labour_r + Q.cpgb_r + Q.liberals_r + Q.sapd_r;
 
-if (Q.kpd_relation >= 30) {
+if (Q.cpgb_relation >= 30) {
     Q.weimar_coalition += Q.sapd_r;
 }
 
-Q.leverage = Q.spd_r;
+Q.leverage = Q.labour_r;
 
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
-Q.kpd_coalition_dissent = 0;
-Q.spd_in_government = 0;
+Q.cpgb_coalition_dissent = 0;
+Q.labour_in_government = 0;
 Q.in_weimar_coalition = 0;
 Q.in_grand_coalition = 0;
 Q.in_left_front = 0;
@@ -134,20 +134,20 @@ Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
 Q.in_unity_government = 0;
-Q.spd_toleration = 0;
-Q.spd_caretaker = 0;
+Q.labour_toleration = 0;
+Q.labour_caretaker = 0;
 Q.foreign_minister_party = 'DVP';
-Q.interior_minister_party = 'Z';
+Q.interior_minister_party = 'T';
 Q.justice_minister_party = 'I';
-Q.labor_minister_party = 'Z';
+Q.labor_minister_party = 'T';
 Q.reichswehr_minister_party = 'I';
-Q.economic_minister_party = Q.ddp_name;
+Q.economic_minister_party = Q.liberals_name;
 Q.finance_minister_party = 'DVP';
-Q.agriculture_minister_party = 'Z';
+Q.agriculture_minister_party = 'T';
 
-// reset KPD goals
-Q.kpd_goals_seen = 0;
-Q.kpd_ultimatum_seen = 0;
+// reset CPGB goals
+Q.cpgb_goals_seen = 0;
+Q.cpgb_ultimatum_seen = 0;
 Q.welfare_goal = 0;
 Q.agriculture_goal = 0;
 Q.economy_goal = 0;
@@ -168,7 +168,7 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-Q.z_minus_bvp_r = Q.z_r - 3;
+Q.tories_minus_bvp_r = Q.tories_r - 3;
 
 // understanding the enemy
 if (Q.nsdap_r >= 15) {
@@ -185,10 +185,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 data = [
     {
-        "id": "kpd",
-        "legend": "KPD",
-        "name": "KPD",
-        "seats": Math.round(Q.kpd_r*5),
+        "id": "cpgb",
+        "legend": "CPGB",
+        "name": "CPGB",
+        "seats": Math.round(Q.cpgb_r*5),
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -201,22 +201,22 @@ if (Q.sapd_formed && Q.sapd_r) {
 }
 data = data.concat([
     {
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Math.round(Q.spd_r*5),
+        "id": "labour",
+        "legend": "Labour",
+        "name": "Labour",
+        "seats": Math.round(Q.labour_r*5),
     },
     {
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_r*5),
+        "id": "liberals",
+        "legend": Q.liberals_name,
+        "name": Q.liberals_name,
+        "seats": Math.round(Q.liberals_r*5),
     },
     {
-        "id": "z",
-        "legend": "Center",
-        "name": "Center",
-        "seats": Math.round((Q.z_r - 3)*5),
+        "id": "tories",
+        "legend": "conservative_Party",
+        "name": "conservative_Party",
+        "seats": Math.round((Q.tories_r - 3)*5),
     },
     {
         "id": "bvp",
@@ -275,15 +275,15 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **Labour:** {!</td><td>!} **[+ labour_r +]%** {!</td><td>!} **[+ str_change_labour +]** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}KPD: {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}CPGB: {!</td><td>!} [+ cpgb_r +]% {!</td><td>!} [+ str_change_cpgb +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ liberals_name +]: {!</td><td>!} [+ liberals_r +]% {!</td><td>!} [+ str_change_liberals +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000'> </div> !} Tories: {!</td><td>!} [+ tories_minus_bvp_r +]% {!</td><td>!} [+ str_change_tories +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#69A2BE'> </div> !} BVP: {!</td><td>!} 3% {!</td><td>!} 0 {!</td></tr>!}
 
@@ -298,23 +298,23 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
+Weimar Coalition (Labour + Tories + [+ liberals_name +]): [+ weimar_coalition +]%
 
-Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
+Grand Coalition (Labour + Tories + BVP + [+ liberals_name +] + DVP): [+ grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ bourgeois_coalition +]%
+Bourgeois Coalition (Tories + BVP + [+ liberals_name +] + DVP + Others): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+Right-wing Coalition (Tories + BVP + DVP + Others + DNVP): [+ right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CPGB, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
 @coalition_menu
 
-- @spd_majority
+- @labour_majority
 - @weimar_coalition
 - @grand_coalition
 - @new_grand_coalition
@@ -331,7 +331,7 @@ There are some potential coalition arrangements.
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
-subtitle: SPD + KPD + Z + [+ ddp_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
+subtitle: Labour + CPGB + Tories + [+ liberals_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
 unavailable-subtitle: SPD + KPD + Z + [+ ddp_name +] [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): We do not have good enough relations with the KPD. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
 choose-if: (((kpd_relation >= 65 and kpd_party_leader == "Thälmann") or (kpd_relation >= 45 and kpd_party_leader == "Conciliators")) and ((z_relation >= 45 and z_party_leader == "Joos") or (z_relation >= 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation >= 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_party_leader == "Joos" and kpd_party_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
@@ -831,8 +831,8 @@ The Center Party is pleased, and somewhat surprised, that we have appointed [+ c
 - @emergency_no_confidence
 
 @wirth_emergency_chancellor
-view-if: z_party_leader == "Joos"
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+view-if: tories_party_leader == "Joos"
+on-arrival: chancellor = "Wirth"; chancellor_party = "T"; labour_in_government = 1; tories_relation += 10; foreign_minister_party = "Labour"; interior_minister_party = "Labour"; justice_minister_party = "Labour"; labor_minister_party = "Labour"; reichswehr_minister_party = "Labour"; economic_minister_party = "Labour"; finance_minister_party = "Labour"; agriculture_minister_party = "Labour" 
 
 The Center Party is pleased that we have appointed [+ chancellor +] as chancellor.
 
@@ -856,9 +856,9 @@ Their numbers are bolstered by the many government workers who are against the p
 @emergency_no_confidence
 title: The Nazis immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
-on-arrival: z_no_confidence = 1 if z_relation < 45; kpd_no_confidence = 1 if kpd_relation < 45; other_no_confidence = 1 if (z_relation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += z_r if z_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += kpd_r if kpd_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
+on-arrival: tories_no_confidence = 1 if tories_relation < 45; cpgb_no_confidence = 1 if cpgb_relation < 45; other_no_confidence = 1 if (tories_relation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += tories_r if tories_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += cpgb_r if cpgb_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
-The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The KPD votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
+The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if cpgb_no_confidence: The CPGB votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
 In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
@@ -879,25 +879,25 @@ if (Q.next_election_month > 12) {
     Q.next_election_year = Q.year;
 }
 Q.pro_republic -= 5;
-Q.workers_spd -= 3;
-Q.new_middle_spd -= 3;
-Q.old_middle_spd -= 3;
-Q.rural_spd -= 3;
-Q.catholics_spd -= 3;
+Q.workers_labour -= 3;
+Q.new_middle_labour -= 3;
+Q.old_middle_labour -= 3;
+Q.rural_labour -= 3;
+Q.catholics_labour -= 3;
 Q.workers_nsdap += 5;
 Q.old_middle_nsdap += 3;
 Q.new_middle_nsdap += 3;
 Q.rural_nsdap += 3;
 Q.unemployed_nsdap += 5;
 if (Q.pro_republic < 45 && Q.pro_republic >= 38) {
-    Q.workers_spd -= 6;
+    Q.workers_labour -= 6;
 }
 if (Q.pro_republic < 38) {
-    Q.workers_spd *= 0.85;
-    Q.new_middle_spd -= 5;
-    Q.old_middle_spd -= 5;
-    Q.rural_spd -= 5;
-    Q.catholics_spd -= 3;
+    Q.workers_labour *= 0.85;
+    Q.new_middle_labour -= 5;
+    Q.old_middle_labour -= 5;
+    Q.rural_labour -= 5;
+    Q.catholics_labour -= 3;
     Q.workers_nsdap += 5;
     Q.old_middle_nsdap += 5;
     Q.new_middle_nsdap += 5;
@@ -920,12 +920,12 @@ We have won the vote of no confidence, and are currently ruling under an SPD min
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
-subtitle: SPD + Z + [+ ddp_name +] [? if sapd_formed and kpd_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
+subtitle: Labour + Tories + [+ liberals_name +] [? if sapd_formed and cpgb_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = liberals_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
-We have enough votes to form a "Weimar Coalition" government consisting of the SPD, Center (Z) and Democratic ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919.
+We have enough votes to form a "Weimar Coalition" government consisting of the Labour Party, Center (Z) and Democratic ([+ liberals_name +]) parties! This has been our preferred governing coalition since 1919.
 
 Who should be the chancellor?
 
@@ -938,9 +938,9 @@ Who should be the chancellor?
 
 @breitscheid_coalition_chancellor
 title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+subtitle: Breitscheid is viewed as friendlier towards the left of the Labour Party.
 view-if: year >= 1930
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
+on-arrival: chancellor = "Breitscheid"; chancellor_party = "Labour";
 go-to: ministries
 
 Rudolf Breitscheid has been appointed chancellor.
@@ -949,19 +949,19 @@ Rudolf Breitscheid has been appointed chancellor.
 @grand_coalition
 title: We can form a Grand Coalition.
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0
-subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP ([+ grand_coalition +]%)
+subtitle: Labour + tories + BVP + [+ liberals_name +] + DVP ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
-go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
+go-to: grand_coalition_labour_lead if (n_elections <= 1 and largest_party == "Labour") or (largest_party == "Labour" and labour_r >= 30) or president = "Braun"; grand_coalition_tories_lead if president != "Braun" and ((n_elections > 1 and labour_r < 30) or (n_elections <= 1 and largest_party != "Labour"))
 
-# TODO: if there are enough votes to form a grand coalition, who leads? Does the SPD lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
-# In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
+# TODO: if there are enough votes to form a grand coalition, who leads? Does the Labour Party lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
+# In the first election, Labour always leads. In subsequent elections, if labour_r >= 29 then Labour leads, otherwise T leads?
 
 @grand_coalition_z_lead
-go-to: grand_coalition_z_lead_2 if dvp_relation >= 30; grand_coalition_fail if dvp_relation < 30
+go-to: grand_coalition_tories_lead_2 if dvp_relation >= 30; grand_coalition_fail if dvp_relation < 30
 
-There are enough votes to form a majority coalition consisting of the SPD, Center (Z), Bavarian People's (BVP), Democratic ([+ ddp_name +]), and People's (DVP) parties. Given our rather weak electoral performance, [? if spd_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] President Hindenburg has asked the Center Party to take the lead role in forming a government.
+There are enough votes to form a majority coalition consisting of the Labour Party, Center (T), Bavarian People's (BVP), Democratic ([+ liberals_name +]), and People's (DVP) parties. Given our rather weak electoral performance, [? if labour_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_labour = 1 : and the vote of no confidence against us, ?] President Hindenburg has asked the Conservatives to take the lead role in forming a government.
 
-# TODO: if the SPD participated in bringing down the previous government via a vote-of-no-confidence, or if we were essentially removed from government by our coalition partners, we should be more reluctant to participate in a new government.
+# TODO: if the Labour Party participated in bringing down the previous government via a vote-of-no-confidence, or if we were essentially removed from government by our coalition partners, we should be more reluctant to participate in a new government.
 
 @grand_coalition_z_lead_2
 
@@ -976,13 +976,13 @@ Brüning is not opposed to a coalition with us. Alternatively, we could enter a 
 
 @join_bruning
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
-on-arrival: spd_in_government = 1; spd_toleration = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "Z"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25;
+on-arrival: labour_in_government = 1; labour_toleration = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "T"; foreign_minister_party = "DVP"; interior_minister_party = "T"; justice_minister_party = "T"; labor_minister_party = "T"; reichswehr_minister_party = "I"; economic_minister_party = "T"; finance_minister_party = "T"; agriculture_minister_party = "T"; leverage = 25 if leverage >= 25;
 go-to: ministries
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @bruning_oppo
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "Z"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "Z"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; grand_coalition_failed = 1
+on-arrival: labour_in_government = 0; labour_toleration = 0; chancellor = "Brüning"; chancellor_party = "T"; foreign_minister_party = "DVP"; interior_minister_party = "T"; justice_minister_party = "T"; labor_minister_party = "T"; reichswehr_minister_party = "I"; economic_minister_party = "T"; finance_minister_party = "T"; agriculture_minister_party = "T"; grand_coalition_failed = 1
 
 By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition that includes the DNVP. However, the DNVP leader, Hugenberg, is opposed to a coalition with the "November criminals" of the Center Party. And of course, the NSDAP is not interested in coalition government. This means that there will not be enough votes to form a majority coalition. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition that includes the DNVP, and they are not interested in joining in a coalition with the "November criminals" of the Center Party, anyhow. And of course, the NSDAP is not interested in coalition government. This means that there is no route to a majority coalition. ?]
 
@@ -1005,19 +1005,19 @@ if (Q.next_election_month > 12) {
     Q.next_election_year = Q.year;
 }
 if (Q.chancellor == "Brüning") {
-    Q.z_relation -= 5;
+    Q.tories_relation -= 5;
     Q.dvp_relation -= 5;
 }
 Q.pro_republic -= 8;
-Q.workers_spd -= 5;
-Q.new_middle_spd -= 5;
-Q.old_middle_spd -= 5;
-Q.rural_spd -= 5;
-Q.catholics_spd -= 3;
+Q.workers_labour -= 5;
+Q.new_middle_labour -= 5;
+Q.old_middle_labour -= 5;
+Q.rural_labour -= 5;
+Q.catholics_labour -= 3;
 Q.new_middle_dvp -= 8;
 Q.old_middle_dvp -= 8;
-Q.new_middle_ddp -= 5;
-Q.old_middle_ddp -= 10;
+Q.new_middle_liberals -= 5;
+Q.old_middle_liberals -= 10;
 Q.rural_dnvp -= 5;
 Q.workers_nsdap += 5;
 Q.old_middle_nsdap += 6;
@@ -1026,18 +1026,18 @@ Q.rural_nsdap += 6;
 Q.unemployed_nsdap += 5;
 // Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
-    Q.workers_spd -= 6;
+    Q.workers_labour -= 6;
 }
 if (Q.pro_republic < 36) {
     // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
-    Q.z_relation -= 5;
+    Q.tories_relation -= 5;
     Q.dvp_relation -= 5;
-    Q.workers_spd *= 0.85;
-    Q.unemployed_spd -= 2;
-    Q.new_middle_spd -= 5;
-    Q.old_middle_spd -= 5;
-    Q.rural_spd -= 5;
-    Q.catholics_spd -= 3;
+    Q.workers_labour *= 0.85;
+    Q.unemployed_labour -= 2;
+    Q.new_middle_labour -= 5;
+    Q.old_middle_labour -= 5;
+    Q.rural_labour -= 5;
+    Q.catholics_labour -= 3;
     Q.workers_nsdap += 8;
     Q.old_middle_nsdap += 8;
     Q.new_middle_nsdap += 8;
@@ -1059,14 +1059,14 @@ The people's faith in democracy is shaken by this ordeal. Of course, the Nazis a
 @toleration_bruning
 choose-if: neo_weimar_coalition >= 50
 unavailable-subtitle: The parties supporting Brüning do not have a majority.
-on-arrival: spd_in_government = 0; spd_toleration = 1; minority_government = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; pro_republic -= 4; new_middle_dvp -= 5; new_middle_ddp -= 5; old_middle_dvp -= 5; old_middle_ddp -= 5; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_dnvp -= 5;
+on-arrival: labour_in_government = 0; labour_toleration = 1; minority_government = 1; chancellor = "Brüning"; chancellor_party = "T"; foreign_minister_party = "DVP"; interior_minister_party = "T"; justice_minister_party = "I"; labor_minister_party = "T"; reichswehr_minister_party = "I"; economic_minister_party = liberals_name; finance_minister_party = "DVP"; agriculture_minister_party = "T"; pro_republic -= 4; new_middle_dvp -= 5; new_middle_liberals -= 5; old_middle_dvp -= 5; old_middle_liberals -= 5; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_dnvp -= 5;
 
 We have decided to tolerate Brüning's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
 @grand_coalition_fail
 on-arrival: grand_coalition_failed = 1
 
-Unfortunately, the DVP and BVP are unwilling to enter into another coalition with the SPD, so the grand coalition is unable to be formed.
+Unfortunately, the DVP and BVP are unwilling to enter into another coalition with the Labour Party, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
 - @brauns_dilemma
@@ -1090,7 +1090,7 @@ Under the influence of Gustav Stresemann, the DVP agrees to allow us into the co
 
 The DVP asks us to adhere to their conservative economic policies (that is, extreme austerity and labor discipline) in exchange for us joining the coalition.
 
-- @beg_dvp_2: But they would not have a majority without the SPD! The DNVP and NSDAP have no interest in participating in government.
+- @beg_dvp_2: But they would not have a majority without the Labour Party! The DNVP and NSDAP have no interest in participating in government.
 - @no_majority: There is no chance that we would agree.
 - @brauns_dilemma
 - @coalition_menu: What are the other governing arrangements?
@@ -1099,7 +1099,7 @@ The DVP asks us to adhere to their conservative economic policies (that is, extr
 @beg_dvp_2
 go-to: beg_dvp_succeed; beg_dvp_fail
 
-We make the case that without the SPD, there is no parliamentary majority, given the DNVP and NSDAP's hostility to constitutional government.
+We make the case that without the Labour, there is no parliamentary majority, given the DNVP and NSDAP's hostility to constitutional government.
 
 @beg_dvp_succeed
 go-to: join_bruning
@@ -1114,10 +1114,10 @@ As expected, the DVP is too set in their anti-democratic ways.
 
 
 
-@grand_coalition_spd_lead
+@grand_coalition_labour_lead
 on-arrival: leverage -= 15 if dvp_relation < 20
 
-As expected, the SPD is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the Center (Z), Bavarian People's (BVP), Democratic ([+ ddp_name +]), and People's (DVP) parties.
+As expected, the Labour Party is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the Conservatives (T), Bavarian People's (BVP), Democratic ([+ liberals_name +]), and People's (DVP) parties.
 
 [? if dvp_relation < 20 : As our relation with the DVP is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
@@ -1134,8 +1134,8 @@ Who should be the chancellor?
 @muller
 title: Hermann Müller for Chancellor
 view-if: muller_dead = 0
-subtitle: Müller is popular within the party, and is the preferred candidate of the Center and other parties.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+subtitle: Müller is popular within the party, and is the preferred candidate of the Conservatives and other parties.
+on-arrival: labour_in_government = 1; chancellor = "Müller"; chancellor_party = "Labour"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -1144,17 +1144,17 @@ Müller's appointment as chancellor is approved by all our potential allies.
 title: Otto Wels for Chancellor
 view-if: muller_dead = 1
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: labour_in_government = 1; chancellor = "Wels"; chancellor_party = "Labour"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
 
 @braun
 title: Otto Braun for Chancellor
-view-if: not historical_mode or not spd_prussia
+view-if: not historical_mode or not labour_prussia
 subtitle: Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
-The Center party has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
+The Conservative Party has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
 
 - @muller
 - @wels
@@ -1163,7 +1163,7 @@ The Center party has significant qualms about appointing Braun as chancellor, gi
 @braun_2
 subtitle: Otto Braun will be Chancellor.
 view-if: not historical_mode
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
+on-arrival: labour_in_government = 1; chancellor = "Braun"; chancellor_party = "Labour"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
 We have promised to let the Center have more influence in the government in response to the appointment of Braun as chancellor.
@@ -1172,19 +1172,19 @@ We have promised to let the Center have more influence in the government in resp
 @z_chancellor
 title: Let the Center Party have their chancellor.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; tories_relation += 10; dvp_relation += 5; cpgb_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "T"; labour_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
 
 [? if year == 1928 : Since Wilhelm Marx resigned, Heinrich Brüning has been appointed chancellor. ?]
-[? if year > 1928: Heinrich Brüning of the Center Party has been appointed chancellor. ?]
+[? if year > 1928: Heinrich Brüning of the Conservative Party has been appointed chancellor. ?]
 
 @z_chancellor_wirth
 title: Let Joseph Wirth of the Center Party be chancellor.
-view-if: z_party_leader == "Joos"
+view-if: tories_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the Center Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 3; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+on-arrival: left_dissent += 2; tories_relation += 6; liberals_relation += 3; cpgb_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "T"; labour_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1199,7 +1199,7 @@ Are we sure about not participating in government? This will cause significant i
 
 - @muller
 - @braun
-- @z_chancellor
+- @tories_chancellor
 - @no_govt_goals: Yes, we're sure.
 
 @no_govt_goals
@@ -1222,15 +1222,15 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_spd if right_coalition >= 50 and president != "Braun" and year < 1929; new_elections_spd if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
+on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Brüning" if chancellor == "Marx"; labour_in_government = 0; grand_coalition_failed = 1
+go-to: right_coalition_post_spd if right_coalition >= 50 and president != "Braun" and year < 1929; new_elections_labour if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
 
 
-@right_coalition_post_spd
+@right_coalition_post_labour
 go-to: right_coalition_2
 
-@new_elections_spd
-on-arrival: next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year = year + 1 if next_election_month > 12; next_election_month = next_election_month - 12 if next_election_month > 12; new_middle_spd -= 5; old_middle_spd -= 5; workers_spd -= 3; catholics_spd -= 3; in_election = 1
+@new_elections_labour
+on-arrival: next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year = year + 1 if next_election_month > 12; next_election_month = next_election_month - 12 if next_election_month > 12; new_middle_labour -= 5; old_middle_labour -= 5; workers_labour -= 3; catholics_labour -= 3; in_election = 1
 
 Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_election_month : month +] [+ next_election_year +]. The previous chancellor has resigned, and has been replaced by Heinrich Brüning, also of the Center Party, ruling as part of a presidential cabinet. 
 
@@ -1239,82 +1239,82 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the KPD. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the KPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the CPGB. ?] [? if in_left_front and reichswehr_minister_party == "CPGB" : If the CPGB controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 - #mins_1928
 - #drop_mins_1928
 
 @labor
-title: Labor Ministry
-subtitle: Taking the Labor Ministry is expected of us.
+title: Labour Ministry
+subtitle: Taking the Labour Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: labor_minister_party != "SPD"
-on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
+view-if: labour_minister_party != "Labour"
+on-arrival: leverage -= 5; labour_minister_party = "Labour"; labour_minister = "Shaw"
 go-to: ministries
 
-Rudolf Wissell of the SPD has been appointed labor minister.
+Thomas Shaw of the Labour Party has been appointed Labour Minister.
 
 @interior
-title: Interior Ministry
-subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+title: Home Office
+subtitle: Taking the Home Office is expected of us. The Home Office controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: interior_minister_party != "SPD"
-on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
+view-if: home_secretary_party != "Labour"
+on-arrival: leverage -= 5; home_secretary_party = "SPD"; home_secretary = "Henderson"
 go-to: ministries
 
-Carl Severing of the SPD has been appointed Interior Minister.
+Arthur Henderson of the Labour Party has been appointed Home Secretary.
 
 @finance
-title: Finance Ministry
-subtitle: The Finance Ministry controls the government budget and taxes.
+title: Chancellor of the Exchequer
+subtitle: The Chancellor of the Exchequer controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: finance_minister_party != "SPD"
-on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+view-if: chancellor_of_the_exchequer_party_party != "Labour"
+on-arrival: leverage -= 10; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"
 go-to: ministries
 
-Rudolf Hilferding of the SPD has been appointed Finance Minister.
+Philip Snowden of the Labour Party has been appointed Chancellor of the Exchequer.
 
 @economic
-title: Economic Ministry
-subtitle: The Economic Ministry controls broader economic policy.
+title: Board of Trade
+subtitle: The Board of Trade controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: economic_minister_party != "SPD"
-on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
+view-if: president_of_the_board_of_trade_party != "Labour"
+on-arrival: leverage -= 10; president_of_the_board_of_trade_party = "Labour"; president_of_the_board_of_trade = "Webb"
 go-to: ministries
 
-Robert Schmidt of the SPD has been appointed Economic Minister.
+Sidney Webb of the Labour Party has been appointed President of the Board of Trade.
 
 @justice
-title: Justice Ministry
-subtitle: The Justice Ministry controls the courts.
+title: Attorney General
+subtitle: The Attorney General controls the courts.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: justice_minister_party != "SPD"
-on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
+view-if: attorney_general_party != "Labour"
+on-arrival: leverage -= 10; attorney_general_party = "Labour"; attorney_general = "Hastings"
 go-to: ministries
 
-Gustav Radbruch of the SPD has been appointed Justice Minister.
+Patrick Hastings of the Labour Party has been appointed Attorney General.
 
 @foreign
 title: Foreign Ministry
-subtitle: This is usually the domain of Gustav Stresemann of the DVP.
+subtitle: The ministry of the foreign office.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+view-if: foreign_minister_party != "Labour"
+on-arrival: leverage -= 10; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"
 go-to: ministries
 
-Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
+Ramsay MacDonald of the Labour Party has been appointed Foreign Minister.
 
 
 @agriculture
@@ -1322,24 +1322,24 @@ title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
-view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
+view-if: agriculture_minister_party != "Labour"
+on-arrival: leverage -= 10; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton"
 go-to: ministries
 tags: mins_1928
 
-Fritz Baade of the SPD has been appointed Agriculture Minister.
+Noel Buxton of the Labour Party has been appointed Agriculture Minister.
 
 @reichswehr
-title: Reichswehr Ministry
-subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased.
+title: War Ministry
+subtitle: The Ministry responsible for the armed forces. 
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
-view-if: reichswehr_minister_party != "SPD"
-on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"
+view-if: secretary_of_state_for_war_party != "Labour"
+on-arrival: leverage -= 15; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"
 go-to: ministries
 
-Julius Leber of the SPD has been appointed Reichswehr Minister.
+Stephen Walsh of the Labour Party has been appointed Secretary of State for War.
 
 
 
@@ -1352,56 +1352,56 @@ This coalition arrangement is tolerable to all.
 
 @drop_labor
 title: Drop the Labor Ministry.
-view-if: labor_minister_party = "SPD"
-on-arrival: labor_minister_party = "Z"; labor_minister = "Stegerwald"; leverage += 5;
+view-if: labor_minister_party = "Labour"
+on-arrival: labor_minister_party = "Tories"; labor_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
-view-if: interior_minister_party = "SPD"
-on-arrival: interior_minister_party = "Z"; interior_minister = "Wirth"; leverage += 5;
+view-if: interior_minister_party = "Labour"
+on-arrival: interior_minister_party = "Tories"; interior_minister = "Wirth"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
-view-if: finance_minister_party = "SPD"
-on-arrival: finance_minister_party = "DVP"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Z" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
+view-if: finance_minister_party = "Labour"
+on-arrival: finance_minister_party = "DVP"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Tories" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
-view-if: economic_minister_party = "SPD"
-on-arrival: economic_minister_party = "DVP"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
+view-if: economic_minister_party = "Labour"
+on-arrival: economic_minister_party = "DVP"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = liberals_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
-view-if: justice_minister_party = "SPD"
-on-arrival: justice_minister_party = ddp_name; justice_minister = "Koch-Weser"; leverage += 10;
+view-if: justice_minister_party = "Labour"
+on-arrival: justice_minister_party = liberals_name; justice_minister = "Koch-Weser"; leverage += 10;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
-view-if: foreign_minister_party = "SPD"
-on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
+view-if: foreign_minister_party = "Labour"
+on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Tories" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
-view-if: agriculture_minister_party = "SPD"
-on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Z" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
+view-if: agriculture_minister_party = "Labour"
+on-arrival: agriculture_minister_party = liberals_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Tories" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_reichswehr
 title: Drop the Reichswehr Ministry.
-view-if: reichswehr_minister_party = "SPD"
+view-if: reichswehr_minister_party = "Labour"
 on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries
