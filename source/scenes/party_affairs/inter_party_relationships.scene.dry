@@ -4,18 +4,18 @@ view-if: year <= 1932 and inter_party_relationships_timer <= 0
 tags: party_affairs
 is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
-card-image: img/weimar_coalition_2.jpg
+card-image: img/Mates_get_me_a_job.jpeg
 max-visits: 12
-#subtitle: Building relations with the other political parties of Germany.
+#subtitle: Building relations with the other political parties of Britain.
 
 = Inter-Party Relationships
 
-The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+Labour cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @liberals: Strengthen our bonds with the Liberals.
+- @tories: Strengthen our bonds with the Conservative Party.
+- @cpgb: Work towards repairing relationships with the Communist Party.
+- @labour_alone: Labour can stand alone for now.
 - @easy_discard
 
 
@@ -23,8 +23,8 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+on-arrival: resources -= 1; cpgb_inter_party_seen += 1
+go-to: kpd_blutmai if blutmai = 1; cpgb_1 if blutmai = 0 and cpgb_coalition_success = 0 and (cpgb_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @kpd_1
 on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
@@ -48,18 +48,18 @@ As part of normalizing relations with the KPD, we have to acknowledge the wrongd
 This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: kpd_relation -= 3
+on-arrival: cpgb_relation -= 3
 
 We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
 
 
 @kpd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
+on-arrival: cpgb_relation += 8*(1 - dissent); communist_coalition += 1 if cpgb_inter_party_seen <= 1; reformist_dissent += 2; tories_relation -= 3; dvp_relation -= 3
 
-After the success of the coalition government with the KPD, they are much more amenable to us.
+After the success of the coalition government with the CPGB, they are much more amenable to us.
 
 @kpd_blutmai
-on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
+on-arrival: cpgb_relation += 3*(1 - dissent); reformist_dissent += 1
 
 After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 
@@ -68,20 +68,20 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: center_op if tories_in_government = 1 and labour_in_government = 0 and chancellor != "Brüning"; center_coalition if labour_in_government = 1 and tories_in_government = 1; center_bruning if chancellor = "Brüning"
 
-@center_op
-on-arrival: z_relation += 5*(1 - dissent)
+@tories_op
+on-arrival: tories_relation += 5*(1 - dissent)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+We are currently in opposition to the Tory-led government, but that does not preclude the general building of feelings of good will.
 
-@center_coalition
-on-arrival: z_relation += 8*(1 - dissent)
+@tories_coalition
+on-arrival: tories_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
-@center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
+@tories_bruning
+on-arrival: tories_relation += 5*(1 - dissent)
 
 The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
 
@@ -113,7 +113,7 @@ The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, 
 
 However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
-@spd_alone
+@labour_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 
