@@ -1,23 +1,23 @@
-title: The KPD calls a vote of no confidence against the current government!
-subtitle: We have angered the KPD too much...
+title: The CPGB calls a vote of no confidence against the current government!
+subtitle: We have angered the CPGB too much...
 new-page: true
-view-if: spd_in_government = 1 and ((in_popular_front = 1 and kpd_coalition_dissent >= 3) or (in_left_front = 1 and kpd_coalition_dissent >= 4)) and spd_r < 50 and not constructive_vonc
+view-if: labour_in_government = 1 and ((in_popular_front = 1 and cpgb_coalition_dissent >= 3) or (in_left_front = 1 and cpgb_coalition_dissent >= 4)) and labour_r < 50 and not constructive_vonc
 tags: event
 go-to: menu
 
 = Vote of No Confidence
 
-The KPD has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+The CPGB has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
 @menu
 
 - @try_assuage: Try to assuage them somehow.
-- @support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
+- @support_center: Could we form a new government based on the Center Party and [+ liberals_name +] (and possibly DVP)?
 - @let_it_happen: Let the vote happen.
 
 @try_assuage
 
-How do we assuage the KPD?
+How do we assuage the CPGB?
 
 - @resources: Use our resources to reduce dissent within the coalition.
 - @thalmann: Appoint Thälmann as chancellor instead of [+ chancellor +].
@@ -28,7 +28,7 @@ How do we assuage the KPD?
 choose-if: president == "Braun"
 subtitle: This would be pretext for a right-wing coup.
 unavailable-subtitle: [? if president == "Hindenburg" : President Hindenburg would never allow this. ?]
-on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"
+on-arrival: chancellor = "Thälmann"; chancellor_party = "CPGB"
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
@@ -40,21 +40,21 @@ In response to [+ chancellor +] being appointed Chancellor, the right-wing force
 
 
 @resources
-choose-if: resources >= 3 and kpd_ultimatum_seen = 0
-unavailable-subtitle: -3 resources - [? if resources < 3 : We do not have enough resources. ?][? if kpd_ultimatum_seen : This is beyond the point when resources could fix. ?]
+choose-if: resources >= 3 and cpgb_ultimatum_seen = 0
+unavailable-subtitle: -3 resources - [? if resources < 3 : We do not have enough resources. ?][? if cpgb_ultimatum_seen : This is beyond the point when resources could fix. ?]
 subtitle: -3 resources
-on-arrival: resources -= 3; kpd_coalition_dissent -= 1;
+on-arrival: resources -= 3; cpgb_coalition_dissent -= 1;
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
 
 @support_center
-choose-if: (weimar_coalition >= 50 and z_relation >= 40) or (grand_coalition >= 50 and z_relation >= 45 and dvp_relation >= 30)
-unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if z_relation < 45 : After working with the Communists, the Center Party does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The DVP would rather see the government fall than rescue us from the Communists. ?]
+choose-if: (weimar_coalition >= 50 and tories_relation >= 40) or (grand_coalition >= 50 and tories_relation >= 45 and dvp_relation >= 30)
+unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if tories_relation < 45 : After working with the Communists, the Center Party does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The DVP would rather see the government fall than rescue us from the Communists. ?]
 
-We could try to boot the KPD from our governing coalition, and form a new government[? if spd_r <= 50 : with the bourgeois parties ?].
+We could try to boot the CPGB from our governing coalition, and form a new government[? if labour_r <= 50 : with the bourgeois parties ?].
 
-- @election_1928.spd_majority: Form an SPD government, without the KPD?
+- @election_1928.labour_majority: Form a Labour government, without the CPGB?
 - @election_1928.weimar_coalition: Form a Weimar Coalition?
 - @election_1928.grand_coalition: Form a Grand Coalition?
 - @let_it_happen: There is nothing we can do.
@@ -62,7 +62,7 @@ We could try to boot the KPD from our governing coalition, and form a new govern
 
 @let_it_happen
 view-if: not constructive_vonc
-on-arrival: kpd_relation -= 8; workers_kpd -= 5; workers_spd -= 8; unemployed_spd -= 6
+on-arrival: cpgb_relation -= 8; workers_cpgb -= 5; workers_labour -= 8; unemployed_labour -= 6
 go-to: let_it_happen_braun if president = "Braun"; let_it_happen_hindenburg if president = "Hindenburg"
 
 # if Braun is president, we are now a caretaker government. If Hindenburg is president, Brüning is a caretaker government
