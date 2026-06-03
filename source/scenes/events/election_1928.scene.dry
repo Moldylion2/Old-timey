@@ -450,16 +450,6 @@ on-arrival: no_majority_bruning_elections += 1
 
 There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the NSDAP, KPD, and DNVP. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
-
-The third option is to have new elections.
-
-- @toleration_bruning: We will tolerate Brüning..
-- @new_elections: We will have new elections.
-
-- @brauns_dilemma
-- @toleration_bruning: We will tolerate a minority government led by Brüning.
-- @new_elections: There will be new elections.
 
 @labour_majority
 title: Labour majority alone
