@@ -29,7 +29,7 @@ Since we are currently ruling as part of an emergency government, we may use qua
 - @election_algorithm: No, let's hold the elections.
 
 @cancel_elections_2
-on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; z_relation -= 8; ddp_relation -= 10; kpd_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
+on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; tories_relation -= 8; liberals_relation -= 10; cpgb_relation -= 8; coup_progress += 2; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 5; catholics_labour -= 5; unemployed_labour -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
 achievement: ausnahmezustand
 
 Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
@@ -345,7 +345,7 @@ The CPGB is still very reluctant to join a coalition, despite grassroots friendl
 @thalmann_chancellor
 choose-if: president == "Braun" and reformist_strength + neorevisionist_strength < left_strength
 unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
-on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; in_left_front = 1; spd_in_government = 1 
+on-arrival: chancellor = "Thälmann"; chancellor_party = "CPGB"; cpgb_relation = 80; in_left_front = 1; labour_in_government = 1 
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
@@ -367,12 +367,12 @@ go-to: left_coalition_success
 @left_coalition_relations
 title: Convince the KPD to accept democracy.
 unavailable-subtitle: Our relationships with the KPD are not good enough.
-choose-if: kpd_relation >= 60 or kpd_party_leader == "Conciliators"
+choose-if: cpgb_relation >= 60 or cpgb_party_leader == "Conciliators"
 go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10
+on-arrival: labour_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cpgb_relation += 10
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
@@ -381,7 +381,7 @@ Somehow, surprisingly, the left coalition is successfully formed, without appoin
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05
+on-arrival: cpgb_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05
 
 In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
@@ -400,7 +400,7 @@ In response to the KPD's entrance into the government, the right-wing immediatel
 
 @right_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: Z + BVP + DVP + DNVP + Others ([+ right_coalition +]%)
+subtitle: Tories + BVP + DVP + DNVP + Others ([+ right_coalition +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
 choose-if: year < 1929
@@ -471,7 +471,7 @@ The Center Party leader, Joseph Joos, clearly sees the threat from the ascension
 
 @unity_government_2
 title: Accept the offer!
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; in_grand_coalition = 1; in_unity_government = 1; leverage = 15; z_relation += 5; dvp_relation += 4
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; labour_in_government = 1; in_grand_coalition = 1; in_unity_government = 1; leverage = 15; tories_relation += 5; dvp_relation += 4
 achievement: constitutional_coalition
 go-to: ministries
 
@@ -479,7 +479,7 @@ We have formed a new unity government of all the constitutional parties! We have
 
 
 @reject_unity_government
-on-arrival: z_relation -= 8; ddp_relation -= 5; dvp_relation -= 5
+on-arrival: tories_relation -= 8; liberals_relation -= 5; dvp_relation -= 5
 
 Our rejection of the unity government has hurt our relations with the bourgeois and center-right parties.
 
@@ -538,7 +538,7 @@ Yes, an emergency minority government, with the support of the SPD. Who should l
 @braun_emergency_chancellor
 subtitle: This is unprecedented.
 view-if: not historical_mode or not spd_prussia
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
+on-arrival: chancellor = "Braun"; chancellor_party = "Labour"; Labour_in_government = 1; pro_republic -= 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
 
 Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
 
@@ -549,7 +549,7 @@ Thus, we have Chancellor-President Otto Braun. He claims that he will resign as 
 
 @breitscheid_emergency_chancellor
 subtitle: The Communists are warming to him...
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
+on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; labour_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
 
 We have appointed Rudolf Breitscheid as emergency chancellor. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
 
@@ -558,7 +558,7 @@ We have appointed Rudolf Breitscheid as emergency chancellor. The Communists con
 
 
 @bruning_emergency_chancellor
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; labour_in_government = 1; tories_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
 
 The Center Party is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as chancellor.
 
@@ -593,7 +593,7 @@ title: The Nazis immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
 on-arrival: tories_no_confidence = 1 if tories_relation < 45; cpgb_no_confidence = 1 if cpgb_relation < 45; other_no_confidence = 1 if (tories_relation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += tories_r if tories_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += cpgb_r if cpgb_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
-The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if cpgb_no_confidence: The CPGB votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
+The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if tories_no_confidence: The Conservative Party is voting against us. ?] [? if cpgb_no_confidence: The CPGB votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
 In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
@@ -650,14 +650,14 @@ view-if: no_confidence_votes <= 50
 on-arrival: in_minority_government = 1; in_emergency_government = 0;
 achievement: minderheitsregierung
 
-We have won the vote of no confidence, and are currently ruling under an SPD minority government. Now our task is to fix the country.
+We have won the vote of no confidence, and are currently ruling under a Labour minority government. Now our task is to fix the country.
 
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
 subtitle: Labour + Tories + [+ liberals_name +] [? if sapd_formed and cpgb_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = liberals_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if tories_party_leader == "Joos"; in_weimar_coalition = 1; labour_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = liberals_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = liberals_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
 We have enough votes to form a "Weimar Coalition" government consisting of the Labour Party, Center (Z) and Democratic ([+ liberals_name +]) parties! This has been our preferred governing coalition since 1919.
@@ -691,14 +691,14 @@ go-to: grand_coalition_labour_lead if (n_elections <= 1 and largest_party == "La
 # TODO: if there are enough votes to form a grand coalition, who leads? Does the Labour Party lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
 # In the first election, Labour always leads. In subsequent elections, if labour_r >= 29 then Labour leads, otherwise T leads?
 
-@grand_coalition_z_lead
+@grand_coalition_tories_lead
 go-to: grand_coalition_tories_lead_2 if dvp_relation >= 30; grand_coalition_fail if dvp_relation < 30
 
 There are enough votes to form a majority coalition consisting of the Labour Party, Center (T), Bavarian People's (BVP), Democratic ([+ liberals_name +]), and People's (DVP) parties. Given our rather weak electoral performance, [? if labour_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_labour = 1 : and the vote of no confidence against us, ?] President Hindenburg has asked the Conservatives to take the lead role in forming a government.
 
 # TODO: if the Labour Party participated in bringing down the previous government via a vote-of-no-confidence, or if we were essentially removed from government by our coalition partners, we should be more reluctant to participate in a new government.
 
-@grand_coalition_z_lead_2
+@grand_coalition_tories_lead_2
 
 The Center chancellor is likely to be Heinrich Brüning of the Center Party [? if chancellor = "Brüning" : again. ?][? if chancellor != "Brüning": . ?] He is known for his conservatism and sympathy for monarchism, being on the right wing of the Center. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
 
@@ -786,7 +786,7 @@ if (Q.far_right_coalition >= 50) {
 }
 !}
 
-There is no path to a workable Reichstag majority or minority government. The next elections are set for [+ next_election_month : month +] [+ next_election_year +].
+There is no path to a workable Parliamentary majority or minority government. The next elections are set for [+ next_election_month : month +] [+ next_election_year +].
 
 The people's faith in democracy is shaken by this ordeal. Of course, the Nazis are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader.
 
