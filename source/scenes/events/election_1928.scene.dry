@@ -518,23 +518,9 @@ achievement: weimar_coalition
 
 We have enough votes to form a "Weimar Coalition" government consisting of the Labour Party, Center (Z) and Democratic ([+ liberals_name +]) parties! This has been our preferred governing coalition since 1919.
 
-Who should be the chancellor?
+Who should be the Prime Minister
 
-- @muller
-- @braun
-- @breitscheid_coalition_chancellor
-- @wels
-- @z_chancellor
-- @z_chancellor_wirth
-
-@breitscheid_coalition_chancellor
-title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the Labour Party.
-view-if: year >= 1930
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "Labour";
-go-to: ministries
-
-Rudolf Breitscheid has been appointed chancellor.
+- @macdonald
 
 
 @grand_coalition
