@@ -1,9 +1,9 @@
 title: KPD Party Conference
 subtitle: The KPD chooses their new central committee - will the Wittorf Affair have an influence on their choice?
 new-page: true
-view-if: kpd_relation >= 50 and wittorf_soviet_union = 1 and year = 1929 and month >= 6 and month <= 8
+view-if: cpgb_relation >= 50 and wittorf_soviet_union = 1 and year = 1929 and month >= 6 and month <= 8
 max-visits: 1
-on-arrival: kpd_party_conference_seen = 1
+on-arrival: cpgb_party_conference_seen = 1
 tags: event
 
 = KPD Party Conference
