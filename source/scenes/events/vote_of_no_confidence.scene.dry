@@ -2,7 +2,7 @@ title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
 on-arrival: tried_supporting_cpgb = 0
-view-if: spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and labour_r < 50 and not constructive_vonc
+view-if: labour_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and labour_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
@@ -16,7 +16,7 @@ go-to: vonc_menu
 @vonc_menu
 
 - @try_assuage: Try to assuage our partners.
-- @support_kpd: Could we get the KPD to abstain?
+- @support_cpgb: Could we get the KPD to abstain?
 - @let_it_happen: Let the vote happen.
 
 @try_assuage
@@ -30,7 +30,7 @@ How do we assuage our partners?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @give_up_prussia
-view-if: spd_prussia == 1
+view-if: labour_prussia == 1
 on-arrival: coalition_dissent = 0; labour_prussia = 0; prussian_government = "I"; reformist_dissent += 10; centrist_dissent += 10; labor_dissent += 10; left_dissent += 5; workers_labour -= 5; rural_labour -= 5; 
 
 Fine. We no longer control the government of Prussia. The vote has been called off.
