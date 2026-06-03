@@ -533,6 +533,8 @@ go-to: grand_coalition_labour_lead if (n_elections <= 1 and largest_party == "La
 # TODO: if there are enough votes to form a grand coalition, who leads? Does the Labour Party lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
 # In the first election, Labour always leads. In subsequent elections, if labour_r >= 29 then Labour leads, otherwise T leads?
 
+@grand_coalition_labour_lead
+
 @grand_coalition_tories_lead
 go-to: grand_coalition_tories_lead_2 if dvp_relation >= 30; grand_coalition_fail if dvp_relation < 30
 
