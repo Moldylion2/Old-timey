@@ -18,9 +18,9 @@ After our discussion with the Soviets, we are inclined to believe that Stalin is
 
 @conciliator_success
 title: The Conciliators are the new leadership of the KPD.
-choose-if: (levi_advisor or rosenfeld_advisor) and (left_strength >= reformist_strength) and (kpd_relation >= 50) 
+choose-if: (levi_advisor or rosenfeld_advisor) and (left_strength >= reformist_strength) and (cpgb_relation >= 50) 
 unavailable-subtitle: [?  if not levi_advisor and not rosenfeld_advisor: Our party leadership is not left-wing enough. ?] [? if left_strength < reformist_strength: The Comintern doubts our commitment to socialism. ?]
-on-arrival: kpd_party_leader = "Conciliators"; communist_coalition += 3; kpd_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
+on-arrival: cpgb_party_leader = "Conciliators"; communist_coalition += 3; cpgb_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
 achievement: versohnler
 
 With our support, the Conciliators have won the leadership contest! The new leadership is a group of Conciliators, including Arthur Ewert, Hugo Eberlein, and Ernst Meyer. Thälmann remains, but largely as a figurehead only, it seems. We hope that the new leadership will be more inclined towards cooperation.
