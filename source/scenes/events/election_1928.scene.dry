@@ -195,7 +195,6 @@ Q.in_left_front = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
-Q.in_unity_government = 0;
 Q.labour_toleration = 0;
 Q.labour_caretaker = 0;
 Q.foreign_minister_party = 'DVP';
@@ -618,7 +617,6 @@ Brüning is not opposed to a coalition with us. Alternatively, we could enter a 
 - @join_bruning: Join the Brüning coalition.
 - @bruning_oppo: Join the opposition.
 - @toleration_bruning: We will "tolerate" a minority Brüning government.
-- @unity_government
 
 @join_bruning
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
@@ -718,7 +716,6 @@ Unfortunately, the DVP and BVP are unwilling to enter into another coalition wit
 - @brauns_dilemma
 - @right_coalition_2: Perhaps a right-wing coalition may form.
 - @beg_dvp: Perhaps we could ask the DVP to change their minds?
-- @unity_government
 - @coalition_menu: What are the other governing arrangements?
 
 
