@@ -759,7 +759,7 @@ on-arrival: reformist_dissent += 5; center_dissent += 5; labor_dissent += 5; neo
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
 
-- @muller
+- @macdonald
 - @braun
 - @tories_chancellor
 - @no_govt_goals: Yes, we're sure.

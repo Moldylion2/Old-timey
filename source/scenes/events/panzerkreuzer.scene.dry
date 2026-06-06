@@ -28,14 +28,14 @@ on-arrival: dvp_relation -= 8; z_relation -= 5; pacifism += 1; nationalism -= 5*
 go-to: vote_no_chancellor if chancellor_party = "SPD"; vote_no_pass if chancellor_party != "SPD"
 
 @vote_no_chancellor
-go-to: braun if chancellor = "Braun"; muller if chancellor = "Müller"
+go-to: braun if chancellor = "Braun"; macdonald if chancellor = "Müller"
 
 @braun
 on-arrival: panzerkreuzer_funded = 0; nationalism -= 3*(1-dissent); panzerkreuzer_failed = 1; workers_spd += 5*(1-dissent);
 
 Our coalition partners are shocked by our intransigence! However, Chancellor Braun manages to persuade our cabinet ministers to drop the plan to vote on the battlecruiser. The ship will not be built!
 
-@muller
+@macdonald
 on-arrival: panzerkreuzer_funded = 1
 
 Our coalition partners are shocked by our intransigence! Despite Chancellor Müller's rejection of the proposal, the other parties bring the matter to a Reichstag vote, which easily passes, with only the SPD and KPD voting against. The ship will be built.
