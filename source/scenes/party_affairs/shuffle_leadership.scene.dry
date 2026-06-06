@@ -51,7 +51,7 @@ go-to: rm_main
 
 Clynes has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_macdonald
+@remove_muller
 title: Remove Müller
 view-if: macdonald_advisor = 1
 tags: remove_advisor
