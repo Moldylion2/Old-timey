@@ -353,14 +353,14 @@ go-to: advisor_menu
 
 Otto Wels is now an advisor.
 
-@add_macdonald
+@add_muller
 title: Hermann Müller
 subtitle: Hermann Müller is the last Social Democratic Chancellor. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
-view-if: macdonald_advisor = 0 and macdonald_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: macdonald_advisor = 1; n_advisors += 1
+view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: muller_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
 Hermann Müller is now an advisor.
