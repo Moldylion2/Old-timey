@@ -1,48 +1,48 @@
-title: The CPGB checks upon our progress in accomplishing the coalition's goals...
-view-if: (in_popular_front or in_left_front) and (cpgb_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and cpgb_goals_seen = 1 and cpgb_ultimatum_seen = 0 and labour_in_government
+title: The KPD checks upon our progress in accomplishing the coalition's goals...
+view-if: (in_popular_front or in_left_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
 on-arrival: {!
-Q.cpgb_ultimatum_seen = 1;
-Q.cpgb_goals_completed = 1;
-Q.cpgb_score = 6;
+Q.kpd_ultimatum_seen = 1;
+Q.kpd_goals_completed = 1;
+Q.kpd_score = 6;
 if (Q.welfare_goal && !Q.welfare_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.agriculture_goal && !Q.agriculture_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.economy_goal && !Q.economy_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.finance_goal && !Q.finance_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.labor_goal && !Q.labor_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.foreign_goal && !Q.foreign_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 if (Q.interior_goal && !Q.interior_goal_completed) {
-    Q.cpgb_goals_completed = 0;
+    Q.kpd_goals_completed = 0;
 }
 if (Q.reichswehr_goal && !Q.reichswehr_goal_completed) {
-    Q.cpgb_goals_completed = 0;
-    Q.cpgb_score -= 1;
+    Q.kpd_goals_completed = 0;
+    Q.kpd_score -= 1;
 }
 !}
 new-page: true
 tags: event
-go-to: goals_success if cpgb_goals_completed; goals_failed if not cpgb_goals_completed
+go-to: goals_success if kpd_goals_completed; goals_failed if not kpd_goals_completed
 
-= CPGB Goals
+= KPD Goals
 
-At the start of this government, the CPGB presented a list of goals for the coalition:
+At the start of this government, the KPD presented a list of goals for the coalition:
 
 [? if welfare_goal = 1 : - Expand social welfare programs - [? if welfare_goal_completed : success ?][? if not welfare_goal_completed: failed ?] ?]
 
@@ -59,21 +59,21 @@ At the start of this government, the CPGB presented a list of goals for the coal
 [? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. - [? if reichswehr_goal_completed : success ?][? if not reichswehr_goal_completed: failed ?] ?]
 
 @goals_failed
-on-arrival: cpgb_relation -= 10; workers_labour -= 8; unemployed_labour -= 8;
+on-arrival: kpd_relation -= 10; workers_spd -= 8; unemployed_spd -= 8;
 
-Unfortunately, we have failed to accomplish all of the goals the CPGB set out. They plan to call a vote of no confidence against our government, and have already begun mounting a propaganda campaign to delegitimize our government in the eyes of the workers.
+Unfortunately, we have failed to accomplish all of the goals the KPD set out. They plan to call a vote of no confidence against our government, and have already begun mounting a propaganda campaign to delegitimize our government in the eyes of the workers.
 
 - @appeal: Appeal to the Communists to have patience - we are trying!
-- @cpgb_vote_of_no_confidence.support_center: Could we form a new government based on the Conservative Party and [+ liberals_name +] (and possibly DVP)?
-- @cpgb_vote_of_no_confidence.let_it_happen: Let the vote happen.
+- @kpd_vote_of_no_confidence.support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
+- @kpd_vote_of_no_confidence.let_it_happen: Let the vote happen.
 - @no_vonc: They cannot call a vote of no confidence due to the constitutional reforms, but they can obstruct our government at every opportunity.
 
 @appeal
-choose-if: (cpgb_score >= 4 and cpgb_relation > 50 and cpgb_appeal_seen = 0) or cpgb_party_leader = "Conciliators"
-unavailable-subtitle: [? if cpgb_score < 4: They do not see us as serious in trying to achieve the goals of the coalition. ?] [? if cpgb_relation < 50: Our relations are too poor. ?] [? if cpgb_appeal_seen = 1: we do not have any more time. ?]
-on-arrival: cpgb_ultimatum_seen = 0; cpgb_ultimatum_timer += 6; cpgb_appeal_seen = 1
+choose-if: (kpd_score >= 4 and kpd_relation > 50 and kpd_appeal_seen = 0) or kpd_party_leader = "Conciliators"
+unavailable-subtitle: [? if kpd_score < 4: They do not see us as serious in trying to achieve the goals of the coalition. ?] [? if kpd_relation < 50: Our relations are too poor. ?] [? if kpd_appeal_seen = 1: we do not have any more time. ?]
+on-arrival: kpd_ultimatum_seen = 0; kpd_ultimatum_timer += 6; kpd_appeal_seen = 1
 
-We argue that we are working hard to achieve the coalition's goals, and in the name of proletarian solidarity, we must make this coalition function. Surprisingly, the CPGB hears our pleas, and is willing to give us six more months before the coalition goals must be achieved.
+We argue that we are working hard to achieve the coalition's goals, and in the name of proletarian solidarity, we must make this coalition function. Surprisingly, the KPD hears our pleas, and is willing to give us six more months before the coalition goals must be achieved.
 
 
 @goals_success
