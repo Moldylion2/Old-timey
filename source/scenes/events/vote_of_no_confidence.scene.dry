@@ -9,7 +9,7 @@ go-to: menu
 
 The KPD has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
-@vonc_menu
+@menu
 
 - @try_assuage: Try to assuage them somehow.
 - @support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
@@ -80,3 +80,6 @@ on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; nex
 The vote succeeds, and our government has resigned. Chancellor Brüning has been appointed as the head of an acting government, consisting solely of the bourgeois parties.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@vonc_menu
+Testing this dialogue
