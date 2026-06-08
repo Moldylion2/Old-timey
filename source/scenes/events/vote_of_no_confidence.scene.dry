@@ -9,7 +9,7 @@ go-to: menu
 
 The KPD has called a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
-@menu
+@vonc_menu
 
 - @try_assuage: Try to assuage them somehow.
 - @support_center: Could we form a new government based on the Center Party and [+ ddp_name +] (and possibly DVP)?
