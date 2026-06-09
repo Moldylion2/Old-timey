@@ -112,22 +112,6 @@ Liberals: [+ liberals_ideology +] ([+ liberals_leader +])
 CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
 
 
-@paramilitaries
-on-arrival: {!
-if (Q.rb_strength) {
-    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
-}
-if (Q.rfb_strength) {
-    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
-}
-if (Q.sh_strength) {
-    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
-}
-if (Q.sa_strength) {
-    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
-}
-!}
-
 @government
 
 = Government
@@ -180,6 +164,22 @@ Reichswehr: [+ reichswehr_minister +] ([?if reichswehr_minister_party=="I":<span
 
 Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if agriculture_minister_party=="SPD":<span style="color: #E3000F;">**SPD**</span>?][?if agriculture_minister_party==ddp_name:<span style="color: #DCCA4A;">**[+ddp_name+]**</span>?][?if agriculture_minister_party=="DBP":<span style="color: #38C538;">**DBP**</span>?][?if agriculture_minister_party=="Z":<span style="color: #000000;">**Z**</span>?][?if agriculture_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if agriculture_minister_party=="CNBLP":<span style="color: #7FCEB1;">**CNBLP**</span>?][?if agriculture_minister_party=="KVP":<span style="color: #455B95;">**KVP**</span>?][?if agriculture_minister_party=="DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?][?if agriculture_minister_party=="DNF":<span style="color: #003755;">**DNF**</span>?][?if agriculture_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
+
+@paramilitaries
+on-arrival: {!
+if (Q.rb_strength) {
+    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
 
 = Paramilitaries
 
