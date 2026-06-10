@@ -144,7 +144,7 @@ Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<s
 
 = Opposition
 
-[? if chancellor == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 Prime Minister: [+ chancellor +] ([?if chancellor_party=="I":<span style="color: #808080;">**I**</span>?][?if chancellor_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if chancellor_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if chancellor_party=="Tories":<span style="color: #000000;">**Tories**</span>?][?if chancellor_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if chancellor_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
