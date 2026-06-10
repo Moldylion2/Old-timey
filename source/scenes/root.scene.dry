@@ -376,21 +376,21 @@ Q.minority_government = 0;
 // starting with the 1st Baldwin cabinet https://en.wikipedia.org/wiki/Conservative_government,_1922%E2%80%931924
 // is the agricultural ministry useful at all?
 Q.foreign_minister = 'Curzon';
-Q.foreign_minister_party = 'C';
+Q.foreign_minister_party = 'Tories';
 Q.home_secretary = 'Bridgeman';
-Q.home_secretary_party = 'C';
+Q.home_secretary_party = 'Tories';
 Q.attorney_general = 'Hogg';
-Q.justice_minister_party = 'C';
+Q.justice_minister_party = 'Tories';
 Q.labour_minister = 'Barlow';
-Q.labour_minister_party = 'C';
+Q.labour_minister_party = 'Tories';
 Q.secretary_of_state_for_war = 'Stanley';
-Q.secretary_of_state_for_war_party = 'C';
+Q.secretary_of_state_for_war_party = 'Tories';
 Q.health_minister = 'Joynson-Hicks';
-Q.health_minister_party = 'C';
+Q.health_minister_party = 'Tories';
 Q.chancellor_of_the_exchequer = 'Chamberlain';
-Q.chancellor_of_the_exchequer_party = 'C';
+Q.chancellor_of_the_exchequer_party = 'Tories';
 Q.agriculture_minister = 'Sanders';
-Q.agriculture_minister_party = 'C';
+Q.agriculture_minister_party = 'Tories';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
