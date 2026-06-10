@@ -116,12 +116,12 @@ CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
 
 = Government
 
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if president == "George V": <img src="img/portraits/King_George_1923.jpg" style="width: 50%; height: 200px;"> ?]
-[? if chancellor == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if king == "George V": <img src="img/portraits/King_George_1923.jpg" style="width: 50%; height: 200px;"> ?]
+[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 King: [+ king +] 
 
-Prime Minister: [+ chancellor +] ([?if chancellor_party=="I":<span style="color: #808080;">**I**</span>?][?if chancellor_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if chancellor_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if chancellor_party=="Tories":<span style="color: #000000;">**Tories**</span>?][?if chancellor_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if chancellor_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
+Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if prime_minister_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if prime_minister_party=="Tories":<span style="color: #000000;">**Tories**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
 Labour: [+ labour_minister +] ([?if labour_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if labour_minister_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if labour_minister_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if labour_minister_party=="Tories":<span style="color: #000000;">**Tories**</span>?][?if labour_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if labour_minister_party=="DNVP":<span style="color: #3F7BC1;">**DNVP**</span>?][?if labour_minister_party=="DNF":<span style="color: #003755;">**DNF**</span>?][?if labour_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
