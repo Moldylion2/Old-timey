@@ -1004,7 +1004,7 @@ if (Q.next_election_month > 12) {
 } else {
     Q.next_election_year = Q.year;
 }
-if (Q.chancellor == "Brüning") {
+if (Q.prime_minister == "Brüning") {
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
 }

@@ -9,7 +9,7 @@ Q.game_over = 1;
 this.achieve('game_completed');
 
 // Roter Zar von Preußen - At the end of the game, Otto Braun is president, chancellor, and minister-president of prussia at the same time.
-if (Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
+if (Q.president == 'Braun' && Q.prime_minister == 'Braun' && Q.spd_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Bürgerkrieg - enter a long civil war.
@@ -51,7 +51,7 @@ if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_ri
 }
 
 // Sohn seiner Klasse - elect Ernst Thälmann as president or chancellor.
-if (Q.chancellor == "Thälmann" || Q.president == "Thälmann") {
+if (Q.prime_minister == "Thälmann" || Q.president == "Thälmann") {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -93,7 +93,7 @@ if (Q.spd_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democ
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
-if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.chancellor != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
+if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.prime_minister != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
@@ -105,7 +105,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Hitler.
-if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
+if ((Q.prime_minister_party == "NSDAP" || Q.prime_minister == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
