@@ -338,8 +338,8 @@ Q.chancellor_party = 'tories';
 Q.labour_in_government = 0;
 Q.tories_in_government = 1;
 Q.liberals_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
+Q.dvp_in_government = 0;
+Q.dnvp_in_government = 0;
 Q.cpgb_in_government = 0;
 Q.nsdap_in_government = 0;
 
