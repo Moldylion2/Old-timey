@@ -103,13 +103,14 @@ Economic growth: [+ economic_growth_2 +]%
 
 # 1928: 15, 1930: 15, 1932: 
 
-Tories: [+ tories_ideology +] ([+ tories_leader +])
-# 1928: 10, 1930: 13
+<span class="tooltip-text" title="The Labour Party" style="color: #E4003B;">**Labour**</span>: <span style="color: #E4003B;">Fabian Socialism</span> ([+ labour_leader +])
 
-Liberals: [+ liberals_ideology +] ([+ liberals_leader +])
+<span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories**</span>: <span style="color: #0087DC;">One Nation Conservatism</span> ([+ tories_leader +])
 
-# 1928: 9, 1930: 5
-CPGB: [+ cpgb_ideology +] ([+ cpgb_leader +])
+<span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals**</span>: <span style="color: #FAA61A;">New Liberalism</span> ([+ liberals_leader +])
+
+<span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB**</span>: <span style="color: #8B0000;">Leninism</span> ([+ cpgb_leader +])
+
 
 
 @government
