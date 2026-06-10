@@ -110,6 +110,8 @@ Q.dvp_relation = 35;
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
+Q.labour_leader = "MacDonald";
+Q.labour_ideology = "Fabian Socialism"
 Q.liberals_leader = "Asquith";
 Q.liberals_ideology = "New Liberalism"
 Q.cpgb_leader = "Inkpin";
