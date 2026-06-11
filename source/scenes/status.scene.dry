@@ -44,7 +44,7 @@ Parliament composition:
 # 1928: 10, 1930: 13
 {!<span class="tooltip-text" title="The Liberal Party"style="color: #FAA61A;">!}**Liberals**{!</span>!}: [+ liberals_r +]%
 #
-{!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">**CPGB**</span>:!}: [+ cpgb_r +]%
+{!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_r +]%
 #
 {!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_r +]%
 # 1928: 14, 1930: 7
