@@ -73,9 +73,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-<span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals**</span>: [+ liberals_relation : relationships +]]
+<span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals**</span>: [+ liberals_relation : relationships +]
 
-<span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories**</span>: [+ tories_relation : relationships +]]
+<span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories**</span>: [+ tories_relation : relationships +]
 
 <span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB**</span>: [+ cpgb_relation : relationships +]
 
