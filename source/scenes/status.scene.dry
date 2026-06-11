@@ -33,7 +33,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 King: [+ king +]
 
-Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E4003B;">**Labour**</span>?][?if prime_minister_party==liberals_name:<span style="color: #FAA61A;">**Liberal**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="tories":<span style="color: #0087DC;">**Tory**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
+Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E4003B;">**Labour**</span>?][?if prime_minister_party==liberals_name:<span style="color: #FAA61A;">**Liberal**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="Tory":<span style="color: #0087DC;">**Tory**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
 Parliament composition:
 
