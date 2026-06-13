@@ -558,7 +558,7 @@ Q.pfulf_advisor = 0; // Antonie Pfülf
 // Reformist advisors
 Q.henderson_advisor = 0; // Arthur Henderson
 Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
+Q.ishbel_advisor = 0; // Ishbel MacDonald
 Q.baade_advisor = 0; // Fritz Baade
 
 // Labor advisors
