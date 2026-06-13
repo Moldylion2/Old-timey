@@ -538,18 +538,18 @@ table {
 }
 
 /* Styles for parties */
-.seat.kpd {
+.seat.cpgb {
     fill: #8B0000;
 }
-.seat.spd {
+.seat.labour {
     fill: #E3000F;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
-.seat.ddp {
+.seat.liberals {
     fill: #DCCA4A;
 }
-.seat.z {
+.seat.tories {
     fill: #000;
 }
 .seat.bvp {
