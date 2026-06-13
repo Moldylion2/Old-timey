@@ -79,7 +79,7 @@ Z + BVP: [+ z_r +]%
 # 1928: 10, 1930: 13
 KPD: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-[+ ddp_name +]: [+ ddp_r +]%
+[+ ddp_name +]: [+ liberals_r +]%
 # 1928: 9, 1930: 5
 DVP: [+ dvp_r +]%
 # 1928: 14, 1930: 7
@@ -213,7 +213,7 @@ Current relations: [+ z_relation : relationships +]
 # TODO: replace this with the german state party after 1930
 **DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the German State Party (DStP). ?]
 
-Current relations: [+ ddp_relation : relationships +]
+Current relations: [+ liberals_relation : relationships +]
 
 **DVP** - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. We have occasionally been in coalitions.
 
@@ -363,7 +363,7 @@ data = data.concat([
         "id": "ddp",
         "legend": "DDP",
         "name": "DDP",
-        "seats": Q.ddp_r*5,
+        "seats": Q.liberals_r*5,
     },
     {
         "id": "z",
@@ -462,7 +462,7 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ liberals_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
