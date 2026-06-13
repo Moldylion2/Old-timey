@@ -1,7 +1,7 @@
 title: The KPD calls a vote of no confidence against the current government!
 subtitle: We have angered the KPD too much...
 new-page: true
-view-if: spd_in_government = 1 and ((in_popular_front = 1 and kpd_coalition_dissent >= 3) or (in_left_front = 1 and kpd_coalition_dissent >= 4)) and spd_r < 50 and not constructive_vonc
+view-if: spd_in_government = 1 and ((in_popular_front = 1 and kpd_coalition_dissent >= 3) or (in_left_front = 1 and kpd_coalition_dissent >= 4)) and labour_r < 50 and not constructive_vonc
 tags: event
 go-to: menu
 
@@ -52,7 +52,7 @@ By transferring resources to our coalition partners, we can reduce their dissent
 choose-if: (weimar_coalition >= 50 and z_relation >= 40) or (grand_coalition >= 50 and z_relation >= 45 and dvp_relation >= 30)
 unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if z_relation < 45 : After working with the Communists, the Center Party does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The DVP would rather see the government fall than rescue us from the Communists. ?]
 
-We could try to boot the KPD from our governing coalition, and form a new government[? if spd_r <= 50 : with the bourgeois parties ?].
+We could try to boot the KPD from our governing coalition, and form a new government[? if labour_r <= 50 : with the bourgeois parties ?].
 
 - @election_1928.spd_majority: Form an SPD government, without the KPD?
 - @election_1928.weimar_coalition: Form a Weimar Coalition?
