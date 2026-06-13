@@ -180,14 +180,14 @@ for (var party of Q.parties) {
     election_result[party] = Q[party + '_r'];
 }
 Q.election_records.push(election_result);
-!}
+}
 on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 data = [
     {
-        "id": "kpd",
-        "legend": "KPD",
-        "name": "KPD",
+        "id": "cpgb",
+        "legend": "CPGB",
+        "name": "CPGB",
         "seats": Math.round(Q.cpgb_r*5),
     }
 ];
@@ -201,28 +201,22 @@ if (Q.sapd_formed && Q.sapd_r) {
 }
 data = data.concat([
     {
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
+        "id": "labour",
+        "legend": "Labour",
+        "name": "Labour",
         "seats": Math.round(Q.labour_r*5),
     },
     {
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
+        "id": "liberals",
+        "legend": "Liberals",
+        "name": "Liberals",
         "seats": Math.round(Q.liberals_r*5),
     },
     {
-        "id": "z",
-        "legend": "Center",
-        "name": "Center",
+        "id": "tories",
+        "legend": "Tories",
+        "name": "Tories",
         "seats": Math.round((Q. - 3)*5),
-    },
-    {
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": Math.round(3*5),
     },
     {
         "id": "dvp",
