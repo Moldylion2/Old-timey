@@ -370,7 +370,7 @@ title: Ramsay MacDonald
 subtitle: MacDonald is the current Labour Party leader, and is a long-time Socialist leader. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/MacDonaldRamsay.jpg
-view-if: breitscheid_advisor = 0 and n_advisors < 3
+view-if: macdonald_advisor = 0 and n_advisors < 3
 on-arrival: macdonald_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
@@ -404,17 +404,17 @@ go-to: advisor_menu
 
 Otto Braun is now an advisor.
 
-@add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+@add_ishbel
+title: Ishbel MacDonald
+subtitle: Ishbel is the eldest daughter of Ramsay MacDonald. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
-card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5
+card-image: img/portraits/Ishbel_MacDonald.jpg
+view-if: ishbel_advisor = 0 and n_advisors < 3
+on-arrival: ishbel_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+Ishbel MacDonald is now an advisor.
 
 @add_pfulf
 title: Antonie Pfülf
