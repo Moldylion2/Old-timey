@@ -53,7 +53,7 @@ Clynes has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_muller
 title: Remove Müller
-view-if: macdonald_advisor = 1
+view-if: muller_advisor = 1
 tags: remove_advisor
 on-arrival: macdonald_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
@@ -91,14 +91,14 @@ go-to: rm_main
 
 Braun has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_juchacz
-title: Remove Juchacz
-view-if: juchacz_advisor = 1
+@remove_ishbel 
+title: Remove Ishbel
+view-if: ishbel_advisor = 1
 tags: remove_advisor
-on-arrival: juchacz_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: ishbel_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+Ishbel has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_pfulf
 title: Remove Pfülf
