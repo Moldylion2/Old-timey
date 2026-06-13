@@ -38,7 +38,7 @@ Q.reform_support = Q.spd_normalized;
 if (Q.z_relation > 30) {
     Q.reform_support += Q.z_normalized - 0.03;
 }
-if (Q.kpd_relation > 50 && Q.kpd_normalized >= 0.1) {
+if (Q.cpgb_relation > 50 && Q.kpd_normalized >= 0.1) {
     Q.reform_support += Q.kpd_normalized;
 }
 if (Q.nsdap_normalized >= 0.2 ) {
@@ -51,7 +51,7 @@ view-if: electoral_threshold = 0
 
 Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation, a gift to regional parties such as the BVP. 
 
-The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if kpd_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the KPD supports this reform. ?] [? if nsdap_normalized >= 0.2 : The NSDAP supports this reform, as they believe they have something to gain. ?]
+The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if cpgb_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the KPD supports this reform. ?] [? if nsdap_normalized >= 0.2 : The NSDAP supports this reform, as they believe they have something to gain. ?]
 
 The SPD Left opposes this change, as they believe it to be anti-democratic.
 

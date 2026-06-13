@@ -1,7 +1,7 @@
 title: Wittorf Affair
 subtitle: A crisis in the KPD?
 new-page: true
-view-if: kpd_relation >= 30 and comintern_seen and year = 1928 and month >= 8 and month <= 10
+view-if: cpgb_relation >= 30 and comintern_seen and year = 1928 and month >= 8 and month <= 10
 max-visits: 1
 on-arrival: wittorf_affair_seen = 1
 tags: event
@@ -20,7 +20,7 @@ What should we do with this information?
 
 @publicize
 title: We will publicize the scandal to damage the KPD and Thälmann.
-on-arrival: kpd_relation -= 10; workers_kpd -= 4; unemployed_kpd -= 4
+on-arrival: cpgb_relation -= 10; workers_kpd -= 4; unemployed_kpd -= 4
 
 Our newspapers are among the first to publicize the affair, bringing a torment of criticism to the hypocrisy of the communists. We have damaged the KPD's standing among the workers, but also perhaps closed the door on further cooperation.
 
