@@ -75,7 +75,7 @@ Reichstag composition:
 SPD: [+ labour_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
+Z + BVP: [+ tories_r +]%
 # 1928: 10, 1930: 13
 KPD: [+ cpgb_r +]%
 # 1928: 5, 1930: 4 (as DstP)
@@ -208,7 +208,7 @@ go-to: menu
 
 **Z** - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **BVP** (Bavarian People's Party), which represents Catholics in Bavaria. [? if year >= 1930 or chancellor = "Brüning" : They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?]
 
-Current relations: [+ z_relation : relationships +]
+Current relations: [+ tories_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
 **DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the German State Party (DStP). ?]
