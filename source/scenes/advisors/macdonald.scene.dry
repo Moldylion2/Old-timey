@@ -7,7 +7,7 @@ view-if: macdonald_advisor = 1
 
 = Ramsay MacDonald
 
-MacDonald is the current [? if prime_minister = "MacDonald": and current ?] Labour Party leader, and is a long-time Socialist leader.
+MacDonald is the current [? if prime_minister = "MacDonald": and current ?] Labour Party leader, he's a long-time Socialist leader.
 
 - @macdonald_international
 - @macdonald_foreign
@@ -26,8 +26,8 @@ go-to: international_relations
 @macdonald_foreign
 title: Foreign Policy
 subtitle: As Foreign Minister, MacDonald can set our foreign policy.
-unavailable-subtitle: [? if not spd_in_government: The SPD is not in government. ?] [? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
+unavailable-subtitle: [? if not labour_in_government: Labour is not in government. ?] [? if foreign_minister_party != "Labour" : Labour does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and labour_in_government and foreign_minister_party == "Labour"
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
 go-to: foreign_policy
 
