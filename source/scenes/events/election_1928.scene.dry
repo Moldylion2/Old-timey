@@ -848,7 +848,7 @@ Their numbers are bolstered by the many government workers who are against the p
 @emergency_no_confidence
 title: The Nazis immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
-on-arrival: tories_no_confidence = 1 if elation < 45; cpgb_no_confidence = 1 if cpgb_relation < 45; other_no_confidence = 1 if (elation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes +=  if tories_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += cpgb_r if cpgb_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
+on-arrival: tories_no_confidence = 1 if elation < 45; cpgb_no_confidence = 1 if cpgb_relation < 45; other_no_confidence = 1 if (elation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += tories_r if tories_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += cpgb_r if cpgb_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
 The NSDAP and DNVP will vote against us, of course. The other parties vote their conscience. [? if tories_no_confidence: The Conservatives are voting against us. ?] [? if cpgb_no_confidence: The CPGB votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
