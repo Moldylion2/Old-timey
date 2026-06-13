@@ -1,0 +1,46 @@
+title: Ishbel MacDonald
+is-pinned-card: true
+tags: advisor, reformist
+card-image: img/portraits/Ishbel_MacDonald.jpg
+view-if: ishbel_advisor = 1
+new-page: true 
+
+= Ishbel MacDonald
+
+Ishbel is the eldest daughter of Ramsay MacDonald. She's currently studying social sciences at university but because of her father's widower status, could be expected to become official hostess at downing street if he were to ever take office.
+
+- @emergency_fundraising
+- @welfare
+- @organizing_women
+- @root: Return to main
+
+@emergency_fundraising
+title: Emergency Fundraising
+subtitle: An emergency infusion of resources.
+view-if: difficulty < 1
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; resources += dues
+
+We have gained +[+ dues +] resources.
+
+@welfare
+title: Support Workers' Welfare, our mutual aid organization.
+subtitle: -1 resources
+choose-if: resources > 0 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
+on-arrival: resources -= 1; workers_aid += 1; unemployed_labour += 5*(1 - dissent); workers_labour += 3*(1-dissent); workers_labour += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6;
+
+We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+
+@organizing_women
+title: Organizing women
+subtitle: Ishbel's charm could help Labour to appeal to more "traditional" women.
+choose-if: advisor_action_timer = 0 and labour_in_government
+unavailable-subtitle: [? if not labour_in_government: Labour is not in government. ?] [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: womens_rights += 1; workers_labour += 4*(1-dissent); rural_labour += 3*(1-dissent); old_middle_labour += 3*(1-dissent); advisor_action_timer = 6
+
+Ishbel's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
+
+[? if labour_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+
