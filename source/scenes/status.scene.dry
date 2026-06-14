@@ -38,15 +38,15 @@ Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style
 Parliament composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="The Labour Party"style="color: #E4003B;">!}**Labour**{!</span>!}: [+ labour_seats +] [+ labour_r +]%   
+{!<span class="tooltip-text" title="The Labour Party"style="color: #E4003B;">!}**Labour**{!</span>!}: [+ labour_seats +] ([+ labour_r +]%)   
 
-{!<span class="tooltip-text" title="The Conservative Party"style="color: #0087DC;">!}**Tories**{!</span> !}: [+ tories_seats +] [+ tories_r +]%
+{!<span class="tooltip-text" title="The Conservative Party"style="color: #0087DC;">!}**Tories**{!</span> !}: [+ tories_seats +] ([+ tories_r +]%)
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="The Liberal Party"style="color: #FAA61A;">!}**Liberals**{!</span>!}: [+ liberals_seats +] [+ liberals_r +]%
+{!<span class="tooltip-text" title="The Liberal Party"style="color: #FAA61A;">!}**Liberals**{!</span>!}: [+ liberals_seats +] ([+ liberals_r +]%)
 #
-{!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_seats +] [+ cpgb_r +]%
+{!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_seats +] ([+ cpgb_r +]%)
 #
-Others: [+ other_seats +] [+ other_r +]%
+Others: [+ other_seats +] ([+ other_r +]%)
 
 [? if labour_in_government = 1 : Budget: [+ budget +] ?]
 
