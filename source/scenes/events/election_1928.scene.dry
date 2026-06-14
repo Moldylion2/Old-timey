@@ -38,51 +38,114 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
+if (Q.year < 1929) {
+    Q.reichstag_size = 4.91;
+} else if (Q.year < 1930) {
+    Q.reichstag_size = 5.2;
+} else if (Q.year < 1931) {
+    Q.reichstag_size = 5.77;
+    if (Q.unemployed < 8) Q.reichstag_size -= 0.1;
+} else if (Q.year < 1932) {
+    Q.reichstag_size = 5.95;
+    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
+} else if (Q.year < 1933) {
+    Q.reichstag_size = 6.08;
+    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
+} else if (Q.year < 1934) {
+    Q.reichstag_size = 5.95;
+    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
+} else {
+    Q.reichstag_size = 5.5;
+    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
+    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
+}
 // set old results
 // election threshold constitutional reform
 // banning parties
+
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.constitutional_reform > 0) {
+    Q['old_' + party + '_seats'] = Q[party + '_seats'];
+    if (Q.electoral_threshold > 0) {
         if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
-            Q[party + '_r'] = Q[party + '_votes'];
+            Q[party + '_r'] = parseFloat((Q[party+'_votes']).toFixed(1));
         }
         new_party_sum += Q[party + '_r'];
     } else {
-        Q[party + '_r'] = Q[party + '_votes'];
+        Q[party + '_r'] = parseFloat((Q[party+'_votes']).toFixed(1));
+        if (party == 'other') Q[party + '_r'] = Q[party + '_votes'] * 0.3;
+        new_party_sum += Q[party + '_r'];
+        console.log(new_party_sum)
     }
-    // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-    }  else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
-    }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+
+    Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['old_' + party + '_votes'];
+    var sign2 = Q['change_' + party + '_votes'] > 0 
+                    ? '<img src="img/arrowup.png"> ' 
+                    : Q['change_' + party + '_votes'] < 0 
+                      ? '<img src="img/arrowdown.png"> ' 
+                      : '<img src="img/steady.png"> ';
+    Q['votes_change_' + party] = sign2 + Math.abs(parseFloat(Q['change_' + party + '_votes'])).toFixed(1);
+
+    Q['old_' + party + '_votes'] = parseFloat((Q[party + '_votes']).toFixed(1));
 }
-// calculate new party sum if electoral reform
-if (Q.electoral_threshold && Q.electoral_threshold > 0) {
-    for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
-            if (Q.use_decimals) {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
-            } else {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*100/new_party_sum);
-            }
-        }
-        if (Q.use_decimals) {
-            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-        } else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
-        }
-        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+
+for (var party of Q.parties) {
+    if (Q[party + '_r'] > 0) {
+        Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
     }
+    Q[party + '_r'] = parseFloat((Q[party+'_r']).toFixed(1));
+}
+
+let allocatedSeats = 0;
+let remainders = [];
+
+for (var party of Q.parties) {
+    let rawSeats = Q[party + '_r'] * Math.round(Q.reichstag_size*100) / 100;
+    let seats = Math.floor(rawSeats);
+    Q[party + '_seats'] = seats;
+    allocatedSeats += seats;
+    remainders.push({
+        party: party,
+        remainder: rawSeats - seats
+    });
+}
+
+let remainingSeats = Math.round(Q.reichstag_size*100) - allocatedSeats;
+remainders.sort((a, b) => b.remainder - a.remainder);
+for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
+    let partyObj = remainders[i];
+    if (!partyObj || !partyObj.party) continue;
+
+    let party = partyObj.party;
+    Q[party + '_seats'] += 1;
+}
+
+for (var party of Q.parties) {
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 
+            ? '<img src="img/arrowup.png"> ' 
+            : Q['change_' + party + '_r'] < 0 
+                    ? '<img src="img/arrowdown.png"> ' 
+                    : '<img src="img/steady.png"> ';
+    Q['str_change_' + party] = sign + Math.abs(parseFloat(Q['change_' + party + '_r'])).toFixed(1);
+
+    Q['change_' + party + '_seats'] = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    var sign = Q['change_' + party + '_seats'] > 0 
+            ? '<img src="img/arrowup.png"> ' 
+            : Q['change_' + party + '_seats'] < 0 
+                    ? '<img src="img/arrowdown.png"> ' 
+                    : '<img src="img/steady.png"> ';
+    Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
 }
 
 // get change arrows and signs
@@ -187,31 +250,31 @@ data = [
         "id": "cpgb",
         "legend": "CPGB",
         "name": "CPGB",
-        "seats": Math.round(Q.cpgb_r*5),
+        "seats": Math.round(Q.cpgb_seats),
     },
     {
         "id": "labour",
         "legend": "Labour",
         "name": "Labour",
-        "seats": Math.round(Q.labour_r*5),
+        "seats": Math.round(Q.labour_seats),
     },
     {
         "id": "liberals",
         "legend": "Liberals",
         "name": "Liberals",
-        "seats": Math.round(Q.liberals_r*5),
+        "seats": Math.round(Q.liberals_seats),
     },
     {
         "id": "tories",
         "legend": "Tories",
         "name": "Tories",
-        "seats": Math.round(Q.tories_r*5),
+        "seats": Math.round(Q.tories_seats),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_seats),
     },
 ];
 
