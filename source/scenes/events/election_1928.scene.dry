@@ -255,9 +255,9 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}CPGB: {!</td><td>!} [+ cpgb_r +]% {!</td><td>!} [+ str_change_cpgb +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} [+ liberals_name +]: {!</td><td>!} [+ liberals_r +]% {!</td><td>!} [+ str_change_liberals +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} Liberals: {!</td><td>!} [+ liberals_r +]% {!</td><td>!} [+ str_change_liberals +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} Tories: {!</td><td>!} [+ tories_minus_bvp_r +]% {!</td><td>!} [+ str_change_tories +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0087DC'> </div> !} Tories: {!</td><td>!} [+ tories_r +]% {!</td><td>!} [+ str_change_tories +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
