@@ -286,21 +286,27 @@ Q.catholics_other = 0;
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.labour_r = 23;
-Q.liberals_r = 19;
-Q.tories_r = 56;
-Q.cpgb_r = 0;
-Q.other_r = 2;
+Q.reichstag_size = 4.93;
+
+
+Q.labour_seats = 142;
+Q.cpgb_seats = 1;
+Q.tories_seats = 344;
+Q.liberals_seats = 115;
+Q.other_seats = 13;
+
+Q.labour_r = 23.0;
+Q.liberals_r = 18.7;
+Q.tories_r = 55.9;
+Q.cpgb_r = 0.1;
+Q.other_r = 2.1;
 
 // diff from prev
-Q.old_labour_r = 29.7;
+Q.old_labour_r = 23;
 Q.old_cpgb_r = 0;
-Q.old_tories_r = 38.5;
-Q.old_liberals_r = 28.8;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 20;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 9;
+Q.old_tories_r = 56;
+Q.old_liberals_r = 19;
+Q.old_other_r = 2;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
