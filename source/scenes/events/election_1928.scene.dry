@@ -150,6 +150,16 @@ for (var party of Q.parties) {
 
 // get change arrows and signs
 
+Q.opposition_party = Tory
+if (Q.labour_r > Q.tories_r && Q.tories_r > Q.liberals_r) {
+}
+Q.opposition_party = Labour
+if (Q.tories_r > Q.labour_r && Q.labour_r > Q.liberals_r) {
+}
+Q.opposition_party = Liberals
+if (Q.tories_r > Q.liberals_r && Q.liberals_r > Q.labour_r) {
+}
+
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
