@@ -226,7 +226,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if aspd_exist: <span style="color: #FE9E00;">**ASPD**</span>: [+ aspd_votes +]% ?]
 
-[? if ddp_exist: <span style="color: #DCCA4A;">**Liberals**</span>: [+ liberals_votes +]% ?]
+<span style="color: #DCCA4A;">**Liberals**</span>: [+ liberals_votes +]% ?]
 
 [? if dbp_exist: <span style="color: #38C538;">**DBP**</span>: [+ dbp_votes +]% ?]
 
