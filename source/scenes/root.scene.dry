@@ -274,7 +274,7 @@ Q.unemployed_liberals = 30;
 Q.unemployed_other = 9;
 
 Q.catholics_labour = 40;
-Q.catholics_cbgb = 1;
+Q.catholics_cpgb = 1;
 Q.catholics_tories = 45;
 Q.catholics_liberals = 14;
 Q.catholics_other = 0;
