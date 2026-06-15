@@ -73,10 +73,6 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB**</span>: [+ cpgb_relation : relationships +]
 
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_relation : relationships +]
-
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
-
 = Internal Factions of the Labour Party
 
 {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the communists.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
