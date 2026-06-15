@@ -313,18 +313,18 @@ go-to: coalition_menu
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **Labour:** {!</td><td>!} **[+ labour_r +]%** {!</td><td>!} **[+ str_change_labour +]** {!</td></tr>!}
+{!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Reichstag Seats</td><td>Seats Change</td></tr>!}
+{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#E4003B'> </div> !} Labour: {!</td><td>!} [+ labour_votes +]% {!</td><td>!} [+ votes_change_labour +] {!</td><td>!} [+ labour_seats +] ([+ labour_r +]%) {!</td><td>!} [+ str_seats_change_labour +] ([+ str_change_labour +]%) {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}CPGB: {!</td><td>!} [+ cpgb_r +]% {!</td><td>!} [+ str_change_cpgb +] {!</td></tr>!}
+{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CPGB: {!</td><td>!} [+ cpgb_votes +]% {!</td><td>!} [+ votes_change_cpgb +] {!</td><td>!} [+ cpgb_seats +] ([+ cpgb_r +]%) {!</td><td>!} [+ str_seats_change_cpgb +] ([+ str_change_cpgb +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div> !} Liberals: {!</td><td>!} [+ liberals_r +]% {!</td><td>!} [+ str_change_liberals +] {!</td></tr>!}
+{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#FAA61A'> </div> !} Liberals: {!</td><td>!} [+ liberals_votes +]% {!</td><td>!} [+ votes_change_liberals +] {!</td><td>!} [+ liberals_seats +] ([+ liberals_r +]%) {!</td><td>!} [+ str_seats_change_liberals +] ([+ str_change_liberals +]%) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0087DC'> </div> !} Tories: {!</td><td>!} [+ tories_r +]% {!</td><td>!} [+ str_change_tories +] {!</td></tr>!}
+{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#0087DC'> </div> !} Tories: {!</td><td>!} [+ tories_votes +]% {!</td><td>!} [+ votes_change_tories +] {!</td><td>!} [+ tories_seats +] ([+ tories_r +]%) {!</td><td>!} [+ str_seats_change_tories +] ([+ str_change_tories +]%) {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ others_votes +]% {!</td><td>!} [+ votes_change_others +] {!</td><td>!} [+ others_seats +] ([+ others_r +]%) {!</td><td>!} [+ str_seats_change_others +] ([+ str_change_others +]%) {!</td></tr>!}
 
 
 {!</table>!}
