@@ -336,6 +336,8 @@ Q.tories_in_government = 1;
 Q.liberals_in_government = 0;
 Q.cpgb_in_government = 0;
 
+Q.election_count = 0
+
 Q.in_right_coalition = 0;
 // Weimar coalition = Labour + Tories + Liberals
 Q.in_weimar_coalition = 0;
