@@ -308,11 +308,11 @@ Q.old_tories_r = 56;
 Q.old_liberals_r = 19;
 Q.old_other_r = 2;
 
-Q.old_labour_vote = 23;
-Q.old_cpgb_vote = 0;
-Q.old_tories_vote = 56;
-Q.old_liberals_vote = 19;
-Q.old_other_vote = 2;
+Q.old_labour_votes = 23;
+Q.old_cpgb_votes = 0;
+Q.old_tories_votes = 56;
+Q.old_liberals_votes = 19;
+Q.old_other_votes = 2;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
