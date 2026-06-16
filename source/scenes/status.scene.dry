@@ -43,7 +43,7 @@ Resources available: [+ resources +]
 Labour position: [? if labour_toleration : toleration ?][? if labour_in_government : in government - ?][? if labour_toleration == 0 and labour_in_government == 0 and labour_caretaker == 0 : opposition ?][? if labour_caretaker : caretaker government ?]
 [? if in_weimar_coalition and labour_in_government: Weimar Coalition ?][? if in_grand_coalition and labour_in_government: Grand Coalition ?][? if in_popular_front and labour_in_government: Popular Front ?][? if in_left_front and labour_in_government: Left Front ?][? if in_labour_majority and labour_in_government: Labour majority ?][? if in_minority_government and labour_in_government: minority government ?][? if in_emergency_government and labour_in_government: emergency government ?]
 
-[? if labour_in_government and not in_labour_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if labour_in_government and not in_labour_majority and not in_left_front : Liberal dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 [? if labour_in_government and (in_left_front or in_popular_front): CPGB coalition dissent: [+ cpgb_coalition_dissent : coalition_dissent +] ?]
 
