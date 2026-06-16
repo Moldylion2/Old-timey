@@ -38,34 +38,7 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
-if (Q.year < 1929) {
-    Q.reichstag_size = 4.91;
-} else if (Q.year < 1930) {
-    Q.reichstag_size = 5.2;
-} else if (Q.year < 1931) {
-    Q.reichstag_size = 5.77;
-    if (Q.unemployed < 8) Q.reichstag_size -= 0.1;
-} else if (Q.year < 1932) {
-    Q.reichstag_size = 5.95;
-    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
-} else if (Q.year < 1933) {
-    Q.reichstag_size = 6.08;
-    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
-} else if (Q.year < 1934) {
-    Q.reichstag_size = 5.95;
-    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
-} else {
-    Q.reichstag_size = 5.5;
-    if (Q.unemployed < 20) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
-    if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
-}
+
 // set old results
 // election threshold constitutional reform
 // banning parties
@@ -314,7 +287,7 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Reichstag Seats</td><td>Seats Change</td></tr>!}
-{!<tr><td><div class={!<tr><td><div class="box" style='background-color:#E4003B'> </div> !} Labour: {!</td><td>!} [+ labour_votes +]% {!</td><td>!} [+ votes_change_labour +] {!</td><td>!} [+ labour_seats +] ([+ labour_r +]%) {!</td><td>!} [+ str_seats_change_labour +] ([+ str_change_labour +]%) {!</td></tr>!}
+{!<tr><td><div class=<div class="box" style='background-color:#E4003B'> </div> !} Labour: {!</td><td>!} [+ labour_votes +]% {!</td><td>!} [+ votes_change_labour +] {!</td><td>!} [+ labour_seats +] ([+ labour_r +]%) {!</td><td>!} [+ str_seats_change_labour +] ([+ str_change_labour +]%) {!</td></tr>!} 
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
