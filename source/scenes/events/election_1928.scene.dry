@@ -373,9 +373,9 @@ go-to: no_majority_labour if prime_minister = "MacDonald" or prime_minister = "A
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
 @no_majority_labour
-on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"
+on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour" labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war_party = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer_party = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton"; reichswehr_loyalty -= 0.05;
 View-if: labour_seats > liberals_seats
-on-arrival: Prime Minister = "Empty"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war_party = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer_party = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton"; reichswehr_loyalty -= 0.05;
+
 
 @no_majority_liberals
 on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"
