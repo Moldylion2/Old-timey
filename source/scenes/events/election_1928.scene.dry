@@ -339,7 +339,7 @@ There are some potential coalition arrangements.
 
 @conservative_majority
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: Z + BVP + DVP + DNVP + Others ([+ conservative_majority +]%)
+subtitle: Tories have enough seats ([+ conservative_majority +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
 choose-if: year < 1929
@@ -348,7 +348,7 @@ There are enough votes for a right-wing coalition of the Center (+ BVP), DVP, DN
 
 - @conservative_majority_sure: It appears the Tories win the election.
 
-@no_@conservative_majority
+@no_conservative_majority
 go-to: no_majority
 
 This is very bad for us.
