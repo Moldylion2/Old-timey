@@ -353,7 +353,7 @@ go-to: no_majority
 
 This is very bad for us.
 
-@liberal_majority
+@liberals_majority
 title: Liberal majority
 subtitle: Liberal: [+ liberals_r +]%
 view-if: liberals_r >= 50
