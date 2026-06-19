@@ -377,5 +377,9 @@ achievement: majority_party
 Labour has won enough seats to govern alone! A historic victory. We now have the mandate to implement our agenda. anything is possible. 
 
 - @macdonald_prime_minister: Ramsay MacDonald is Prime Minister.
-subtitle: MacDonald is the next Prime Minister
+
+- @macdonald_prime_minister: Ramsay MacDonald is Prime Minister.
+
+@macdonald_prime_minister
+subtitle: Ramsay MacDonald is the the next Prime Minister
 on-arrival: prime_minister = "MacDonald"
