@@ -37,7 +37,7 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 title: Urge the coalition against austerity politics, and to increase social spending.
 choose-if: budget >= 1
 unavailable-subtitle: This can only happen with a budget surplus.
-go-to: urge_success liberals_relation >= 40; urge_failure if liberals_relation < 40
+go-to: urge_success if liberals_relation >= 40; urge_failure if liberals_relation < 40
 
 @urge_success
 on-arrival: welfare += 1; budget -= 1; workers_labour += 5*(1-dissent); unemployed_labour += 5*(1-dissent); liberals_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5;
