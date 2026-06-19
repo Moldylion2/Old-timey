@@ -368,7 +368,7 @@ on-arrival: pro_republic -= 0; center_dissent += 0; left_dissent += 0; labor_dis
 @no_majority
 title: There is a hung Parliament.
 view-if: labour_majority < 50
-on-arrival: no_majority_elections; election_count += 1
+on-arrival: no_majority; election_count += 1
 go-to: no_majority_labour if prime_minister = "MacDonald" or prime_minister = "Asquith"; no_majority_tories if Q.election_count = 0 no_majority_liberals if liberals_seats > labour_seats
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
