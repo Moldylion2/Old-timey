@@ -153,12 +153,8 @@ Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 // Cleaned British Coalitions (using raw percentage share or variables)
 Q.labour_majority = Q.labour_r;
 Q.conservative_majority = Q.tories_r;
-Q.progressive_alliance = Q.labour_r + Q.liberals_r;
-Q.left_coalition = Q.labour_r + Q.cpgb_r;
-Q.national_government = Q.tories_r + Q.liberals_r + Q.labour_r;
 
-Q.grand_coalition_failed = 0;
-Q.coalition_dissent = 0;
+Q.liberal_dissent = 0;
 Q.kpd_coalition_dissent = 0;
 Q.labour_in_government = 0;
 Q.tories_in_government = 0;
