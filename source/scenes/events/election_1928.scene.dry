@@ -7,8 +7,6 @@ on-departure: month_actions += 1; in_election = 0; next_election_year = next_ele
 set-jump: post_election_1928
 face-image: img/Rothe_Wahlen_1903.jpg
 
-# TODO: should there be an image?
-
 # the low priority means that this event is only seen after all other events are resolved for the month.
 
 = Elections, [+ month : month +] [+ year +]
@@ -29,7 +27,7 @@ Since we are currently ruling as part of an emergency government, we may use qua
 - @election_algorithm: No, let's hold the elections.
 
 @cancel_elections_2
-on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; elation -= 8; liberals_relation -= 10; cpgb_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
+on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; elation -= 8; liberals_relation -= 10; cpgb_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5;
 achievement: ausnahmezustand
 
 Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
@@ -57,7 +55,6 @@ for (var party of Q.parties) {
         Q[party + '_r'] = parseFloat((Q[party+'_votes']).toFixed(1));
         if (party == 'other') Q[party + '_r'] = Q[party + '_votes'] * 0.3;
         new_party_sum += Q[party + '_r'];
-        console.log(new_party_sum)
     }
 
     Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['old_' + party + '_votes'];
@@ -102,6 +99,9 @@ for (let i = 0; i < remainingSeats && i < remainders.length; i++) {
     Q[party + '_seats'] += 1;
 }
 
+// Calculate total seats distributed for majority calculations
+Q.total_seats_distributed = allocatedSeats + Math.min(remainingSeats, remainders.length);
+
 for (var party of Q.parties) {
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 
@@ -120,96 +120,49 @@ for (var party of Q.parties) {
     Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
 }
 
-// Fixed opposition logic with quotes and braces logic
+// Fixed opposition logic
 if (Q.labour_r > Q.tories_r && Q.tories_r > Q.liberals_r) {
     Q.opposition_party = 'Tories';
 } else if (Q.tories_r > Q.labour_r && Q.labour_r > Q.liberals_r) {
     Q.opposition_party = 'Labour';
-} else if (Q.tories_r > Q.liberals_r && Q.liberals_r > Q.labour_r) {
-    Q.opposition_party = 'Liberals';
 } else {
     Q.opposition_party = 'Liberals';
 }
 
-// The largest party can only be the NSDAP or the SPD.
-Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.labour_r && Q.nsdap_r >= Q.cpgb_r) {
-    Q.largest_party = 'NSDAP';
+// Dynamically track Largest and Second Largest party
+var sortedParties = Q.parties.map(p => ({name: p, votes: Q[p + '_r']})).sort((a, b) => b.votes - a.votes);
+
+if (sortedParties[0]) {
+    if (sortedParties[0].name == 'labour') Q.largest_party = 'Labour';
+    else if (sortedParties[0].name == 'tories') Q.largest_party = 'Tories';
+    else if (sortedParties[0].name == 'liberals') Q.largest_party = 'Liberals';
+    else if (sortedParties[0].name == 'cpgb') Q.largest_party = 'CPGB';
+    else Q.largest_party = 'Other';
 }
 
-if (Q.cpgb_r >= Q.labour_r && Q.cpgb_r >= Q.nsdap_r) {
-    Q.largest_party = 'KPD';
+if (sortedParties[1]) {
+    if (sortedParties[1].name == 'labour') Q.second_largest_party = 'Labour';
+    else if (sortedParties[1].name == 'tories') Q.second_largest_party = 'Tories';
+    else if (sortedParties[1].name == 'liberals') Q.second_largest_party = 'Liberals';
+    else if (sortedParties[1].name == 'cpgb') Q.second_largest_party = 'CPGB';
+    else Q.second_largest_party = 'Other';
 }
 
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
-// coalitions
-Q.weimar_coalition = Q.labour_r + Q.liberals_r + Q.tories_r - 3;
-Q.grand_coalition = Q.labour_r + Q.liberals_r + Q.tories_r + Q.dvp_r;
-Q.bourgeois_coalition = Q.liberals_r + Q.tories_r + Q.dvp_r + Q.other_r;
-Q.center_right_coalition = Q.tories_r + Q.liberals_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.right_coalition = Q.tories_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
-Q.left_coalition = Q.labour_r + Q.cpgb_r + Q.sapd_r;
-Q.popular_front_coalition = Q.labour_r + Q.cpgb_r + Q.tories_r + Q.liberals_r - 3 + Q.sapd_r;
-Q.anti_democratic_coalition = Q.cpgb_r + Q.nsdap_r + Q.dnvp_r;
-Q.neo_weimar_coalition = Q.labour_r + Q.liberals_r + Q.tories_r + Q.dvp_r + Q.other_r;
-Q.hitler_right_coalition = Q.tories_r + Q.dnvp_r + Q.nsdap_r;
-Q.progressive_coalition = Q.labour_r + Q.cpgb_r + Q.liberals_r + Q.sapd_r;
-
-if (Q.cpgb_relation >= 30) {
-    Q.weimar_coalition += Q.sapd_r;
-}
-
-Q.leverage = Q.labour_r;
+// Cleaned British Coalitions (using raw percentage share or variables)
+Q.labour_majority = Q.labour_r;
+Q.conservative_majority = Q.tories_r;
+Q.progressive_alliance = Q.labour_r + Q.liberals_r;
+Q.left_coalition = Q.labour_r + Q.cpgb_r;
+Q.national_government = Q.tories_r + Q.liberals_r + Q.labour_r;
 
 Q.grand_coalition_failed = 0;
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
-Q.spd_in_government = 0;
-Q.in_weimar_coalition = 0;
-Q.in_grand_coalition = 0;
-Q.in_left_front = 0;
-Q.in_popular_front = 0;
-Q.in_emergency_government = 0;
-Q.in_minority_government = 0;
-Q.in_unity_government = 0;
-Q.spd_toleration = 0;
-Q.spd_caretaker = 0;
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister_party = 'Z';
-Q.justice_minister_party = 'I';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister_party = Q.ddp_name;
-Q.finance_minister_party = 'DVP';
-Q.agriculture_minister_party = 'Z';
-
-Q.kpd_goals_seen = 0;
-Q.kpd_ultimatum_seen = 0;
-Q.welfare_goal = 0;
-Q.agriculture_goal = 0;
-Q.economy_goal = 0;
-Q.finance_goal = 0;
-Q.labor_goal = 0;
-Q.foreign_goal = 0;
-Q.interior_goal = 0;
-Q.reichswehr_goal = 0;
-
-Q.welfare_goal_completed = 0;
-Q.agriculture_goal_completed = 0;
-Q.economy_goal_completed = 0;
-Q.finance_goal_completed = 0;
-Q.labor_goal_completed = 0;
-Q.foreign_goal_completed = 0;
-Q.interior_goal_completed = 0;
-Q.reichswehr_goal_completed = 0;
-
-Q.strike_term_seen = 0;
-
-if (Q.nsdap_r >= 15) {
-    Q.understanding_enemy_timer = 2;
-}
+Q.labour_in_government = 0;
+Q.tories_in_government = 0;
+Q.liberals_in_government = 0;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
@@ -217,7 +170,7 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
+ON-DEPARTURE: nazi_urgency = 1 if (nazi_urgency == 0 and Q.cpgb_r >= 15)
 on-display: {!
 data = [
     {
@@ -270,17 +223,12 @@ if (window && d3) {
 }
 !}
 
-[? if largest_party == "Tories" and tories_r >= majority_needed : The Conservatives have won an outright majority and can govern on their own. ?]
-
-[? if largest_party == "Tories" and tories_r < majority_needed : The Conservatives remain the largest party but lack a majority, will the liberals tolerate them? ?]
-
-[? if largest_party == "Labour" and labour_r >= majority_needed : The Labour Party has won an outright majority! This is a historic victory. ?]
-
-[? if largest_party == "Labour" and labour_r < majority_needed : The Labour Party has emerged as the largest party! However, maybe the liberals will tolerate us? ?]
-
-[? if second_largest_party == "Labour" : We are at least the second largest party in parliament meaning we will be the offical opposition ?]
-
-[? if second_largest_party == "Tories" : The Tories has been pushed back to the opposition, this is a major victory for Labour ?]
+[? if largest_party == "Tories" and tories_seats >= majority_needed : The Conservatives have won an outright majority and can govern on their own. ?]
+[? if largest_party == "Tories" and tories_seats < majority_needed : The Conservatives remain the largest party but lack an outright majority. Will the Liberals tolerate them? ?]
+[? if largest_party == "Labour" and labour_seats >= majority_needed : The Labour Party has won an outright majority! This is a historic victory. ?]
+[? if largest_party == "Labour" and labour_seats < majority_needed : The Labour Party has emerged as the largest party! However, they lack an outright majority. ?]
+[? if second_largest_party == "Labour" : We are the second largest party in parliament, meaning we will form the official opposition. ?]
+[? if second_largest_party == "Tories" : The Tories have been pushed back into opposition—this is a major tactical shift. ?]
 
 go-to: coalition_menu
 
@@ -289,10 +237,8 @@ go-to: coalition_menu
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Reichstag Seats</td><td>Seats Change</td></tr>!}
+{!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Seats Won</td><td>Seats Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E4003B'> </div> !} Labour: {!</td><td>!} [+ labour_votes +]% {!</td><td>!} [+ votes_change_labour +] {!</td><td>!} [+ labour_seats +] ([+ labour_r +]%) {!</td><td>!} [+ str_seats_change_labour +] ([+ str_change_labour +]%) {!</td></tr>!} 
-
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CPGB: {!</td><td>!} [+ cpgb_votes +]% {!</td><td>!} [+ votes_change_cpgb +] {!</td><td>!} [+ cpgb_seats +] ([+ cpgb_r +]%) {!</td><td>!} [+ str_seats_change_cpgb +] ([+ str_change_cpgb +]%) {!</td></tr>!} 
 
@@ -300,83 +246,64 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !} Tories: {!</td><td>!} [+ tories_votes +]% {!</td><td>!} [+ votes_change_tories +] {!</td><td>!} [+ tories_seats +] ([+ tories_r +]%) {!</td><td>!} [+ str_seats_change_tories +] ([+ str_change_tories +]%) {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ others_votes +]% {!</td><td>!} [+ votes_change_others +] {!</td><td>!} [+ other_seats +] ([+ others_r +]%) {!</td><td>!} [+ str_seats_change_others +] ([+ str_change_others +]%) {!</td></tr>!}
-
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 {!</table>!}
 
-**Potential coalitions:**
-
-conservative_majority (Tories): [+ conservative_majority +]%
-
-liberal_majority (Liberals): 
-
-labour_majority (Labour): [+ labour_majority +]%
-
-There are some potential coalition arrangements.
+**Potential Layouts:**
+- Tory Share: [+ tories_r +]%
+- Labour Share: [+ labour_r +]%
+- Liberal Share: [+ liberals_r +]%
 
 @coalition_menu
+- @labour_majority_option: Form a Labour Government.
+- @conservative_majority_option: Realize a Tory Victory.
+- @no_majority: Proceed with a Hung Parliament.
 
-- @labour_majority
-- @no_majority
-- @conservative_majority
+@conservative_majority_option
+title: It appears the Conservatives have won or lead.
+subtitle: Tories hold ([+ tories_r +]%) of the vote share.
+view-if: tories_seats >= majority_needed
 
-# TODO: black-brown coalition
+The Tories have won an explicit control milestone.
 
-@conservative_majority
-title: It appears the Conservatives have a majority.
-subtitle: Tories have enough seats ([+ conservative_majority +]%)
-unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
-view-if: tories_seats >= 50
-choose-if: year < 1929
+- @conservative_majority_sure: Hand over the keys to the government.
 
-The Tories have a majority in Parliament.
-
-- @conservative_majority_sure: It appears the Tories win the election.
-
-@no_conservative_majority
-go-to: no_majority
-
-This is very bad for us.
+@conservative_majority_sure
+on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1;
 
 @liberals_majority
 title: Liberal majority
 subtitle: Liberal: [+ liberals_r +]%
 view-if: liberals_r >= 50
-on-arrival: prime_minister = "Empty"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_majority = 1; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew"; reichswehr_loyalty -= 0.05; 
+on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1;
 achievement: majority_party
-
-@conservative_majority_sure
-subtitle: Theres no other path to government...
-on-arrival: pro_republic -= 0; center_dissent += 0; left_dissent += 0; labor_dissent += 0; reformist_dissent += 0; neorevisionist_dissent += 0; elation -= 0; liberals_relation -= 0;
 
 @no_majority
 title: There is a hung Parliament.
-view-if: labour_majority < 50
+view-if: labour_seats < majority_needed and tories_seats < majority_needed
 on-arrival: election_count += 1
-go-to: no_majority_labour if prime_minister == "MacDonald" or prime_minister == "Asquith"; no_majority_conservative if election_count == 1; no_majority_liberals if liberals_seats > labour_seats
+go-to: no_majority_labour if (largest_party == "Labour"); no_majority_conservative if (largest_party == "Tories"); no_majority_liberals if (largest_party == "Liberals")
 
 @no_majority_labour
-on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton"; reichswehr_loyalty -= 0.05;
-view-if: labour_seats > liberals_seats
+on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
 
 @no_majority_liberals
-on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew"; reichswehr_loyalty -= 0.05;
-view-if: liberals_seats > labour_seats
+on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman";
 
 @no_majority_conservative
-on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; home_secretary_party = "Tory"; home_secretary = "Bridgeman"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Barlow"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Stanley"; health_minister_party = "Tory"; health_minister = "Joynson-Hicks"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "Chamberlain"; agriculture_minister_party = "Tory"; agriculture_minister = "Sanders"; reichswehr_loyalty -= 0.05;
+on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "Chamberlain";
 
-@labour_majority
+@labour_majority_option
 title: Labour majority
 subtitle: Labour: [+ labour_r +]%
-view-if: labour_r >= 50
-on-arrival: prime_minister = "Empty"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton"; reichswehr_loyalty -= 0.05; 
+view-if: labour_seats >= majority_needed
+on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
 achievement: majority_party
 
-Labour has won enough seats to govern alone! A historic victory. We now have the mandate to implement our agenda. anything is possible. 
+Labour has won enough seats to govern alone! A historic victory.
 
 - @macdonald_prime_minister: Ramsay MacDonald is Prime Minister.
 
 @macdonald_prime_minister
-subtitle: Ramsay MacDonald is the the next Prime Minister
+subtitle: Ramsay MacDonald is the next Prime Minister
 on-arrival: prime_minister = "MacDonald"
