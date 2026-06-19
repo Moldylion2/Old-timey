@@ -40,25 +40,29 @@ unavailable-subtitle: This can only happen with a budget surplus.
 go-to: urge_success if liberals_relation >= 40; urge_failure if liberals_relation < 40
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_labour += 5*(1-dissent); unemployed_labour += 5*(1-dissent); liberals_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5;
+on-arrival: welfare += 1; budget -= 1; workers_labour += 5*(1-dissent); unemployed_labour += 5*(1-dissent); liberals_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
 @urge_failure
-on-arrival: liberals_relation -= 3; 
+on-arrival: liberals_relation -= 3
 
 Unfortunately, our negotiations have met with failure. The Liberals increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
-
 @improve_relations
 title: Improve relations with the parties of the coalition.
-on-arrival: liberals_relation += 5*(1-dissent);  left_dissent += 5;
+on-arrival: liberals_relation += 5*(1-dissent); left_dissent += 5
 
 We have increased our level of contact and discussions with the parties of the coalition, primarily the Center Party and DVP.
 
 Our attempts to reach out to the center-right are met with disdain by leftists within our party.
 
-
 @stay_course
+title: Stay the course.
 
 We will stay the course of toleration, for the sake of stability.
+
+@easy_discard
+title: Discard this card.
+
+We decide not to act on this matter right now.
