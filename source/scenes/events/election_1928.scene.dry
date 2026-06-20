@@ -166,7 +166,7 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-ON-DEPARTURE: nazi_urgency = 1 if (nazi_urgency == 0 and Q.cpgb_r >= 15)
+on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and cpgb_r >= 15)
 on-display: {!
 data = [
     {
