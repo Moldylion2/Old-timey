@@ -39,7 +39,7 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 Labour position: [? if labour_toleration : toleration ?][? if labour_in_government : in government - ?][? if labour_toleration == 0 and labour_in_government == 0 and labour_caretaker == 0 : opposition ?][? if labour_caretaker : caretaker government ?]
-[? if in_labour_majority and labour_in_government: Labour majority ?][? if in_labour_minority_government ?]
+[? if in_labour_majority and labour_in_government: Labour majority ?][? if in_labour_minority_government : Labour minority ?]
 
 [? if in_labour_minority_government: Liberal dissent: [+ liberal_dissent : liberal_dissent +] ?]
 
@@ -75,17 +75,13 @@ Parliament composition:
 })();
 </script>!}
 
-# 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="The Labour Party"style="color: #E4003B;">!}**Labour**{!</span>!}: [+ labour_seats +] ([+ labour_r +]%)   
 {!<span class="tooltip-text" title="The Conservative Party"style="color: #0087DC;">!}**Tories**{!</span> !}: [+ tories_seats +] ([+ tories_r +]%)
-# 1928: 10, 1930: 13
 {!<span class="tooltip-text" title="The Liberal Party"style="color: #FFBF00;">!}**Liberals**{!</span>!}: [+ liberals_seats +] ([+ liberals_r +]%)
-#
 {!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_seats +] ([+ cpgb_r +]%)
-#
 <span style="color: #909090;">**Others**</span>: [+ other_seats +] ([+ other_r +]%)
 
-[? if labour_in_government = 1 : Budget: [+ budget +] ?]
+[? if labour_in_government == 1 : Budget: [+ budget +] ?]
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
