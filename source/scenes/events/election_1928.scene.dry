@@ -218,6 +218,7 @@ if (window && d3) {
      d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 [? if largest_party == "Tories" and tories_seats >= majority_needed : The Conservatives have won an outright majority and can govern on their own. ?]
 [? if largest_party == "Tories" and tories_seats < majority_needed : The Conservatives remain the largest party but lack an outright majority. Will the Liberals tolerate them? ?]
@@ -226,7 +227,7 @@ if (window && d3) {
 [? if second_largest_party == "Labour" : We are the second largest party in parliament, meaning we will form the official opposition. ?]
 [? if second_largest_party == "Tories" : The Tories have been pushed back into opposition—this is a major tactical shift. ?]
 
-go-to: coalition_menu
+
 
 = Election results
 
