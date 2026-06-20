@@ -279,7 +279,7 @@ achievement: majority_party
 @no_majority
 title: There is a hung Parliament.
 view-if: labour_seats < majority_needed and tories_seats < majority_needed
-on-arrival: if n_elections += 1
+on-arrival: 
 go-to: no_majority_labour if n_elections >= 1;; no_majority_conservative if "or n_elections == 0"; no_majority_liberals if n_elections >= 1;
 
 @no_majority_labour
