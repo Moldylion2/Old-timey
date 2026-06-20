@@ -121,16 +121,16 @@ for (var party of Q.parties) {
 }
 
 // Fixed opposition logic
-if (Q.labour_r > Q.tories_r && Q.tories_r > Q.liberals_r) {
+if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
     Q.opposition_party = 'Tories';
-} else if (Q.tories_r > Q.labour_r && Q.labour_r > Q.liberals_r) {
+} else if (Q.tories_seats > Q.labour_seats && Q.labour_seats > Q.liberals_seats) {
     Q.opposition_party = 'Labour';
 } else {
     Q.opposition_party = 'Liberals';
 }
 
 // Dynamically track Largest and Second Largest party
-var sortedParties = Q.parties.map(p => ({name: p, votes: Q[p + '_r']})).sort((a, b) => b.votes - a.votes);
+var sortedParties = Q.parties.map(p => ({name: p, votes: Q[p + '_seats']})).sort((a, b) => b.seats - a.seats);
 
 if (sortedParties[0]) {
     if (sortedParties[0].name == 'labour') Q.largest_party = 'Labour';
@@ -151,8 +151,11 @@ if (sortedParties[1]) {
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
 // Cleaned British Coalitions (using raw percentage share or variables)
-Q.labour_majority = Q.labour_r;
-Q.conservative_majority = Q.tories_r;
+Q.labour_majority = Q.labour_r >= 50;
+Q.conservative_majority = Q.tories_r >= 50;
+Q.liberals_majority = Q.liberals_r >= 50;
+Q.no_majority_labour = Q.liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 && labour_r > liberals_r
+Q.no_majority_liberals = Q.liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 && liberals_r > labour_r
 
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
@@ -247,9 +250,10 @@ go-to: coalition_menu
 {!</table>!}
 
 **Potential Layouts:**
-- Tory Share: [+ tories_r +]%
-- Labour Share: [+ labour_r +]%
-- Liberal Share: [+ liberals_r +]%
+
+Labour majority: = Q.labour_r >= 50;
+Conservative majority: = Q.tories_r >= 50;
+Liberals majority: Q.liberals_r >= 50;
 
 @coalition_menu
 
@@ -259,8 +263,8 @@ go-to: coalition_menu
 
 @conservative_majority_option
 title: It appears the Conservatives have won or lead.
-subtitle: Tories hold ([+ tories_r +]%) of the vote share.
-view-if: tories_seats >= majority_needed
+subtitle: Tories hold a majority of the vote share.
+view-if: tories_r >= 50
 
 The Tories have won an explicit control milestone.
 
@@ -271,14 +275,14 @@ on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in
 
 @liberals_majority
 title: Liberal majority
-subtitle: Liberal: [+ liberals_r +]%
+subtitle: Liberal: The liberals won themselves a majority.
 view-if: liberals_r >= 50
 on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1;
 achievement: majority_party
 
 @no_majority
 title: There is a hung Parliament.
-view-if: labour_seats < majority_needed and tories_seats < majority_needed
+view-if: liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 
 on-arrival: 
 go-to: no_majority_labour if n_elections >= 1;; no_majority_conservative if "or n_elections == 0"; no_majority_liberals if n_elections >= 1;
 
@@ -293,8 +297,8 @@ on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in
 
 @labour_majority_option
 title: Labour majority
-subtitle: Labour: [+ labour_r +]%
-view-if: labour_seats >= majority_needed
+subtitle: Labour: Labour have won themselves a majority.
+view-if: labour_r >= 50
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
 achievement: majority_party
 
