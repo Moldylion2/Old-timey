@@ -151,11 +151,11 @@ if (sortedParties[1]) {
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
 // Cleaned British Coalitions (using raw percentage share or variables)
-Q.labour_majority = Q.labour_r >= 50;
-Q.conservative_majority = Q.tories_r >= 50;
-Q.liberals_majority = Q.liberals_r >= 50;
-Q.no_majority_labour = Q.liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 && labour_r > liberals_r
-Q.no_majority_liberals = Q.liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 && liberals_r > labour_r
+Q.labour_majority = labour_r >= 50;
+Q.conservative_majority = tories_r >= 50;
+Q.liberals_majority = liberals_r >= 50;
+Q.no_majority_labour = liberals_r < 50 and labour_r < 50 and tories_r < 50 and labour_r > liberals_r
+Q.no_majority_liberals = liberals_r < 50 and labour_r < 50 and tories_r < 50 and liberals_r > labour_r
 
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
@@ -282,9 +282,9 @@ achievement: majority_party
 
 @no_majority
 title: There is a hung Parliament.
-view-if: liberals_r < 50 && Q.labour_r < 50 && tories_r < 50 
+view-if: liberals_r < 50 and Q.labour_r < 50 and tories_r < 50 
 on-arrival: 
-go-to: no_majority_labour if n_elections >= 1;; no_majority_conservative if "or n_elections == 0"; no_majority_liberals if n_elections >= 1;
+go-to: no_majority_labour if n_elections >= 1; no_majority_conservative if "or n_elections == 0"; no_majority_liberals if n_elections >= 1;
 
 @no_majority_labour
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
