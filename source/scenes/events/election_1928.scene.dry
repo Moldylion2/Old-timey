@@ -251,6 +251,7 @@ go-to: coalition_menu
 - Liberal Share: [+ liberals_r +]%
 
 @coalition_menu
+
 - @labour_majority_option: Form a Labour Government.
 - @conservative_majority_option: Realize a Tory Victory.
 - @no_majority: Proceed with a Hung Parliament.
