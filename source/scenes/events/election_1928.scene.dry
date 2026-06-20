@@ -154,7 +154,7 @@ Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 Q.labour_majority = Q.labour_r;
 Q.conservative_majority = Q.tories_r;
 
-Q.liberal_dissent = 0;
+Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
 Q.labour_in_government = 0;
 Q.tories_in_government = 0;

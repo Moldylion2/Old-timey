@@ -41,7 +41,7 @@ Resources available: [+ resources +]
 Labour position: [? if labour_toleration : toleration ?][? if labour_in_government : in government - ?][? if labour_toleration == 0 and labour_in_government == 0 and labour_caretaker == 0 : opposition ?][? if labour_caretaker : caretaker government ?]
 [? if in_labour_majority and labour_in_government: Labour majority ?][? if in_labour_minority_government : Labour minority ?]
 
-[? if in_labour_minority_government: Liberal dissent: [+ liberal_dissent : liberal_dissent +] ?]
+[? if in_labour_minority_government: Liberal dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 [? if labour_in_government and (in_left_front or in_popular_front): CPGB coalition dissent: [+ cpgb_coalition_dissent : coalition_dissent +] ?]
 
