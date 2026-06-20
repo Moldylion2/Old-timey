@@ -280,16 +280,16 @@ achievement: majority_party
 title: There is a hung Parliament.
 view-if: labour_seats < majority_needed and tories_seats < majority_needed
 on-arrival: if n_elections += 1
-go-to: no_majority_labour if (largest_party == "Labour"); no_majority_conservative if (largest_party == "Tories"); no_majority_liberals if (largest_party == "Liberals")
+go-to: no_majority_labour if n_elections >= 1;; no_majority_conservative if "or n_elections == 0"; no_majority_liberals if n_elections >= 1;
 
 @no_majority_labour
-on-arrival: if n_elections == 1 prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
+on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden";
 
 @no_majority_liberals
-on-arrival: if n_elections == 1 prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman";
+on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman";
 
 @no_majority_conservative
-on-arrival: if n_elections == 0 prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "Chamberlain";
+on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "Chamberlain";
 
 @labour_majority_option
 title: Labour majority
