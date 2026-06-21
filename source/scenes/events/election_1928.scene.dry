@@ -151,11 +151,11 @@ if (sortedParties[1]) {
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
 // Cleaned British Coalitions (using raw percentage share or variables)
-Q.labour_majority = labour_r >= 50;
-Q.conservative_majority = tories_r >= 50;
-Q.liberals_majority = liberals_r >= 50;
-Q.no_majority_labour = liberals_r < 50 and labour_r < 50 and tories_r < 50 and labour_r > liberals_r
-Q.no_majority_liberals = liberals_r < 50 and labour_r < 50 and tories_r < 50 and liberals_r > labour_r
+Q.labour_majority = (!labour_r >= 50;!)
+Q.conservative_majority = (!tories_r >= 50;!)
+Q.liberals_majority = (!liberals_r >= 50;!)
+Q.no_majority_labour = (!liberals_r < 50 and labour_r < 50 and tories_r < 50 and labour_r > liberals_r!)
+Q.no_majority_liberals = (!liberals_r < 50 and labour_r < 50 and tories_r < 50 and liberals_r > labour_r!)
 
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
