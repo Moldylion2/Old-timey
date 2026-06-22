@@ -121,9 +121,9 @@ for (var party of Q.parties) {
 }
 
 // Fixed opposition logic
-if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
+if (Q.labour_seats > Q.tories_r && Q.tories_r > Q.liberals_r) {
     Q.opposition_party = 'Tories';
-} else if (Q.tories_seats > Q.labour_seats && Q.labour_seats > Q.liberals_seats) {
+} else if (Q.tories_r > Q.labour_r && Q.labour_r > Q.liberals_r) {
     Q.opposition_party = 'Labour';
 } else {
     Q.opposition_party = 'Liberals';
@@ -154,8 +154,8 @@ Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 Q.labour_majority = (!labour_r >= 50;!)
 Q.conservative_majority = (!tories_r >= 50;!)
 Q.liberals_majority = (!liberals_r >= 50;!)
-Q.no_majority_labour = (!liberals_r < 50 and labour_r < 50 and tories_r < 50 and labour_r > liberals_r!)
-Q.no_majority_liberals = (!liberals_r < 50 and labour_r < 50 and tories_r < 50 and liberals_r > labour_r!)
+Q.no_majority_labour = if (Q.largest_party = "labour" && (Q.labour_r + Q.liberals_r > Q.tories_r)) Q.no_majority_labour = 1
+Q.no_majority_liberals = if (Q.largest_party = "liberals" && (Q.labour_r + Q.liberals_r > Q.tories_r)) Q.no_majority_liberals = 1
 
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
