@@ -234,7 +234,7 @@ go-to: coalition_menu
 
 = Election results
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="reichstag"; style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Seats Won</td><td>Seats Change</td></tr>!}
