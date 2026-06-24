@@ -165,7 +165,7 @@ Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<s
 
 = Opposition
 
-[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px; display: flex; justify-content: center;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 Leader of the Opposition: Leader of the Opposition [+ opposition_leader +] ([+ opposition_leader_party +]) 
 
