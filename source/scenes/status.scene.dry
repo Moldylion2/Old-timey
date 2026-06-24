@@ -138,7 +138,7 @@ Economic growth: [+ economic_growth_2 +]%
 = Government
 
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if king == "George V": <img src="img/portraits/King_George_1923.jpg" style="width: 50%; height: 200px;"> ?]
-[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "MacDonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 King: [+ king +] 
 
