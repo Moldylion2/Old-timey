@@ -1,71 +1,3 @@
-Username
-u…
-Invisible
-
-
-
-
-
-Direct Message
-
-placedstone
-s…
-Search s…
-
-placedstone chat
-23 June 2026
-[04:25]Tuesday, 23 June 2026 04:25Username: No rush. You've got your own mod to worry about, and we all have our own lives going on too. Whenever you get the time.
-[04:26]Tuesday, 23 June 2026 04:26Username: Cus once this election system works. I can finally get started on the bulk of my mods story content
-[04:26]Tuesday, 23 June 2026 04:26placedstone: Sounds good, I am excited to play it
-[04:26]Tuesday, 23 June 2026 04:26placedstone: Cuz i dont know anything about that period
-@placedstone
-Cuz i dont know anything about that period
-[04:28]Tuesday, 23 June 2026 04:28Username: Well its gonna center around the first labour government. And the 1926 general strike. Which irl labour wasn't in power for, and there will be content for the historical stuff like that. The labour party famously distanced themselves from the strike to not appear revolutionary. But what if they did try to help it win? Or, could they have delayed or prevented the strike if they were in power???? Now I have read into the period so I'm being rhetorical with my questions here. But there'll be a bunch of options is what I mean. (edited)Tuesday, 23 June 2026 04:33
-[04:36]Tuesday, 23 June 2026 04:36Username: Also. Goddamn, Hugenberg is so overpowered. Once that snap election features put in it'll be smooth sailing. It'd be like how you can get that 36% spd weimar coalition in 1929 in basegame. Its not even the great depression yet and a Hugenberg DNVP could be minmaxed into a Christian coalition and not need another election until 1933.
-
-Delete
-[23:50]Tuesday, 23 June 2026 23:50Username: Do you have an economics degree? Cus if not, that economy tab must have been nuts to make, without even getting into all the coding for it.
-24 June 2026
-[18:44]Wednesday, 24 June 2026 18:44placedstone: heres the reichstag elections
-title: Reichstag Elections
-new-page: true
-tags: event
-priority: -1
-view-if: (year == next_election_year and month >= next_election_month) or (year > next_election_year)
-on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; papen_chancellor_timer = 4;
-
-Expand (328 lines)
-message.txt
-message.txt (16 KB)
-16 KB
-:100:
-Click to react
-:laughing:
-Click to react
-:sparkling_heart:
-Click to react
-Add Reaction
-Reply
-Forward
-More
-[18:44]Wednesday, 24 June 2026 18:44placedstone: for the british mod
-:100:
-Click to react
-:laughing:
-Click to react
-:sparkling_heart:
-Click to react
-Add Reaction
-Reply
-Forward
-More
-@Username
-Do you have an economics degree? Cus if not, that economy tab must have been nuts to make, without even getting into all the coding for it.
-[18:45]Wednesday, 24 June 2026 18:45placedstone: no
-
-Message @placedstone
-﻿
-Send GIF
 title: Reichstag Elections
 new-page: true
 tags: event
@@ -389,5 +321,7 @@ priority: -1
 view-if: in_labour_minority == 1 and liberal_dissent >= 100
 on-arrival: in_labour_minority = 0; labour_in_government = 0;
 on-departure: next_election_year = year; next_election_month = month; in_election = 1;
+
+The Liberals have withdrawn their confidence and carried a motion of no confidence in the government. Parliament is dissolved and fresh elections are called.
 
 The Liberals have withdrawn their confidence and carried a motion of no confidence in the government. Parliament is dissolved and fresh elections are called.
