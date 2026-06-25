@@ -7,7 +7,7 @@ view-if: labour_in_government = 1 and (economic_minister_party == "Labour" or fi
 card-image: img/portraits/John_Wheatley.jpg
 #subtitle: Policies to address the economic crisis.
 
-= health Policy
+= economic Policy
 
 We have already formulated an economic plan. Now we have to implement it.
 
