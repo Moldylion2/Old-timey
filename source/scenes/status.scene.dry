@@ -165,7 +165,7 @@ Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<s
 
 = Opposition
 
-[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px; display: flex; justify-content: center;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if [? if opposition_party == "Tory": [+ party_leader +] <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px; display: flex; justify-content: center;"></div> ?][? if chancellor == "Macdonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if chancellor == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 Leader of the Opposition: Leader of the Opposition [+ opposition_leader +] ([+ opposition_leader_party +]) 
 
@@ -183,7 +183,7 @@ Foreign: [+ foreign_minister +] ([?if foreign_minister_party=="I":<span style="c
 
 War Office: [+ secretary_of_state_for_war +] ([?if secretary_of_state_for_war_party=="I":<span style="color: #808080;">**I**</span>?][?if secretary_of_state_for_war_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if secretary_of_state_for_war_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if secretary_of_state_for_war_party=="tories":<span style="color: #000000;">**Tory**</span>?])
 
-Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if agriculture_minister_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if agriculture_minister_party==liberals_name:<span style="color: #DCCA4A;">**[+liberals_name+]**</span>?][?if agriculture_minister_party=="DBP":<span style="color: #38C538;">**DBP**</span>?][?if agriculture_minister_party=="tories":<span style="color: #000000;">**Tory**</span>?])
+Agriculture: [? if opposition_party == "Tories": [+ tories_agricultural_ministry +]<span style="color: #000000;">**Tory**</span>?][? if opposition_party == "Labour": [+ labour_agricultural_ministry +]<span style="color: #E3000F;">**Labour**</span>?][? if opposition_party == "Liberals": [+ liberals_agricultural_ministry +]<span style="color: #DCCA4A;">**Liberal**</span>?]
 
 
 
