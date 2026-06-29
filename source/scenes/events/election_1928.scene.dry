@@ -148,6 +148,9 @@ if (sortedParties[1]) {
     else Q.second_largest_party = 'Other';
 }
 
+Q.opposition_party = Q.second_largest_party;
+Q.opposition_leader = Q.opposition_party;
+
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
 // Cleaned British Coalitions (majority is held by seats, not raw vote share)
