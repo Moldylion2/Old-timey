@@ -356,7 +356,7 @@ Q.cpgb_coalition_dissent = 0;
 Q.labour_toleration = 0;
 
 Q.opposition_party = Q.second_largest_party
-Q.opposition_leader = opposition_party
+Q.opposition_leader = Q.opposition_party
 
 // ministries - which parties control the ministries?
 // starting with the 1st Baldwin cabinet https://en.wikipedia.org/wiki/Conservative_government,_1922%E2%80%931924
