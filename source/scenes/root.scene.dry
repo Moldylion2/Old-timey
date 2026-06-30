@@ -381,6 +381,34 @@ Q.chancellor_of_the_exchequer_party = 'Tory';
 Q.agriculture_minister = 'Sanders';
 Q.agriculture_minister_party = 'Tory';
 
+Q.tories_foreign_minister_party = "A.Chamberlain";
+Q.tories_home_secretary_party = "Joynson-Hicks"; 
+Q.tories_attorney_general_party = "Hogg"; 
+Q.tories_labour_minister_party = "Steel-Maitland";
+Q.tories_secretary_of_state_for_war = "Worthington-Evans"; 
+Q.tories_health_minister_party = "N.Chamberlain"; 
+Q.tories_chancellor_of_the_exchequer_party = "Churchill"; 
+Q.tories_agriculture_minister_party = "Wood";
+
+Q.labour_foreign_minister = "MacDonald"; 
+Q.labour_home_secretary_party = "Henderson"; 
+Q.labour_attorney_general_party = "Hastings"; 
+Q.labour_labour_minister_party = "Shaw"; 
+Q.labour_secretary_of_state_for_war_party = "Walsh"; 
+Q.labour_health_minister_party = "Wheatley"; 
+Q.labour_chancellor_of_the_exchequer_party = "Snowden"; 
+Q.labour_agriculture_minister_party = "Buxton";
+
+Q.liberals_foreign_minister_party = "Simon"; 
+Q.liberals_home_secretary_party = "Samuel"; 
+Q.liberals_attorney_general_party = "Hopkinson"; 
+Q.liberals_labour_minister_party = "Harris"; 
+Q.liberals_secretary_of_state_for_war_party = "Benn"; 
+Q.liberals_health_minister_party = "Addison"; 
+Q.liberals_chancellor_of_the_exchequer_party = "Runciman"; 
+Q.liberals_agriculture_minister_party = "Rew";
+
+
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
 Q.panzerkreuzer_funded = 0;
