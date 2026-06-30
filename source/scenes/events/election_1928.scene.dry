@@ -283,7 +283,7 @@ title: Liberal majority
 subtitle: Liberal: The liberals won themselves a majority.
 choose-if: liberals_majority == 1
 unavailable-subtitle: The Liberals did not win a majority of seats.
-on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = 'Liberal'; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew";
+on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew";
 achievement: majority_party
 
 @no_majority
