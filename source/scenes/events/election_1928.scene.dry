@@ -276,7 +276,7 @@ The Tories have won an explicit control milestone.
 - @conservative_majority_sure: Hand over the keys to the government.
 
 @conservative_majority_sure
-on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; foreign_minister_party = "Tory"; foreign_minister = "A.Chamberlain"; home_secretary_party = 'Tory'; home_secretary = "Joynson-Hicks"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Steel-Maitland"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Worthington-Evans"; health_minister_party = "Tory"; health_minister = "N.Chamberlain"; chancellor_of_the_exchequer_party = 'Tory'; chancellor_of_the_exchequer = "Churchill"; agriculture_minister_party = "Tory"; agriculture_minister = "Wood";
+on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; foreign_minister_party = "Tory"; foreign_minister = "A.Chamberlain"; home_secretary_party = "Tory"; home_secretary = "Joynson-Hicks"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Steel-Maitland"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Worthington-Evans"; health_minister_party = "Tory"; health_minister = "N.Chamberlain"; chancellor_of_the_exchequer_party = 'Tory'; chancellor_of_the_exchequer = "Churchill"; agriculture_minister_party = "Tory"; agriculture_minister = "Wood";
 
 @liberals_majority_option
 title: Liberal majority
