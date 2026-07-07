@@ -1,4 +1,4 @@
-title: Reichstag Elections
+title: House of Commons Elections
 new-page: true
 tags: event
 priority: -1
@@ -11,7 +11,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Reichstag elections are to be held now.
+The House of Commons are to be held now.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
@@ -269,9 +269,9 @@ go-to: coalition_menu
 title: It appears the Conservatives have won or lead.
 subtitle: Tories hold a majority of the seats.
 choose-if: conservative_majority == 1
-unavailable-subtitle: The Conservatives did not win a majority of seats.
+unavailable-subtitle: The Conservatives won a majority of seats.
 
-The Tories have won an explicit control milestone.
+The Tories have won a Majority!
 
 - @conservative_majority_sure: Hand over the keys to the government.
 
