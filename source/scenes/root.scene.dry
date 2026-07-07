@@ -390,7 +390,7 @@ Q.tories_health_minister_party = "N.Chamberlain";
 Q.tories_chancellor_of_the_exchequer_party = "Churchill"; 
 Q.tories_agriculture_minister_party = "Wood";
 
-Q.labour_foreign_minister = "MacDonald"; 
+Q.labour_foreign_minister_party = "MacDonald"; 
 Q.labour_home_secretary_party = "Henderson"; 
 Q.labour_attorney_general_party = "Hastings"; 
 Q.labour_labour_minister_party = "Shaw"; 
