@@ -11,7 +11,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The House of Commons are to be held now.
+The House of Commons elections are to be held now.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
@@ -231,14 +231,6 @@ if (window && d3) {
 }
 !}
 go-to: coalition_menu
-
-[? if largest_party == "Tories" and tories_seats >= majority_needed : The Conservatives have won an outright majority! ?]
-[? if largest_party == "Tories" and tories_seats < majority_needed : The Conservatives remain the largest party, but they don’t have an outright majority, so they need Liberals tolerate them. ?]
-[? if largest_party == "Labour" and labour_seats >= majority_needed : The Labour Party has won an outright majority! This is a historic victory. ?]
-[? if largest_party == "Labour" and labour_seats < majority_needed : The Labour Party has emerged as the largest party! However, they lack an outright majority. ?]
-[? if second_largest_party == "Labour" : We are the second largest party in parliament, meaning we will form the official opposition. ?]
-[? if second_largest_party == "Tories" : The Tories have been pushed back into opposition—this is a major tactical shift. ?]
-
 
 
 = Election results
