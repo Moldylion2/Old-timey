@@ -303,16 +303,16 @@ Q.other_r = 2.1;
 
 // diff from prev
 Q.old_labour_r = 23;
-Q.old_cpgb_r = 0;
+Q.old_cpgb_r = 0.3;
 Q.old_tories_r = 56;
 Q.old_liberals_r = 19;
 Q.old_other_r = 2;
 
-Q.old_labour_votes = 23;
-Q.old_cpgb_votes = 0;
-Q.old_tories_votes = 56;
-Q.old_liberals_votes = 19;
-Q.old_other_votes = 2;
+Q.old_labour_votes = 29.7;
+Q.old_cpgb_votes = 0.3;
+Q.old_tories_votes = 38.5;
+Q.old_liberals_votes = 28.8;
+Q.old_other_votes = 1.4;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
