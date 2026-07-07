@@ -164,7 +164,7 @@ Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<s
 @opposition
 
 = Opposition
- <img src="img/portraits/Stanley_Baldwin_1920s.jpg"
+
 [? if opposition_party == "Tories": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;">  <img src="img/portraits/Stanley_Baldwin_1920s.jpg"  style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Labour": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Liberals": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 Leader of the Opposition: [? if opposition_party == "Tories": Baldwin (<span style="color: #000000;">**Tory**</span>) ?][? if opposition_party == "Labour": MacDonald (<span style="color: #E3000F;">**Labour**</span>) ?] [? if opposition_party == "Liberals": Asquith (<span style="color: #DCCA4A;">**Liberal**</span>) ?] 
