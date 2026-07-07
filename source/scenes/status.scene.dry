@@ -39,7 +39,7 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 Labour position: [? if labour_toleration : toleration ?][? if labour_in_government : in government - ?][? if labour_toleration == 0 and labour_in_government == 0 and labour_caretaker == 0 : opposition ?][? if labour_caretaker : caretaker government ?]
-[? if in_labour_majority and labour_in_government: Labour majority ?][? if in_labour_minority_government : Labour minority ?]
+[? if in_labour_majority and labour_in_government: Labour Majority ?][? if in_labour_minority : Labour Minority ?]
 
 [? if in_labour_minority_government: Liberal dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
