@@ -258,6 +258,14 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 {!</table>!}
 
+**Potential coalitions:**
+
+Labour Majority (<span style="color: #E4003B;">**Labour**</span>): [+ labour_majority +]%
+
+Conservative Majority (<span style="color: #0087DC;">**Tories**</span>): [+ conservative_majority_option +]%
+
+Liberal Majority (<span style="color: #FAA61A;">**Liberals**</span>): [+ liberals_majority +]%
+
 @coalition_menu
 
 - @labour_majority_option: Labour Majority
@@ -293,6 +301,7 @@ go-to: no_majority_labour if no_majority_labour == 1; no_majority_liberals if no
 
 @no_majority_labour
 title: The liberals will support a Labour Minority Government.
+view-if: hung_parliament ==1
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; tolerated_by = "Liberals"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton";
 
 @no_majority_liberals
