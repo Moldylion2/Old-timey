@@ -267,4 +267,3 @@ Unemployed: <span style="color: #8B0000;">**CPGB**</span>: [+ unemployed_cpgb_di
 
 Catholics: <span style="color: #8B0000;">**CPGB**</span>: [+ catholics_cpgb_display +]%, <span style="color: #E3000F;">**Labour**</span>: [+ catholics_labour_display +]%, <span style="color: #0087DC;">**Tories**</span>: [+ catholics_tories_display +]%, [? if liberals_exist: <span style="color: #DCCA4A;">**Liberals**</span>: [+ catholics_liberals_display +]%, ?] <span style="color: #909090;">**Others**</span>: [+ catholics_other_display +]%
 
-Support for the Republic: [+ pro_republic_disp +]%
