@@ -240,10 +240,10 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_labour = 50;
+Q.workers_labour = 32;
 Q.workers_cpgb = 1;
-Q.workers_tories = 5;
-Q.workers_liberals = 43;
+Q.workers_tories = 27;
+Q.workers_liberals = 28;
 Q.workers_other = 2;
 
 Q.old_middle_labour = 5;
