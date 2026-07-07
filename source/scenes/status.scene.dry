@@ -183,7 +183,7 @@ Foreign: [? if opposition_party == "Tories": [+ tories_foreign_minister_party +]
 
 War Office: [? if opposition_party == "Tories": [+ tories_secretary_of_state_for_war_party +] (<span style="color: #000000;">**Tory**</span>)?][? if opposition_party == "Labour": [+ labour_secretary_of_state_for_war_party +] (<span style="color: #E3000F;">**Labour**</span>)?][? if opposition_party == "Liberals": [+ liberals_secretary_of_state_for_war_party +] (<span style="color: #DCCA4A;">**Liberal**</span>)?]
 
-Agriculture: [? if opposition_party == "Tories": [+ tories_agricultural_minister_party +] (<span style="color: #000000;">**Tory**</span>)?][? if opposition_party == "Labour": [+ labour_agricultural_minister_party +] (<span style="color: #E3000F;">**Labour**</span>)?][? if opposition_party == "Liberals": [+ liberals_agricultural_minister_party +] (<span style="color: #DCCA4A;">**Liberal**</span>)?]
+Agriculture: [? if opposition_party == "Tories": [+ tories_agriculture_minister_party +] (<span style="color: #000000;">**Tory**</span>)?][? if opposition_party == "Labour": [+ labour_agriculture_minister_party +] (<span style="color: #E3000F;">**Labour**</span>)?][? if opposition_party == "Liberals": [+ liberals_agriculture_minister_party +] (<span style="color: #DCCA4A;">**Liberal**</span>)?]
 
 
 @paramilitaries
