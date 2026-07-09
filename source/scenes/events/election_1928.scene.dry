@@ -129,6 +129,13 @@ if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
     Q.opposition_party = 'Liberals';
 }
 
+for (var party of Q.parties) {
+          for (var party2 of Q.parties) {
+         if (Q[party + '_seats']>Q[party2 + '_seats']) && !([party + '_in_government']) {
+[var party = Q.opposition_party]
+    } 
+    }
+}
 // Dynamically track Largest and Second Largest party
 var sortedParties = Q.parties.map(p => ({name: p, seats: Q[p + '_seats']})).sort((a, b) => b.seats - a.seats);
 
@@ -148,7 +155,7 @@ if (sortedParties[1]) {
     else Q.second_largest_party = 'Other';
 }
 
-Q.opposition_party = Q.second_largest_party;
+Q.opposition_party = Q.opposition_party;
 Q.opposition_leader = Q.opposition_party;
 
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
