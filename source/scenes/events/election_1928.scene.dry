@@ -131,7 +131,7 @@ if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
 
 for (var party of Q.parties) {
           for (var party2 of Q.parties) {
-         if (Q[party + '_seats']>Q[party2 + '_seats']) && !([party + '_in_government']) {
+         if ((Q[party + '_seats']>Q[party2 + '_seats'])) && !(([party + '_in_government'])) {
 [var party = Q.opposition_party]
     } 
     }
