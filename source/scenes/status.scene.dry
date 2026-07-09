@@ -53,7 +53,7 @@ King: [+ king +]
 
 Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E4003B;">**Labour**</span>?][?if prime_minister_party=="Liberal":<span style="color: #FAA61A;">**Liberal**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="Tory":<span style="color: #0087DC;">**Tory**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
-Leader of the Opposition: [? if opposition_party == "Tories": Baldwin:(<span style="color: #0087DC;">**Tory**</span>) ?] [? if opposition_party == "Labour": MacDonald:(<span style="color: #E4003B;">**Labour**</span>) ?] [? if opposition_party == "Liberal": Asquith:(<span style="color: #FAA61A;">**Liberal**</span>) ?]
+Leader of the Opposition: [? if opposition_party == "Tories": Baldwin(<span style="color: #0087DC;">**Tory**</span>) ?] [? if opposition_party == "Labour": MacDonald(<span style="color: #E4003B;">**Labour**</span>) ?] [? if opposition_party == "Liberal": Asquith(<span style="color: #FAA61A;">**Liberal**</span>) ?]
 
 Parliament composition:
 
