@@ -303,7 +303,7 @@ title: The liberals will support a Labour Minority Government.
 view-if: hung_parliament ==1
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; tolerated_by = "Liberals"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton";
 
-@labour_minority_government:
+@labour_minority_government
 subtitle: Labour forms a minority government
 view-if: hung_parliament ==1
 view-if: in_labour_minority = 1;
