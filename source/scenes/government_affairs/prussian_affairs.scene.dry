@@ -1,13 +1,13 @@
-title: The Prussian Bulwark
+title: Health Policy
 new-page: true
 is-card: true
-view-if: spd_prussia = 1 and prussian_affairs_timer <= 0
+view-if: labour_in_government = 1 and (health_minister_party = "Labour")
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
-card-image: img/braun.jpg
+card-image: img/portraits/John_Wheatley.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
-= Prussian Affairs
+= Health Policy
 
 Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the Center and Democratic parties. It is the most stable and democratic state government in Germany, led by the able Otto Braun.
 
