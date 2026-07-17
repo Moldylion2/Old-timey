@@ -12,7 +12,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 = Elections, [+ month : month +] [+ year +]
 
 The House of Commons elections are to be held now.
-- 308 seats are needed for a majority.
+
 
 
 - @election_algorithm: May we do our best...
@@ -260,6 +260,8 @@ go-to: coalition_menu
 {!</table>!}
 
 **Potential coalitions:**
+
+- 308 seats are needed for a majority.
 
 Labour Majority (<span style="color: #E4003B;">**Labour**</span>): [+ labour_majority +]%
 
