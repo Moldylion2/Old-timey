@@ -306,7 +306,7 @@ on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labou
 @labour_minority_government
 title: Form a Labour Minority Government
 subtitle: Labour forms a minority government
-view-if: hung_parliament ==1; in_labour_minority = 1; 
+view-if: hung_parliament ==1; in_labour_minority == 1 
 on-arrival: prime_minister = "MacDonald"
 
 @no_majority_liberals
