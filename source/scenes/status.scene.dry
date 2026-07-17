@@ -138,7 +138,7 @@ Economic growth: [+ economic_growth_2 +]%
 = Government
 
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">[? if king == "George V": <img src="img/portraits/King_George_1923.jpg" style="width: 50%; height: 200px;"> ?]
-[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "MacDonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "MacDonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Asquith_portrait_old.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 King: [+ king +] 
 
@@ -165,7 +165,7 @@ Agriculture: [+ agriculture_minister +] ([?if agriculture_minister_party=="I":<s
 
 = Opposition
 
-[? if opposition_party == "Tories": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;">  <img src="img/portraits/Stanley_Baldwin_1920s.jpg"  style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Labour": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Liberals": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/Herbert_Asquith.jpg" style="width: 50%; height: 200px;"></div> ?]
+[? if opposition_party == "Tories": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;">  <img src="img/portraits/Stanley_Baldwin_1920s.jpg"  style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Labour": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if opposition_party == "Liberals": <div style="display: flex; justify-content: center; gap: 5px; margin-bottom: 5px;"> <img src="img/portraits/Asquith_portrait_old.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 Leader of the Opposition: [? if opposition_party == "Tories": Baldwin (<span style="color: #0087DC;">**Tory**</span>) ?][? if opposition_party == "Labour": MacDonald (<span style="color: #E3000F;">**Labour**</span>) ?] [? if opposition_party == "Liberals": Asquith (<span style="color: #DCCA4A;">**Liberal**</span>) ?] 
 
