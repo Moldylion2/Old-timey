@@ -257,7 +257,7 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ votes_change_other +] {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [+ str_seats_change_other +] ([+ str_change_other +]%) {!</td></tr>!}
 {!</table>!}
 
-**Potential coalitions:**
+**Potential coalitions: 308 seats are needed for a majority**
 
 Labour Majority (<span style="color: #E4003B;">**Labour**</span>): [+ labour_majority +]%
 
