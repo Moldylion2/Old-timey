@@ -99,6 +99,8 @@ on-arrival: dvp_relation += 8*(1 - dissent)
 
 Herbert Asquith, the Liberal party Leader planted the seeds of social welfare 10 years ago as Prime Minister, while he takes issue with our recent successes, he may be open to working with us.
 
+@dvp_loss
+
 @dvp_moribund
 on-arrival: dvp_relation += 5*(1 - dissent)
 
