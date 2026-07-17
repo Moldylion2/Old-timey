@@ -299,7 +299,6 @@ achievement: majority_party
 @no_majority
 title: There is a hung Parliament.
 view-if: hung_parliament == 1
-go-to: no_majority_labour if no_majority_labour == 1; no_majority_liberals if no_majority_liberals == 1; no_majority_conservative if no_majority_conservative == 1
 
 - @no_majority_labour: Labour Minority
 - @no_majority_liberals: Liberal Minority
