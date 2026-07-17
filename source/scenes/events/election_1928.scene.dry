@@ -301,16 +301,15 @@ title: There is a hung Parliament.
 view-if: hung_parliament == 1
 go-to: no_majority_labour if no_majority_labour == 1; no_majority_liberals if no_majority_liberals == 1; no_majority_conservative if no_majority_conservative == 1
 
+- @no_majority_labour_option: Labour Minority
+- @no_majority_liberals_option: Liberal Minority
+- @no_majority_conservative_option: Conservative Minority
+
+
 @no_majority_labour
-title: The liberals will support a Labour Minority Government.
+title: Form a Labour Minority Government with Liberal support
 view-if: hung_parliament ==1
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; tolerated_by = "Liberals"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton";
-
-@labour_minority_government
-title: Form a Labour Minority Government
-subtitle: Labour forms a minority government
-view-if: hung_parliament ==1 and in_labour_minority == 1 
-on-arrival: prime_minister = "MacDonald"
 
 @no_majority_liberals
 title: Labour will support a Liberal Minority Government.
