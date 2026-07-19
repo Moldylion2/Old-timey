@@ -330,14 +330,14 @@ No party won a majority in the Commons, maybe a minority government could govern
 title: Form a Labour Minority Government
 subtitle: With Liberal support, we can form a Labour Minority government.
 view-if: hung_parliament ==1
-choose-if labour_seats > liberal_seats
+choose-if: labour_seats > liberal_seats
 unavailable-subtitle: Labour have less seats than the Liberals, so they refuse to support a Labour Minority government.
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; tolerated_by = "Liberals"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton";
 
 @no_majority_liberals
 title: Labour will support a Liberal Minority Government.
 subtitle: Labour has less seats than the Liberals, maybe tolerating a Liberal Minority government would be preferable to the Tories forming a government.
-choose-if labour_seats < liberal_seats
+choose-if: labour_seats < liberal_seats
 unavailable-subtitle: Labour have more seats than the liberals, theres no need for them to form a government.
 on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; tolerated_by = "Labour"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew";
 
