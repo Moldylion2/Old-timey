@@ -289,9 +289,22 @@ title: There is a hung Parliament.
 view-if: hung_parliament == 1
 
  @no_majority_conservative_one: Conservative Minority
+ @no_majority_Labour_one: Labour Minority
+ @no_majority_liberal_one: Liberal Minority
+
+@no_majority_Labour_one
+title: Labour Minority Government
+unavailable-subtitle: Labour would need the Liberals to support a Labour government
+Choose-if: labour_seats > tories_seats
+
+@no_majority_liberal_one:
+title: Liberal Minority government
+unavailable-subtitle: Labour won't support a Liberal minority government.
+Choose-if: liberals-seats > tories_seats
 
 @no_majority_conservative_one
-title: The Tories choose to stay on as a Minority Government.
+title: Conservative Minority Government
+subtitle: The Tories choose to stay on as a Minority Government.
 on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; home_secretary_party = "Tory"; home_secretary = "Bridgeman"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Barlow"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Stanley"; health_minister_party = "Tory"; health_minister = "Joynson-Hicks"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "N.Chamberlain"; agriculture_minister_party = "Tory"; agriculture_minister = "Sanders";
 
 
@@ -310,7 +323,7 @@ on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in
 
 @liberals_majority_option
 title: Liberal majority
-subtitle: Liberal: The Liberals won themselves a majority.
+subtitle: The Liberals won themselves a majority.
 choose-if: liberals_majority == 1
 unavailable-subtitle: The Liberals did not win a majority.
 on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew";
