@@ -297,7 +297,7 @@ title: Labour Minority Government
 unavailable-subtitle: Labour would need the Liberals to support a Labour government
 Choose-if: labour_seats > tories_seats
 
-@no_majority_liberal_one:
+@no_majority_liberal_one
 title: Liberal Minority government
 unavailable-subtitle: Labour won't support a Liberal minority government.
 Choose-if: liberals-seats > tories_seats
