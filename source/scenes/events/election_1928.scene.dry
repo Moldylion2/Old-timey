@@ -268,7 +268,7 @@ Conservative Majority (<span style="color: #0087DC;">**Tories**</span>): [+ cons
 
 Liberal Majority (<span style="color: #FAA61A;">**Liberals**</span>): [+ liberals_majority +]%
 
-@Tories_menu
+@tories_menu
 
 - @labour_majority_option: Labour Majority
 - @liberals_majority_option: Liberal Majority
@@ -288,6 +288,11 @@ Liberal Majority (<span style="color: #FAA61A;">**Liberals**</span>): [+ liberal
 title: There is a hung Parliament.
 view-if: hung_parliament == 1
 
+ @no_majority_conservative_one: Conservative Minority
+
+@no_majority_conservative_one
+title: The Tories choose to stay on as a Minority Government.
+on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; home_secretary_party = "Tory"; home_secretary = "Bridgeman"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Barlow"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Stanley"; health_minister_party = "Tory"; health_minister = "Joynson-Hicks"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "N.Chamberlain"; agriculture_minister_party = "Tory"; agriculture_minister = "Sanders";
 
 
 @conservative_majority_option
@@ -337,7 +342,7 @@ unavailable-subtitle: Labour have more seats than the liberals, theres no need f
 on-arrival: prime_minister = "Asquith"; prime_minister_party = "Liberal"; liberals_in_government = 1; in_liberals_minority = 1; tolerated_by = "Labour"; liberal_dissent = 0; pro_republic += 5; foreign_minister_party = "Liberal"; foreign_minister = "Simon"; home_secretary_party = "Liberal"; home_secretary = "Samuel"; attorney_general_party = "Liberal"; attorney_general = "Hopkinson"; labour_minister_party = "Liberal"; labour_minister = "Harris"; secretary_of_state_for_war_party = "Liberal"; secretary_of_state_for_war = "Benn"; health_minister_party = "Liberal"; health_minister = "Addison"; chancellor_of_the_exchequer_party = "Liberal"; chancellor_of_the_exchequer = "Runciman"; agriculture_minister_party = "Liberal"; agriculture_minister = "Rew";
 
 @no_majority_conservative
-title: The Tories try to stay on as a Minority Government.
+title: The Tories form a minority government.
 on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in_government = 1; in_tories_minority = 1; pro_republic += 5; foreign_minister_party = "Tory"; foreign_minister = "Curzon"; home_secretary_party = "Tory"; home_secretary = "Bridgeman"; attorney_general_party = "Tory"; attorney_general = "Hogg"; labour_minister_party = "Tory"; labour_minister = "Barlow"; secretary_of_state_for_war_party = "Tory"; secretary_of_state_for_war = "Stanley"; health_minister_party = "Tory"; health_minister = "Joynson-Hicks"; chancellor_of_the_exchequer_party = "Tory"; chancellor_of_the_exchequer = "N.Chamberlain"; agriculture_minister_party = "Tory"; agriculture_minister = "Sanders";
 
 @labour_majority_option
