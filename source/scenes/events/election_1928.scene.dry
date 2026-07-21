@@ -238,7 +238,7 @@ if (window && d3) {
      parliament.exit.toCenter(false).bigToSmall(true);
      d3.select("#reichstag").datum(data).call(parliament);
 }
-if (If (Q.year = 1923 && Q.month = 12) {
+if (Q.year = 1923 && Q.month = 12) {
     Q.first_election = 1;
 } else {
     Q.first_election = 0;
