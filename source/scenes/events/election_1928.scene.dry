@@ -238,12 +238,14 @@ if (window && d3) {
      parliament.exit.toCenter(false).bigToSmall(true);
      d3.select("#reichstag").datum(data).call(parliament);
 }
-var Q.first_election if (election = december 1923) = 1 {
-    go-to = tories_menu:;
-} else if (election != december 1923) = 0 {
-    go-to: coalition_menu;
+on-arrival: {!
+if (If (Q.year = 1923 && Q.month = 12) {
+    Q.first_election = 1;
+} else {
+    Q.first_election = 0;
 }
 !}
+go-to: tories_menu if first_election = 1; coalition_menu if first_election = 0
 go-to: coalition_menu
 
 
