@@ -246,7 +246,6 @@ if (If (Q.year = 1923 && Q.month = 12) {
 }
 !}
 go-to: tories_menu if first_election = 1; coalition_menu if first_election = 0
-go-to: coalition_menu
 
 
 = Election results
