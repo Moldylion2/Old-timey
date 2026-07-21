@@ -293,9 +293,9 @@ Liberal Majority (<span style="color: #FAA61A;">**Liberals**</span>): [+ liberal
 title: There is a hung Parliament.
 view-if: hung_parliament == 1
 
- @no_majority_conservative_one: Conservative Minority
- @no_majority_Labour_one: Labour Minority
- @no_majority_liberal_one: Liberal Minority
+- @no_majority_conservative_one: Conservative Minority
+- @no_majority_Labour_one: Labour Minority
+- @no_majority_liberal_one: Liberal Minority
 
 @no_majority_Labour_one
 title: Labour Minority Government
