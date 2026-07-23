@@ -24,3 +24,6 @@ The Liberal Party chooses to side with Labour. Providing enough votes to oust th
 - @prove: Prove them wrong
 
 @prove
+
+labour_in_government && labour_minority_government = 1
+
