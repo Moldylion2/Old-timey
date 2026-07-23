@@ -25,5 +25,5 @@ The Liberal Party chooses to side with Labour. Providing enough votes to oust th
 
 @prove
 
-labour_in_government && labour_minority_government = 1
+on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_minority = 1; tolerated_by = "Liberals"; liberal_dissent = 0;
 
