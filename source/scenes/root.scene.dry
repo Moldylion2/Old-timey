@@ -242,9 +242,9 @@ Q.sapd_formed = 0;
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_labour = 31;
 Q.workers_cpgb = 1;
-Q.workers_tories = 38;
+Q.workers_tories = 39;
 Q.workers_liberals = 28;
-Q.workers_other = 2;
+Q.workers_other = 1;
 
 Q.old_middle_labour = 5;
 Q.old_middle_cpgb = 0;
@@ -260,12 +260,9 @@ Q.new_middle_other = 2;
 
 Q.rural_labour = 10;
 Q.rural_cpgb = 0;
-Q.rural_tories = 5;
-Q.rural_liberals= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
-Q.rural_other = 10;
+Q.rural_tories = 59;
+Q.rural_liberals= 25;
+Q.rural_other = 1;
 
 Q.unemployed_labour = 55;
 Q.unemployed_cpgb = 5;
