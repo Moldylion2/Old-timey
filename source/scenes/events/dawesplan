@@ -1,0 +1,37 @@
+title: Dawes Plan
+new-page: true
+subtitle: An international treaty for peace
+view-if: year = 1924 and (month = 7 or month = 8)
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= Dawes Plan negotiation 
+
+Germany has been spiralling from hyperinflation as a result of reparations payments along with Frances occupation of the Ruhr. We plan to meet with representatives from other western powers to discuss how this go down.
+
+- @sign_treaty: Foreign Minister Breitscheid will sign the treaty, of course.
+- @step_forward
+- @not_enough
+
+@sign_treaty
+view-if: labour_in_government and foreign_minister_party = "Labour"
+on-arrival: kellogg_briand_signed = 1
+
+Foreign Minister Breitscheid will sign the treaty, of course. The reaction is generally muted; both pacifists and militarists are skeptical about the efficacy of the treaty.
+
+- @step_forward
+- @not_enough
+
+@step_forward
+view-if: dawes_plan_agreed
+title: The treaty is a step forward for peace.
+
+Despite our misgivings about the treaty, it still represents a step forward for the cause of international peace.
+
+@not_enough
+view-if: dawes_plan_agreed
+title: The treaty is not enough.
+
+Despite the idealism behind the treaty, it is inadequate for its goal of preventing wars. There must be some enforcement mechanism, perhaps automatic trade sanctions, or an intervention force controlled by the League of Nations. As it stands, the League of Nations and this treaty is toothless.
