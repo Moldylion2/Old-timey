@@ -17,6 +17,7 @@ What should our foreign policy priority be?
 - @improve_west
 - @improve_east
 - @improve_soviet
+- @recognise_soviet
 - @customs_union
 - @negotiate
 - @reduce_reparations
@@ -77,7 +78,6 @@ The Soviets are pleased that we have sent them aid, and have not asked for anyth
 
 The Soviets are slightly upset, but they seemed to expect this answer.
 
-
 @kpd
 on-arrival: cpgb_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
 
@@ -91,6 +91,9 @@ max-visits: 1
 
 Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
 
+@recognise_soviet
+title: Grant official diplomatic recognition of the USSR
+subtitle: Normalising relations with the soviets should open the door to an official trade deal.
 
 @customs_union
 title: Form a customs union with Austria?
