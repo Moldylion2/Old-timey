@@ -1,7 +1,7 @@
 title: MacDonald EXPOSED for Biscuit Corruption  
 new-page: true
 subtitle: The Prime Minister 
-view-if: year = 1927 and (month = 6 or month = 7)
+view-if: year = 1924 and (month = 9 or month = 10)
 max-visits: 1
 on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
 tags: event
