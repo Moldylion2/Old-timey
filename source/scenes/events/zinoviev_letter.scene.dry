@@ -1,0 +1,21 @@
+title: Zinoviev letter  
+new-page: true
+subtitle: Press leak DAMNING Soviet Letter.
+view-if: year = 1924 and (month = 10)
+max-visits: 1
+on-arrival: zinoviev_letter = 1; 
+tags: event
+<img src="img/Zinoviev_letter_caricature.jpg">
+
+= Dawes Plan negotiation 
+
+4 days before the General Election, The Daily Mail publish a letter they claim to have been from the Chairman of the Communist International Gregory Zinoviev. In it, it remarks that Labour's normalising of relations with Russia was all a ploy to "make it possible for us to extend and develop the propaganda of ideas of Leninism in England and the Colonies." Panic strickens the nation, especially among the middle classes and up.  
+
+- @and_the_results: Just more slander from the right wing press.
+
+@and_the_results
+on-arrival: next_election_time = time + 0 if next_election_time >= time + 0; next_election_month = month + 0 if next_election_time >= time + 0; next_election_year = year if next_election_time >= time+0; next_election_year += 0 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_liberals -= 50; new_middle_liberals -= 50; rural_liberals -= 50; old_middle_tories += 50; new_middle_tories += 50; rural_tories += 50
+  
+How much this hurts us is to be determined.
+  
+ 
