@@ -13,8 +13,8 @@ Liberal MP John Simon has introduced a motion calling for a select committee to 
 
 - @and_the_results: This may be the end of the road...
 
-  @and_the_results
-  on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+@and_the_results
+on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
   
 The resolution was passed 364 to 198. This is it... MacDonald requests a dissolution of parliament the very next day. And a General Election is called.
   
