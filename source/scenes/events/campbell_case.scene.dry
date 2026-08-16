@@ -1,7 +1,7 @@
 title: The Campbell Case 
 new-page: true
 subtitle: Attorney General Advises prosecution of J.R Campbell
-view-if: year = 1924 and (month = 9 or month = 10)
+view-if: year = 1924 and (month = 8)
 max-visits: 1
 on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
 tags: event
@@ -11,27 +11,18 @@ tags: event
 
 The Attorney General, Patrick Hastings has come out and advised the justice ministry to persue the prosecution of communist party co founder J.R Campbell on incitement to sedition following an article he published in the workers weekly calling on British soldiers to turn their guns on the "exploiters and capitalists." Hastings believes these charges are appropriate. However, there is a stir among certain backbenchers. MacDonald fears a mutiny. He's thinking of getting Hastings to withdraw the prosecution. This could become a media spectacle. How should this be handled?
 
-- @sign_treaty: Foreign Minister Breitscheid will sign the treaty, of course.
-- @step_forward
-- @not_enough
+- @prosecute_him: This could cause a mutiny among a decent amount of backbenchers...
+- @withdraw_indictment: With the liberals keeping this government alive, is this the right move?
 
-@sign_treaty
+@prosecute_him
 view-if: labour_in_government and foreign_minister_party = "Labour"
-on-arrival: kellogg_briand_signed = 1
+on-arrival: backbencher_grudge = 1; old_middle_labour += 5; new_middle_labour += 5; workers_labour -= 7; unemployed_labour -= 15; rural_labour += 5; tories_relation += 15; liberals_relation += 15;
 
-Foreign Minister Breitscheid will sign the treaty, of course. The reaction is generally muted; both pacifists and militarists are skeptical about the efficacy of the treaty.
+Hastings will move forward with Campbell's charges. This appears to ease fears of radical influence over the government.
 
-- @step_forward
-- @not_enough
+@withdraw_indictment
+view-if: labour_in_government
+on-arrival: select_committee_called = 1; old_middle_labour -= 10; new_middle_labour -= 10; workers_labour += 3; unemployed_labour -= 8; rural_labour -= 5; tories_relation -= 15; liberals_relation -= 15;
 
-@step_forward
-view-if: dawes_plan_agreed
-title: The treaty is a step forward for peace.
+Fearing rebellion from more left leaning backbenchers. MacDonald reluctantly gets Hastings to withdraw his indictment. Prompting widespread fears this government is under soviet influence. The MP for Glasgow Hillhead, Robert Horne calls a resolution to censure the government. Failing 198 - 359. But this will not be the end of this it seems. 
 
-Despite our misgivings about the treaty, it still represents a step forward for the cause of international peace.
-
-@not_enough
-view-if: dawes_plan_agreed
-title: The treaty is not enough.
-
-Despite the idealism behind the treaty, it is inadequate for its goal of preventing wars. There must be some enforcement mechanism, perhaps automatic trade sanctions, or an intervention force controlled by the League of Nations. As it stands, the League of Nations and this treaty is toothless.
