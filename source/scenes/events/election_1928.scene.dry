@@ -69,19 +69,24 @@ for (var party of Q.parties) {
 
 Q.parties = ['tories', 'labour', 'liberals', 'cpgb', 'other'];
 
+// Set default FPTP power law exponent if undefined or set to 1
+if (!Q.n || Q.n <= 1) Q.n = 2.5;
+
 // Calculate power sum pool correctly for standard seats calculation
 var total_votes_power = 0;
 for (let p of Q.parties) {
-    total_votes_power += Math.pow(Q[p + "_votes"] || 0, Q.n || 1);
+    total_votes_power += Math.pow(Q[p + "_votes"] || 0, Q.n);
 }
 
+var calculated_allocated_seats = 0;
 for (let p of Q.parties) {
-    let percent = total_votes_power > 0 ? Math.pow(Q[p + "_votes"]  0, Q.n  1) / total_votes_power : 0;
+    let percent = total_votes_power > 0 ? Math.pow(Q[p + "_votes"] || 0, Q.n) / total_votes_power : 0;
     Q[p + "_seats"] = Math.round(615 * percent);
+    calculated_allocated_seats += Q[p + "_seats"];
 }
 
-// Calculate total seats distributed for majority calculations
-Q.total_seats_distributed = allocatedSeats + Math.min(remainingSeats, remainders.length);
+// Dynamically assign total seats allocated by the power algorithm
+Q.total_seats_distributed = calculated_allocated_seats;
 
 for (var party of Q.parties) {
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
@@ -100,7 +105,7 @@ for (var party of Q.parties) {
                     : '<img src="img/steady.png"> ';
     Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
 }
-
+!}
 // Fixed opposition logic (compare seats to seats)
 if (Q.labour_seats > Q.tory_seats && Q.tory_seats > Q.liberals_seats) {
     Q.opposition_party = 'Tories';
