@@ -76,8 +76,8 @@ for (let p of Q.parties) {
 }
 
 for (let p of Q.parties) {
-    let percent = total_votes_power > 0 ? Math.pow(Q[p + "_votes"] || 0, Q.n || 1) / total_votes_power : 0;
-    Q[p + "_seats"] = 615 * percent;
+    let percent = total_votes_power > 0 ? Math.pow(Q[p + "_votes"]  0, Q.n  1) / total_votes_power : 0;
+    Q[p + "_seats"] = Math.round(615 * percent);
 }
 
 // Fixed opposition logic (compare seats to seats)
