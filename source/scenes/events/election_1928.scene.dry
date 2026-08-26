@@ -67,7 +67,7 @@ for (var party of Q.parties) {
     Q['old_' + party + '_votes'] = parseFloat((Q[party + '_votes']).toFixed(1));
 }
 
-Q.parties = ['tory', 'labour', 'liberals'];
+Q.parties = ['tories', 'labour', 'liberals', 'cpgb', 'other'];
 
 // Calculate power sum pool correctly for standard seats calculation
 var total_votes_power = 0;
