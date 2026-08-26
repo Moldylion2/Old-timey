@@ -65,8 +65,7 @@ for (var party of Q.parties) {
     Q['votes_change_' + party] = sign2 + Math.abs(parseFloat(Q['change_' + party + '_votes'])).toFixed(1);
 
     Q['old_' + party + '_votes'] = parseFloat((Q[party + '_votes']).toFixed(1));
-}
-{
+
 Q.Tory_votes =
 Q.Labour_votes =
 Q.Liberal_votes =
