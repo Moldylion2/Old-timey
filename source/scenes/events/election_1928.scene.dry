@@ -65,44 +65,44 @@ for (var party of Q.parties) {
     Q['votes_change_' + party] = sign2 + Math.abs(parseFloat(Q['change_' + party + '_votes'])).toFixed(1);
 
     Q['old_' + party + '_votes'] = parseFloat((Q[party + '_votes']).toFixed(1));
+}
 
-Q.Tory_votes = 0;
-Q.Labour_votes = 0;
-Q.Liberal_votes = 0;
-Q.Tory_seats = 0;
-Q.Labour_seats = 0;
-Q.Liberal_seats = 0;
-Q.n = 0;
-Q.parties = ['Tory', 'Labour', 'Liberal'];
+Q.parties = ['tory', 'labour', 'liberals'];
 
-for(let party of Q.parties)
-{
-      let precent = Math.pow(Q[party + "_votes"], Q.n)/(Math.pow(Q.Tory_votes, Q.n) + Math.pow(Q.Labour_votes, Q.n) + Math.pow(Q.Liberal_votes, Q.n) );
-      Q[party + "_seats"]  = 615 * precent;
+// Calculate power sum pool correctly for standard seats calculation
+var total_votes_power = 0;
+for (let p of Q.parties) {
+    total_votes_power += Math.pow(Q[p + "_votes"] || 0, Q.n || 1);
+}
+
+for (let p of Q.parties) {
+    let percent = total_votes_power > 0 ? Math.pow(Q[p + "_votes"] || 0, Q.n || 1) / total_votes_power : 0;
+    Q[p + "_seats"] = 615 * percent;
 }
 
 // Fixed opposition logic (compare seats to seats)
-if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
+if (Q.labour_seats > Q.tory_seats && Q.tory_seats > Q.liberals_seats) {
     Q.opposition_party = 'Tories';
-} else if (Q.tories_seats > Q.labour_seats && Q.labour_seats > Q.liberals_seats) {
+} else if (Q.tory_seats > Q.labour_seats && Q.labour_seats > Q.liberals_seats) {
     Q.opposition_party = 'Labour';
 } else {
     Q.opposition_party = 'Liberals';
 }
 
-for (var party of Q.parties) {
-          for (var party2 of Q.parties) {
-         if ((Q[party + '_seats']>Q[party2 + '_seats']) && !([party + '_in_government'])) {
-Q.opposition_party = party
-    } 
+for (var p1 of Q.parties) {
+    for (var p2 of Q.parties) {
+        if ((Q[p1 + '_seats'] > Q[p2 + '_seats']) && !Q[p1 + '_in_government']) {
+            Q.opposition_party = p1.charAt(0).toUpperCase() + p1.slice(1);
+        } 
     }
 }
+
 // Dynamically track Largest and Second Largest party
-var sortedParties = Q.parties.map(p => ({name: p, seats: Q[p + '_seats']})).sort((a, b) => b.seats - a.seats);
+var sortedParties = Q.parties.map(p => ({name: p, seats: Q[p + '_seats'] || 0})).sort((a, b) => b.seats - a.seats);
 
 if (sortedParties[0]) {
     if (sortedParties[0].name == 'labour') Q.largest_party = 'Labour';
-    else if (sortedParties[0].name == 'tories') Q.largest_party = 'Tories';
+    else if (sortedParties[0].name == 'tory') Q.largest_party = 'Tories';
     else if (sortedParties[0].name == 'liberals') Q.largest_party = 'Liberals';
     else if (sortedParties[0].name == 'cpgb') Q.largest_party = 'CPGB';
     else Q.largest_party = 'Other';
@@ -110,28 +110,28 @@ if (sortedParties[0]) {
 
 if (sortedParties[1]) {
     if (sortedParties[1].name == 'labour') Q.second_largest_party = 'Labour';
-    else if (sortedParties[1].name == 'tories') Q.second_largest_party = 'Tories';
+    else if (sortedParties[1].name == 'tory') Q.second_largest_party = 'Tories';
     else if (sortedParties[1].name == 'liberals') Q.second_largest_party = 'Liberals';
     else if (sortedParties[1].name == 'cpgb') Q.second_largest_party = 'CPGB';
     else Q.second_largest_party = 'Other';
 }
 
-Q.opposition_party = Q.opposition_party;
 Q.opposition_leader = Q.opposition_party;
 
+Q.total_seats_distributed = 615;
 Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
 
 // Cleaned British Coalitions (majority is held by seats, not raw vote share)
 Q.labour_majority       = (Q.labour_seats   >= Q.majority_needed) ? 1 : 0;
-Q.conservative_majority = (Q.tories_seats   >= Q.majority_needed) ? 1 : 0;
+Q.conservative_majority = (Q.tory_seats     >= Q.majority_needed) ? 1 : 0;
 Q.liberals_majority     = (Q.liberals_seats >= Q.majority_needed) ? 1 : 0;
 
 Q.hung_parliament = (!Q.labour_majority && !Q.conservative_majority && !Q.liberals_majority) ? 1 : 0;
 
 // Lab-Lib minority: the leader must out-seat its partner AND the two together out-seat the Tories
-var lab_lib = Q.labour_seats + Q.liberals_seats;
-Q.no_majority_labour       = (Q.hung_parliament && Q.labour_seats   > Q.liberals_seats && lab_lib > Q.tories_seats) ? 1 : 0;
-Q.no_majority_liberals     = (Q.hung_parliament && Q.liberals_seats > Q.labour_seats   && lab_lib > Q.tories_seats) ? 1 : 0;
+var lab_lib = (Q.labour_seats || 0) + (Q.liberals_seats || 0);
+Q.no_majority_labour       = (Q.hung_parliament && Q.labour_seats   > Q.liberals_seats && lab_lib > Q.tory_seats) ? 1 : 0;
+Q.no_majority_liberals     = (Q.hung_parliament && Q.liberals_seats > Q.labour_seats   && lab_lib > Q.tory_seats) ? 1 : 0;
 Q.no_majority_conservative = (Q.hung_parliament && !Q.no_majority_labour && !Q.no_majority_liberals) ? 1 : 0;
 
 Q.coalition_dissent = 0;
@@ -153,31 +153,31 @@ data = [
         "id": "cpgb",
         "legend": "CPGB",
         "name": "CPGB",
-        "seats": Math.round(Q.cpgb_seats),
+        "seats": Math.round(Q.cpgb_seats || 0),
     },
     {
         "id": "labour",
         "legend": "Labour",
         "name": "Labour",
-        "seats": Math.round(Q.labour_seats),
+        "seats": Math.round(Q.labour_seats || 0),
     },
     {
         "id": "liberals",
         "legend": "Liberals",
         "name": "Liberals",
-        "seats": Math.round(Q.liberals_seats),
+        "seats": Math.round(Q.liberals_seats || 0),
     },
     {
         "id": "tories",
         "legend": "Tories",
         "name": "Tories",
-        "seats": Math.round(Q.tories_seats),
+        "seats": Math.round(Q.tory_seats || 0),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_seats),
+        "seats": Math.round(Q.other_seats || 0),
     },
 ];
 
