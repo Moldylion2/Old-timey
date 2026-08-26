@@ -276,6 +276,8 @@ Q.catholics_tories = 55;
 Q.catholics_liberals = 14;
 Q.catholics_other = 0;
 
+Q.n = 2;
+
 
 // Current Parliament composition
 // % of Parliament in July 1923
