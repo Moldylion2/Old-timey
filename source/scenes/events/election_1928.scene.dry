@@ -66,13 +66,13 @@ for (var party of Q.parties) {
 
     Q['old_' + party + '_votes'] = parseFloat((Q[party + '_votes']).toFixed(1));
 
-Q.Tory_votes =
-Q.Labour_votes =
-Q.Liberal_votes =
-Q.Tory_seats =
-Q.Labour_seats =
-Q.Liberal_seats =
-Q.n  = 
+Q.Tory_votes = 0;
+Q.Labour_votes = 0;
+Q.Liberal_votes = 0;
+Q.Tory_seats = 0;
+Q.Labour_seats = 0;
+Q.Liberal_seats = 0;
+Q.n = 0;
 Q.parties = ['Tory', 'Labour', 'Liberal'];
 
 for(let party of Q.parties)
