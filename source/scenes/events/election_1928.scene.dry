@@ -80,6 +80,27 @@ for (let p of Q.parties) {
     Q[p + "_seats"] = Math.round(615 * percent);
 }
 
+// Calculate total seats distributed for majority calculations
+Q.total_seats_distributed = allocatedSeats + Math.min(remainingSeats, remainders.length);
+
+for (var party of Q.parties) {
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0
+            ? '<img src="img/arrowup.png"> '
+            : Q['change_' + party + '_r'] < 0
+                    ? '<img src="img/arrowdown.png"> '
+                    : '<img src="img/steady.png"> ';
+    Q['str_change_' + party] = sign + Math.abs(parseFloat(Q['change_' + party + '_r'])).toFixed(1);
+
+    Q['change_' + party + '_seats'] = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    var sign = Q['change_' + party + '_seats'] > 0
+            ? '<img src="img/arrowup.png"> '
+            : Q['change_' + party + '_seats'] < 0
+                    ? '<img src="img/arrowdown.png"> '
+                    : '<img src="img/steady.png"> ';
+    Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
+}
+
 // Fixed opposition logic (compare seats to seats)
 if (Q.labour_seats > Q.tory_seats && Q.tory_seats > Q.liberals_seats) {
     Q.opposition_party = 'Tories';
