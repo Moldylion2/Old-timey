@@ -53,11 +53,11 @@ On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [?
 [? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
 
 
-[? if labour_in_government = 1?] The strike has broken out, how do we proceed
+[? if labour_in_government = 1: The strike has broken out, how do we proceed ?]
 
 
 
-[? if labour = opposition?] Do we get involved?
+[? if labour = opposition: Do we get involved? ?]
 
 # note: many scenarios lead to civil war. This calculates the array of forces, and the possible outcomes.
 
