@@ -37,7 +37,22 @@ Fine. President [+ president +] has taken the unprecedented step of canceling th
 Let us hope this does not backfire.
 
 @post_election_1928
-on-arrival: 
+on-arrival: {!
+
+Q.Tory_votes =
+Q.Labour_votes =
+Q.Liberal_votes =
+Q.Tory_seats =
+Q.Labour_seats =
+Q.Liberal_seats =
+Q.n  = 
+Q.parties = ['Tory', 'Labour', 'Liberal'];
+
+for(let party of Q.parties)
+{
+      let precent = Math.pow(Q[party + "_votes"], Q.n)/(Math.pow(Q.Tory_votes, Q.n) + Math.pow(Q.Labour_votes, Q.n) + Math.pow(Q.Liberal_votes, Q.n) );
+      Q[party + "_seats"]  = 615 * precent;
+}
 
 // Fixed opposition logic (compare seats to seats)
 if (Q.labour_seats > Q.tories_seats && Q.tories_seats > Q.liberals_seats) {
