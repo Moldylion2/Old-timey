@@ -196,7 +196,7 @@ data = [
         "id": "tories",
         "legend": "Tories",
         "name": "Tories",
-        "seats": Math.round(Q.tory_seats || 0),
+        "seats": Math.round(Q.tories_seats || 0),
     },
     {
         "id": "other",
