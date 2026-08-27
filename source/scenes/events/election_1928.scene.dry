@@ -104,7 +104,6 @@ for (var party of Q.parties) {
                     : '<img src="img/steady.png"> ';
     Q['str_seats_change_' + party] = sign + Math.abs(Q['change_' + party + '_seats']);
 }
-!}
 
 // Fixed opposition logic (compare seats to seats)
 if (Q.labour_seats > Q.tory_seats && Q.tory_seats > Q.liberals_seats) {
