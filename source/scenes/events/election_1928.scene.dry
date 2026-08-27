@@ -141,6 +141,11 @@ if (sortedParties[1]) {
     else Q.second_largest_party = 'Other';
 }
 
+for (var _r/615)*100 { Q[p + "_seats"] = Math.round(615 * percent)
+    for (var p2 of Q.parties) {
+        if ((Q[p1 + '_seats'] > Q[p2 + '_seats']) && !Q[p1 + '_in_government']) {
+            Q.opposition_party = p1.charAt(0).toUpperCase() + p1.slice(1);
+
 Q.opposition_leader = Q.opposition_party;
 
 Q.total_seats_distributed = 615;
