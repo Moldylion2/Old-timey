@@ -1,4 +1,4 @@
-title: <span style="color: #000000;">Snap</span> Election Called!
+title: Snap Election Called!
 subtitle: New elections scheduled
 new-page: true
 view-if: year = 1923 and month >= 10
