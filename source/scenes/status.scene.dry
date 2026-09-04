@@ -39,7 +39,7 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 <span style="color: #E4003B;">**Labour**</span> position: [? if labour_toleration : toleration ?][? if labour_in_government : in government - ?][? if labour_toleration == 0 and labour_in_government == 0 and labour_caretaker == 0 : opposition ?][? if labour_caretaker : caretaker government ?]
-[? if in_labour_majority and labour_in_government: <span style="color: #E4003B;">**Labour**</span> Majority ?][? if in_labour_minority : <span style="color: #E4003B;">**Labour**</span> Minority ?]
+
 
 [? if in_labour_minority_government: Liberal dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -141,6 +141,8 @@ Economic growth: [+ economic_growth_2 +]%
 [? if prime_minister == "Baldwin": <img src="img/portraits/Stanley_Baldwin_1920s.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "MacDonald": <img src="img/portraits/MacDonaldRamsay.jpg" style="width: 50%; height: 200px;"></div> ?][? if prime_minister == "Asquith": <img src="img/portraits/Asquith_portrait_old.jpg" style="width: 50%; height: 200px;"></div> ?]
 
 King: [+ king +] 
+
+[? if in_labour_majority and labour_in_government: <span style="color: #E4003B;">**Labour**</span> Majority ?][? if in_labour_minority : <span style="color: #E4003B;">**Labour**</span> Minority ?]
 
 Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if prime_minister_party=="Liberal":<span style="color: #DCCA4A;">**Liberal**</span>?][?if prime_minister_party=="Tory":<span style="color: #0087DC;">**Tory**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
