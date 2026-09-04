@@ -1,23 +1,23 @@
-title: Reichsbanner
+title: Trade Union Congress
 new-page: true
 is-card: true
 tags: party_affairs
 view-if: reichsbanner_timer <= 0
-card-image: img/reichsbanner.jpg
+card-image: img/trade_union_congress.jpeg
 on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 max-visits: 6
 #subtitle: Paramilitary organizing in defense of the republic.
 
 = Reichsbanner
 
-The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and [+ ddp_name +], but by far the largest component is with the SPD.
+The Trades Union Congress is a national trade union group, a federation of trade unions that collectively represent most unionised workers in the UK. While not linked to the Labour party, In 1899, the TUC wanted to establish a voice for working people within parliament. And the Labour Representation Committee formed the next year, the original name for the Labour party. While not offcially linked, most Labour MPs are tied to TUC unions. 
 
 [? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 
-- @militant: Fund more military-style training and equipment for the Reichsbanner.
-- @militant_2: Use our existing resources to support more training for the Reichsbanner.
-- @same: Keep the Reichsbanner as it is.
-- @cut_rb: Cut funding for the Reichsbanner.
+- @militant: Fund more military-style training and equipment for the TUC.
+- @militant_2: Use our existing resources to support more training for the TUC.
+- @same: Keep the TUC as it is.
+- @cut_rb: Cut funding for the TUC.
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action
