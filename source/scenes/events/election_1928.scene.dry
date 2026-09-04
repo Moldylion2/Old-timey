@@ -327,7 +327,7 @@ achievement: majority_party
 
 @no_majority
 title: There is a hung Parliament.
-view-if: hung_parliament == 1
+view-if: hung_parliament == 1 and labour_r <= 50 and tories_r <= 50 and liberals_r <= 50
 
 No party won a majority in the Commons, maybe a minority government could govern.
 
