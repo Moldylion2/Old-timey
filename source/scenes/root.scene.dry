@@ -278,6 +278,7 @@ Q.catholics_other = 0;
 
 Q.n = 2;
 
+Q.zinoviev_letter = 0;
 
 // Current Parliament composition
 // % of Parliament in July 1923
