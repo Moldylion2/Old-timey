@@ -264,6 +264,7 @@ Conservative Majority (<span style="color: #0087DC;">**Tories**</span>): [+ cons
 Liberal Majority (<span style="color: #FAA61A;">**Liberals**</span>): [+ liberals_majority +]%
 
 @tories_menu
+on-arrival: opposition_party = "Labour";
 
 - @labour_majority_option: Labour Majority
 - @liberals_majority_option: Liberal Majority
