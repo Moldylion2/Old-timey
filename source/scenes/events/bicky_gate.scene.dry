@@ -17,12 +17,14 @@ A recent exposé has revealed the Prime Minister recieved £40,000 in shares of 
 
 @step_forward
 title: Stay silent about the affair
-on-arrival: unemployed_spd -= 3; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 4;
+on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
 
 Making a scene with silly comments will only give the right wing press more ammunition. If we win the hearts of the public through policy, this can surely be forgotten!
 
 @not_enough
 title: Deny everything!
-on-arrival: unemployed_spd += 3; workers_spd += 1; new_middle_spd += 1; old_middle_spd -= 2; rural_spd += 2;
+subtitle: "The matter has nothing to do with politics."
+on-arrival: unemployed_labour += 3; workers_labour += 1; new_middle_labour += 1; old_middle_labour -= 2; rural_labour += 2;
 
-The Rothermare and Beaverbrook press are at it again... Fabricating slander against Britain's first socialist prime minister. Classic.
+"The capital is not mine and I only technically own the shares, and Sir Grant got his baronetcy for public service." 
+The Rothermare and Beaverbrook press are at it again... Fabricating slander against Britain's first socialist prime minister. Classic. 
