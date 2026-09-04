@@ -7,13 +7,15 @@ on-arrival: select_committee_called = 1;
 tags: event
 #face-image: img/portraits/StresemannGustav.jpg
 
-= Dawes Plan negotiation 
+= Select Committee Called 
 
 Liberal MP John Simon has introduced a motion calling for a select committee to be appointed to investigate the circumstances that lead to the withdrawal of the proceedings against J.R Campbell. Suspecting foul play. MacDonald makes clear he sees the motion as a vote of confidence for his government.
 
-- @and_the_results: This may be the end of the road...
+- @and_the_results:
 
 @and_the_results
+title: and the results
+subtitle: This may be the end of the road...
 on-arrival: zinoviev_letter = 1
   
 The resolution was passed 364 to 198. This is it... MacDonald requests a dissolution of parliament the very next day. And a General Election is called.
