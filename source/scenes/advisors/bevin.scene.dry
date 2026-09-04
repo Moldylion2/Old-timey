@@ -1,13 +1,13 @@
-title: Kurt Schumacher
+title: Ernest Bevin
 is-pinned-card: true
-tags: advisor, neorevisionist
-card-image: img/portraits/SchumacherKurt.jpg
-view-if: schumacher_advisor = 1
+tags: advisor, reformist
+card-image: img/portraits/ernest_bevin.jpg
+view-if: bevin_advisor = 1
 new-page: true 
 
 = Kurt Schumacher
 
-A Great War veteran and a neorevisionist leader, Kurt Schumacher argues for a strong resistance against the Nazis.
+Ernest Bevin is the General Secretary of the Transport & General Workers Union, one of the UK's largest trade unions. More of a reformist moderate compared to some of his more miltant peers.
 
 - @emergency_fundraising
 - @build_reichsbanner
@@ -27,12 +27,12 @@ on-arrival: advisor_action_timer = 6; resources += dues
 We have gained +[+ dues +] resources.
 
 @build_reichsbanner
-title: Reichsbanner
-subtitle: Schumacher supports providing more resources to the Reichsbanner.
+title: Trade Union Congress
+subtitle: Bevin supports providing more resources to the Reichsbanner.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; reichsbanner_timer -= 6; last_advisor_action = 1
-go-to: reichsbanner
+go-to: trade_union_congress
 
 @moderate_economic_plan
 title: Support the reformist economic plan
