@@ -1,7 +1,7 @@
 title: The Zinoviev letter  
 new-page: true
 subtitle: Press leak DAMNING Soviet Letter.
-view-if: zinoviev_letter = 1;
+view-if: zinoviev_letter == 1;
 max-visits: 1 
 tags: event
 
