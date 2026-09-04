@@ -18,11 +18,7 @@ view-if: labour_in_government and foreign_minister_party = "Labour"
 title: Finalise plan
 on-arrival: kellogg_briand_signed = 1
 
-- @step_forward
-
-@step_forward
-view-if: dawes_plan_agreed
-title: This should ease Germany's economy.
+This should ease Germany's economy.
 
 
 
