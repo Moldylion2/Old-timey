@@ -551,6 +551,7 @@ Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 Q.ministry_number = 0;
+Q.government_number = 0;
 
 
 // all the initial advisors are centrists.
