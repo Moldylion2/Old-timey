@@ -142,7 +142,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 King: [+ king +] 
 
-HM Government: [? if in_labour_majority and labour_in_government: <span style="color: #E4003B;">**Labour**</span> Majority ?][? if in_labour_minority : <span style="color: #E4003B;">**Labour**</span> Minority [+ government number : ministry_number +]  
+HM Government: [? if in_labour_majority and labour_in_government: <span style="color: #E4003B;">**Labour**</span> Majority ?][? if in_labour_minority : <span style="color: #E4003B;">**Labour**</span> Minority [+ government number : baldwin_ministry +]  
 
 Prime Minister: [+ prime_minister +] ([?if prime_minister_party=="I":<span style="color: #808080;">**I**</span>?][?if prime_minister_party=="Labour":<span style="color: #E3000F;">**Labour**</span>?][?if prime_minister_party=="Liberal":<span style="color: #DCCA4A;">**Liberal**</span>?][?if prime_minister_party=="Tory":<span style="color: #0087DC;">**Tory**</span>?][?if prime_minister_party==dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][?if prime_minister_party=="NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
