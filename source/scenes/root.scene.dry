@@ -552,6 +552,7 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 Q.ministry_number = 0.1;
 Q.government_number = 0.1;
+Q.baldwin_ministry = 0.1
 
 
 // all the initial advisors are centrists.
