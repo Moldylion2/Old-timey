@@ -1,7 +1,7 @@
 title: Snap Election Called!
 subtitle: New elections scheduled
 new-page: true
-view-if: year = 1929 and month >= 05
+view-if: year = 1929 and month >= 05; tories_in_government = 1;
 tags: event
 max-visits: 1
 
