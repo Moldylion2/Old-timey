@@ -1,0 +1,19 @@
+title: Snap Election Called!
+subtitle: New elections scheduled
+new-page: true
+view-if: year = 1929 and month >= 05
+tags: event
+max-visits: 1
+
+=Baldwin Calls Snap Election
+
+The Prime Minister has called a snap election hoping to win yet another term in office, resting on his laurels he promises no major action. Just a continuation of the agenda he pushed this term. 
+
+The King has dissolved parliament, and new elections are scheduled for later this month.
+
+- @good:
+
+@good
+on-arrival: next_election_year = 1929; next_election_month = 05
+
+Hopefully we've used out time in opposition well. Will Labour be returned to power?
