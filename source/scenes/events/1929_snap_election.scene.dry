@@ -11,7 +11,7 @@ The Prime Minister has called a snap election hoping to win yet another term in 
 
 The King has dissolved parliament, and new elections are scheduled for later this month.
 
-- @good:
+- @good: Nice
 
 @good
 on-arrival: next_election_year = 1929; next_election_month = 05
