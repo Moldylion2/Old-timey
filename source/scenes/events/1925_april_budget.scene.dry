@@ -18,7 +18,7 @@ There are some naysayers however, including one John Maynard Keynes. Who claims 
 - @step_forward: This could be devastating for industry.
 
 @step_forward
-on-arrival: unemployed += 3 unemployed_tories -= 5; workers_tories -= 4; new_middle_tories -= 1; old_middle_tories -= 1; rural_tories -= 1;
+on-arrival: unemployed += 3; unemployed_tories -= 5; workers_tories -= 4; new_middle_tories -= 1; old_middle_tories -= 1; rural_tories -= 1;
 
 
 
