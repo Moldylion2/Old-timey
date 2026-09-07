@@ -1,0 +1,34 @@
+title: The Trade Disputes and Trade Unions Act  
+new-page: true
+subtitle: Baldwin clamps down on the unions.
+view-if: year = 1927 and month = 7
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+=  Trade Disputes and Trade Unions Act
+
+Following the unrest of the general strike last year. The Prime Minister has decided to heavily restrict strikes and strike related action and their legality in an attempt to ensure such a mass strike never occurs again. The Act includes the following:
+
+- Declaring Secondary Strikes to be illegal, as well as making it so any strike attempting to influence in any way the action of the government to be unlawful! 
+
+- Declaring mass picketing also to be unlawful.
+
+- Barring any civil service union to have any such affiliation with the TUC
+
+- As well as well to make illegal to encourage any such person to participate in any kind of illegal strike.  
+  
+- And finally, mandated trade union members to contract the opt in to allowing their union to use their dues to donate to any such politcal party.
+
+  The final part being specifically to stick the knife in to the labour party. This will make a dent in our funding.
+
+- @step_forward: This is a sad day for the labour movement...
+
+@step_forward
+title: This is a sad day for the labour movement...
+on-arrival: unemployed_labour += 3; workers_labour += 4; new_middle_labour -= 1; old_middle_labour -= 1; rural_labour -= 1;
+
+
+
+ 
