@@ -1,0 +1,24 @@
+title: Churchill Announces first Budget  
+new-page: true
+subtitle: A return to the gold standard!
+view-if: year = 1925 and month = 4
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= 1925 Budget 
+
+
+Winston Churchill has unveiled his first Budget as Chancellor of the Exchequer. Alongside expected reductions in tax and public expenditure. He also announced the return to the gold standard at its 1914 parity of £4.25 to the ounce. The bank of England and economists such as Sir Henry Strakosch rejoyce at the decision.
+
+There are some naysayers however, including one John Maynard Keynes. Who claims the decision could cripple British exports, and necessitated destructive internal wage cuts. Whether this comes to pass is to be seen.
+
+
+- @step_forward: This could be devastating for industry.
+
+@step_forward
+on-arrival: unemployed += 3 unemployed_tories -= 5; workers_tories -= 4; new_middle_tories -= 1; old_middle_tories -= 1; rural_tories -= 1;
+
+
+
