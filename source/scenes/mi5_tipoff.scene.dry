@@ -1,7 +1,7 @@
 title: MI5 Tips off the Government.
 new-page: true
 subtitle: Warning of potential Soviet espionage.
-tags: events
+tags: event
 view-if: year = 1927 and month = 5
 max-visits: 1
 on-arrival: kellogg_briand_seen = 1; kellogg_briand_signed = 1 if labour_in_government if tories_in_government if liberals_in_government
