@@ -1,0 +1,38 @@
+title: MI5 Tips off the Government.
+new-page: true
+subtitle: Warning of potential Soviet espionage.
+view-if: year = 1927 and month = 5
+max-visits: 1
+on-arrival: kellogg_briand_seen = 1; kellogg_briand_signed = 1 iflabour_in_government if tories_in_government if liberals_in_government
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= The Arcos Affair
+
+The other day, the home secretary, Mr Joynson-Hicks informed the prime minister of his intent to authorise a raid on the ARCOS building in London that facilitates Anglo-Soviet Trade. After testimony was given that ARCOS had illegally procured and copied a classified document from one of our military bases. Baldwin approved the raid and police soon found numerous classified documents in the building's basement.
+
+The Prime Minister cites his intent to sever ties with the Soviets following the incident. 
+
+[? if foreign_minister_party = "DVP": Our foreign Minister Gustav Stresemann has signed the treaty. The reaction is generally muted; both pacifists and militarists are skeptical about the efficacy of the treaty. ?]
+
+- @sign_treaty: Foreign Minister Breitscheid will sign the treaty, of course.
+- @step_forward
+- @not_enough
+
+@sign_treaty
+view-if: labour_in_government and foreign_minister_party = "Labour"
+on-arrival: kellogg_briand_signed = 1
+
+Foreign Minister Breitscheid will sign the treaty, of course. The reaction is generally muted; both pacifists and militarists are skeptical about the efficacy of the treaty.
+
+- @step_forward: Theres something suspicious about this...
+- @not_enough: This is how they repay our good will...
+
+@step_forward
+view-if: kellogg_briand_signed
+title: The treaty is a step forward for peace.
+
+@not_enough
+view-if: kellogg_briand_signed
+  
+
