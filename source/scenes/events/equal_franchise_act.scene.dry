@@ -1,0 +1,22 @@
+title: Conservatives Equalise Female Voting Age   
+new-page: true
+subtitle: The press sneer about how the tories are the real party of the people.
+view-if: year = 1928 and month = 6 
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= Equal Franchise Act 
+
+The other day the Conservative government passed the "Representation of the People (Equal Franchise) Act" to equalise the voting age for women in Britain from 31 down to 21, the same that it is for men. As well as getting rid of the requirement for those women to own property, which the universal suffrage bill for men did a decade ago. 
+
+Some outlets in the press have focused on how Labour could have passed such a bill when they were preiviously in power, but chose not to? Were they afraid it would benefit their opposition, and held back the doors of progress for their own political gain? Regardless, the passing of this bill gives young women the chance to vote in the next election. Who will win their votes, is to be determined.
+
+
+- @step_forward
+
+@step_forward
+title: Hopefully its for Labour.
+on-arrival: unemployed_tories += 3; workers_labour += 2; new_middle_tories += 2; old_middle_tories += 2; rural_tories += 2;
+
