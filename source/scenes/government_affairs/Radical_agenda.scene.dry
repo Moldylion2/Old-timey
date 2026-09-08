@@ -1,0 +1,83 @@
+title: Radical Agenda
+is-card: true
+new-page: true
+on-arrival: economic_democracy_timer += 10; month_actions += 1
+view-if: labour_in_government and (economic_minister_party == "Labour" or finance_minister_party == "Labour") and (labor_minister_party == "Labour") and economic_democracy_timer <= 0
+card-image: img/portraits/Sidney_Webb.jpg
+max-visits: 15
+tags: govt_affairs, cabinet
+#subtitle: How can we give workers more control over the means of production?
+
+= Labour's Radical Agenda
+
+Labour have been running in the last few elections on a platform with some lofty policy proposals. From the capital levy, to the nationalisation of the mines and electric sectors. The liberals and conservatives oppose most of them. But maybe they could support a few of the smaller policies.
+
+As we control the Labor [? if economic_minister_party == "Labour" : and Economic ?][? if chancellor_of_the_exchequer_party == "Labour" : and Finance ?] ministries, we can finally begin to implement our long-standing goals. [? if in_grand_coalition: Our bourgeois coalition partners might not agree, however. ?]
+
+- @capital_levy
+- @land_value_tax
+- @equalise_women_vote
+- @nationalize_1
+- @nationalize_mines
+- @cooperatives_1
+- @return: Do not enact any policies for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@capital_levy
+title: Capital Levy
+subtitle: A one time graduated tax on riches to massively cut war debt to afford to cut sales taxes and pay for policy. 
+view-if: works_councils == 0
+choose-if: Labour_majority = 1
+on-arrival: economic_democracy += 1; budget += 3; workers_labour += 7*(1-dissent); capital_strike_progress += 1; works_councils += 1; labor_dissent -= 6; labor_strength += 8; dvp_relation -= 5; coalition_dissent +=1 if in_grand_coalition
+max-visits: 1
+
+The Captial Levy will tax fortunes £5000 and up, with the top rate being those with millions. Only once.
+
+
+@land_value_tax
+title: Land Value Tax
+subtitle: If we taxed land, then we can raise money without discouraging construction or economic activity.
+view-if: labour_in_government
+on-arrival: economic_democracy += 1; budget += 1; workers_labour += 7*(1-dissent); capital_strike_progress += 1; works_councils += 1; labor_dissent -= 6; labor_strength += 8; dvp_relation -= 5; coalition_dissent +=1 if in_grand_coalition; economic_growth += 0.1 if economic_growth < 3
+max-visits: 1
+
+Taxing land is just the correct thing to do. Deters speculation while also not being as harsh as a property tax. The liberals vote with us in introducing the tax.
+
+
+@equalise_women_vote
+title: Equalise the voting age for Women
+subtitle: Currently only property owning women 31 and up can vote, we can change that.
+view-if: labour_in_government
+on-arrival: economic_democracy += 1; workers_labour += 7*(1-dissent); 
+max-visits: 1
+
+We introduce a bill to equalise the voting age for women and get rid of the property requirement. 
+
+
+@nationalize_1
+title: Begin to socialize key industries.
+subtitle: -1 budget - we should buy out industries and govern them together with workers and consumers.
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_labour += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+choose-if: budget >= 1
+max-visits: 3
+
+We have begun to socialize key industries by buying out the capitalist owners, and creating coordinated governing boards consisting of worker, consumer, and state representatives. The capitalists are not pleased at our intrusion into the economy.
+
+@nationalize_mines
+title: Nationalise the Coal Mines
+subtitle: -2 budget - The liberals won't support this policy.
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+choose-if: budget >= 2; labour_majority = 1
+max-visits: 1
+
+We have introduced a bill to nationalise the coal mines. the House of Lords will resist, but in 2 years we will force it through with the Parliament Act
+
+@cooperatives_1
+title: Support worker and consumer cooperatives.
+subtitle: -1 budget
+on-arrival: economic_democracy += 1; cooperatives += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
+choose-if: budget >= 1
+max-visits: 3
+
+We have enacted legislation that makes it easier to create cooperative enterprises of all sorts, and provide financial support to struggling cooperatives.
