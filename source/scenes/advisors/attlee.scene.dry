@@ -1,13 +1,13 @@
-title: Toni Sender
+title: Clement Attlee
 is-pinned-card: true
-tags: advisor, left
-card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 1
+tags: advisor, centrists
+card-image: img/portraits/Clement_Attlee.jpg
+view-if: attlee_advisor = 1
 new-page: true 
 
-= Toni Sender
+= Clement Attlee
 
-Toni Sender is an organizer and writer who came from a bourgeois family, but was radicalized into socialism after her experiences in the workforce. She was a member of the anti-war USPD, but did not support armed revolution.
+Clement Attlee is the MP for Limehouse on the east end of London. A fairly junior member within the party though formerly the mayor of Stepney. A modest man despite his well of background. And a man strong in his convictions. 
 
 - @left_unity
 - @organizing_women
