@@ -578,6 +578,7 @@ Q.henderson_advisor = 0; // Arthur Henderson
 Q.braun_advisor = 0; // Otto Braun
 Q.ishbel_advisor = 0; // Ishbel MacDonald
 Q.baade_advisor = 0; // Fritz Baade
+Q.bevin_advisor = 0; // Ernest Bevin
 
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
