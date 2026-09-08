@@ -1,6 +1,6 @@
 title: Ernest Bevin
 is-pinned-card: true
-tags: advisor, reformist
+tags: advisor, labor
 card-image: img/portraits/ernest_bevin.jpg
 view-if: bevin_advisor = 1
 new-page: true 
