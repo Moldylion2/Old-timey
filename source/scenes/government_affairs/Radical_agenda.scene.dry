@@ -66,7 +66,7 @@ We have begun to socialize key industries by buying out the capitalist owners, a
 title: Nationalise the Coal Mines
 subtitle: -2 budget - The liberals won't support this policy.
 on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
-choose-if: budget >= 2 in_labour_majority == 1
+choose-if: budget >= 2 and in_labour_majority == 1
 max-visits: 1
 
 We have introduced a bill to nationalise the coal mines. the House of Lords will resist, but in 2 years we will force it through with the Parliament Act
