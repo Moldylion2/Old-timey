@@ -55,6 +55,31 @@ On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [?
 
 [? if labour_in_government == 1: The strike has broken out, how do we proceed ?]
 
+The mass strike occurring under a Labour government, does put us in a pickle. While we do want to maintain our image as a serious non extreme party, going as far as to sending in the military could massively hurt our support. That being said, we could leverage our position to try to get the mine owners to concede, but whether the liberals will go with it. We need to pick carefully.
+
+@government_war_menu
+
+- @attempt_to_negotiate: Strike a compromise
+- @side_with_strikers: Side with strikers
+- @send_in_military: Send in Military
+
+@attempt_to_negotiate
+title: Strike a compromise
+on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
+
+It might be best to try and broker a compromise between the two sides. 
+
+@side_with_strikers
+title: Side with strikers
+
+Given our position in power, we could use state to pressure the mine owners to concede to the strikers demands.
+
+@send_in_military
+title: Send in the military
+
+While we support the right to strike, this is too much. We must use the state to restore order.
+
+
 
 
 [? if labour == "opposition": Do we get involved? ?]
@@ -71,7 +96,6 @@ On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [?
 
 @stay_out_of_it
 max-visits: 1
-go-to: war_menu
 on-arrival: war_choices += 1
 
 We have urged the Reichswehr to stand down, to avoid killing their countrymen. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the Reichswhere detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
@@ -79,7 +103,6 @@ We have urged the Reichswehr to stand down, to avoid killing their countrymen. [
 @kpd_help
 max-visits: 1
 view-if: chancellor_party != "KPD" and president != "Thälmann" 
-go-to: war_menu
 on-arrival: war_choices += 1
 
 There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
@@ -88,7 +111,6 @@ There are [+ rfb_strength +] thousand fighters with the Communist RFB, in additi
 
 @general_strike
 max-visits: 1
-go-to: war_menu
 on-arrival: war_choices += 1
 
 A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
@@ -96,7 +118,6 @@ A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today.
 
 @loyal_police
 max-visits: 1
-go-to: war_menu
 on-arrival: war_choices += 1
 view-if: spd_prussia == 1
 
