@@ -12,8 +12,6 @@ tags: govt_affairs, cabinet
 
 Labour have been running in the last few elections on a platform with some lofty policy proposals. From the capital levy, to the nationalisation of the mines and electric sectors. The liberals and conservatives oppose most of them. But maybe they could support a few of the smaller policies.
 
-As we control the Labor [? if economic_minister_party == "Labour" : and Economic ?][? if chancellor_of_the_exchequer_party == "Labour" : and Finance ?] ministries, we can finally begin to implement our long-standing goals. [? if in_grand_coalition: Our bourgeois coalition partners might not agree, however. ?]
-
 - @capital_levy
 - @land_value_tax
 - @equalise_women_vote
@@ -68,7 +66,7 @@ We have begun to socialize key industries by buying out the capitalist owners, a
 title: Nationalise the Coal Mines
 subtitle: -2 budget - The liberals won't support this policy.
 on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
-choose-if: budget >= 2; in_labour_majority = 1
+choose-if: budget >= 2 in_labour_majority = 1
 max-visits: 1
 
 We have introduced a bill to nationalise the coal mines. the House of Lords will resist, but in 2 years we will force it through with the Parliament Act
