@@ -33,6 +33,15 @@ go-to: root
 tags: remove_advisor
 
 
+@remove_attlee
+title: Remove Attlee
+view-if: attlee_advisor = 1
+tags: remove_advisor
+on-arrival: attlee_advisor = 0; center_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Attlee has been removed as an advisor. The Centrist faction disapproves.
+
 @remove_snowden
 title: Remove Snowden
 view-if: snowden_advisor = 1
@@ -344,23 +353,23 @@ subtitle: Snowden is a strict adeherent of economic orthadoxy and believes in th
 is-card: true
 card-image: img/portraits/SnowdenPhilip.jpg
 tags: center_advisor
-view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+view-if: snowden_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: snowden_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
 Philip Snowden is now an advisor.
 
-@add_wels
-title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+@add_clynes
+title: J.R Clynes
+subtitle: Clynes is the deputy leader of the Labour Party. He is a gifted organizer and a member of the centrist faction. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
-card-image: img/portraits/WelsRudolf.jpg
+card-image: img/portraits/ClynesJR.jpg
 tags: center_advisor
-view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: wels_advisor = 1; n_advisors += 1
+view-if: clynes_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: clynes_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Otto Wels is now an advisor.
+J.R Clynes is now an advisor.
 
 @add_muller
 title: Hermann Müller
@@ -385,6 +394,18 @@ go-to: advisor_menu
 tags: center_advisor
 
 Ramsay MacDonald is now an advisor.
+
+@add_attlee
+title: Clement Attlee
+subtitle: Clement Attlee is the MP for Limehouse on the east end of London. A fairly junior member within the party though formerly the mayor of Stepney. A modest man despite his well of background. And a man strong in his convictions. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+is-card: true
+card-image: img/portraits/Clement_Attlee.jpg
+view-if: attlee_advisor = 0 and n_advisors < 3
+on-arrival: attlee_advisor = 1; n_advisors += 1; left_strength += 5
+go-to: advisor_menu
+tags: center_advisor
+
+Clement Attlee is now an advisor.
 
 # reformist
 
