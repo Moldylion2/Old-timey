@@ -12,7 +12,7 @@ Snowden is a christian socalist. A former liberal MP, he's a strict adeherent of
 
 - @against_right_and_left
 - @toleration
-- @finance_ministry_
+- @chancellor_of_the_exchequer_
 - @economic_democracy_
 - @root: Return to main
 
@@ -34,7 +34,7 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent
 
 We have reduced dissent among the anti-toleration factions.
 
-@chancellor_of_the_exchequer
+@chancellor_of_the_exchequer_
 title: Fiscal Policy
 subtitle: Chancellor, Snowden can enact tax policies.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if finance_minister_party != "SPD" : The SPD does not control the finance ministry. ?]
@@ -43,9 +43,9 @@ on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_act
 go-to: fiscal_policy
 
 @economic_democracy_
-title: Economic Democracy
-subtitle: Enact policies to build a more democratic economy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
+title: Radical Agenda
+subtitle: Enact Labour's major Policy Platform.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if labour_in_government = 0 : Labour not in government: ?] [? if labor_minister_party != "Labour" or (finance_minister_party != "Labour" and economic_minister_party != "Labour") : We do not have the necessary government ministers. ?]
+choose-if: advisor_action_timer == 0 and labour_in_government == 1 and (economic_minister_party == "Labour" or finance_minister_party == "Labour") and (labor_minister_party == "Labour")
 on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
 go-to: Radical_Agenda
