@@ -112,6 +112,15 @@ Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 # labor
 
+@remove_bevin
+title: Remove Bevin
+view-if: bevin_advisor = 1
+tags: remove_advisor
+on-arrival: bevin_advisor = 0; labor_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Bevin has been removed as an advisor. The Labor faction disapproves.
+
 @remove_leipart
 title: Remove Leipart
 view-if: leipart_advisor = 1
@@ -495,6 +504,18 @@ Anna Siemsen is now an advisor.
 
 
 # labor
+
+@add_bevin
+title: Ernest Bevin
+subtitle: Ernest Bevin is the General Secretary of the Transport & General Workers Union, one of the UK's largest trade unions. More of a reformist moderate compared to some of his more miltant peers.. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Building the Reichsbanner, Addressing the Economic Crisis ?]
+is-card: true
+card-image: img/portraits/ernest_bevin.jpg
+tags: labor_advisor
+view-if: bevin_advisor = 0 and n_advisors < 3
+on-arrival: bevin_advisor = 1; n_advisors += 1; labor_strength += 5
+go-to: advisor_menu
+
+Ernest Bevin is now an advisor.
 
 @add_leipart
 title: Theodor Leipart
