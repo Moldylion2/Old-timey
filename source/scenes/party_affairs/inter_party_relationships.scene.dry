@@ -92,12 +92,11 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; liberals_relation += 5*(1 - dissent)
 go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
 
-The Liberals has been allies through the course of the last few decades.Though, they don't take too kindly to us becoming the opposition.
+The Liberals has been allies through the course of the last few decades.Though, though they don't take too kindly to us becoming the opposition.
 
 @dvp_stresemann
 on-arrival: dvp_relation += 8*(1 - dissent)
 
-Herbert Asquith, the Liberal party Leader planted the seeds of social welfare 10 years ago as Prime Minister, while he takes issue with our recent successes, he may be open to working with us.
 
 @dvp_loss
 
