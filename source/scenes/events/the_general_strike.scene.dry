@@ -69,7 +69,7 @@ On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [?
 - @loyal_police: Call up the loyal portions of the police.
 - @war_outcome: Now, the battle...
 
-@rw_help
+@stay_out_of_it
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
