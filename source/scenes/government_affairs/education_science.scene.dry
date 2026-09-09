@@ -1,9 +1,9 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: spd_in_government and spd_prussia and chancellor_party = "SPD" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: labour_in_government and labour_prussia and prime_minister_party = "Labour" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
 on-arrival: education_science_timer += 9; month_actions += 1
-card-image: img/portraits/EinsteinAlbert.jpg
+card-image: img/portraits/charles_trevelyan.jpg
 go-to: ed_menu
 tags: govt_affairs, cabinet
 
@@ -26,7 +26,7 @@ tags: govt_affairs, cabinet
 
 = Education and Science
 
-Education in Germany is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Reichstag has historically been unable to pass an education law. Currently, with our control of Prussia and the Chancellorship, we can try to set policy for a large part of the country.
+Education in Britain is managed by local city councils but overseen by the Board of education, where changes to the general curriculum are made also funding is allocated.
 
 [? if major_curriculum: Current educational curriculum - [+ major_curriculum +], [+ minor_curriculum +] ?]
 
@@ -43,7 +43,7 @@ view-if: not last_advisor_action
 
 @increase_science
 title: Increase funding for scientific research.
-choose-if: economic_minister_party = "SPD"
+choose-if: economic_minister_party = "Labour"
 unavailable-subtitle: This requires the Economic Ministry.
 
 Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
