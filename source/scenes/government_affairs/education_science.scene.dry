@@ -1,4 +1,4 @@
-title: Education & Science
+title: Education Policy
 new-page: true
 is-card: true
 view-if: labour_in_government and labour_prussia and prime_minister_party = "Labour" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
@@ -24,7 +24,7 @@ tags: govt_affairs, cabinet
 
 # science increases economic growth...
 
-= Education and Science
+= Education Policy
 
 Education in Britain is managed by local city councils but overseen by the Board of education, where changes to the general curriculum are made also funding is allocated.
 
@@ -42,11 +42,11 @@ view-if: not last_advisor_action
 
 
 @increase_science
-title: Increase funding for scientific research.
-choose-if: economic_minister_party = "Labour"
-unavailable-subtitle: This requires the Economic Ministry.
+title: Increase funding
+choose-if: health_minister_party = "Labour"
+unavailable-subtitle: This requires the labour in government.
 
-Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
+Educational funding as seen a decline since the end of the great war. This is unacceptable, we should see it upon ourselves to better fund our schools, and maybe even expand the years kids stay in school.   
 
 - @kwg
 - @applied
@@ -56,20 +56,20 @@ Socialism has always stood for science and rationality. Despite the setbacks of 
 - @cancel_advisor_action
 
 @kwg
-title: Fund the Kaiser Wilhelm Society for basic scientific research.
+title: Increase the education budget.
 subtitle: -1 budget
 choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_spd += 5*(1-dissent); liberals_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; west_relation += 1; science_funding += 1
+on-arrival: budget -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_labour += 5*(1-dissent); liberals_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; west_relation += 1; science_funding += 1
 
-The Kaiser Wilhelm Society is one of the most respected scientific research institutions in the world, with physicist Albert Einstein as its most famous employee. Our research program is to provide the Society with additional resources to hire and train scientists and conduct fundamental research, based on the scientists' own interests.
+Having more geenral education spedning allows the construction of more schools, as well as the hiring of more teachers and to better pay them. 
 
 @applied
-title: Fund applied research in economically useful technologies.
-subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_spd += 5*(1-dissent); workers_spd += 3*(1-dissent); liberals_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
+title: Raise the school leaving age to 15
+subtitle: -2 budget
+choose-if: budget >= 2
+on-arrival: budget -= 2; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_labour += 5*(1-dissent); workers_labour += 3*(1-dissent); liberals_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
 
-Our research program focuses on collaborating with industry to develop useful technologies, creating new research institutions for applied science. This collaboration is focused on economic growth and development.
+Though it will be expensive, it may be better long term to increase the school leavers age to 15 to ensure kids stay in school an additonal year. Creating a more educated next generation. 
 
 
 @medical
@@ -81,13 +81,13 @@ on-arrival: budget -= 1; science += 1; medical_research += 1; economic_growth +=
 Our research program focuses on medical research to improve the treatment of diseases and public health. [? if change_sex: Some of our medical advancements include new methods for sex change surgery and hormone therapy for transsexual individuals. ?]
 
 @cut_funding
-title: Cut science funding.
+title: Cut Education spending.
 subtitle: +1 budget
 choose-if: science_funding >= 1
-unavailable-subtitle: We have not funded science.
-on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_spd -= 5; workers_spd -= 2; liberals_relation -= 5; unemployed += 0.3
+unavailable-subtitle: We have not funded education.
+on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_labour -= 5; workers_labour -= 2; liberals_relation -= 5; unemployed += 0.3
 
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the SPD.
+We have cut funding for education, this will only making the declining quality of education in this country worse.
 
 
 @structure
@@ -138,11 +138,11 @@ We have funded more public secondary schools so that proletarian children may re
 
 
 @school_boards
-title: Create elected school boards to give local areas more control over education.
-on-arrival: school_boards += 1; workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); education_science += 0.2;
+title: Abolish Poor Law schools, convert them into regular public schools.
+on-arrival: school_boards += 1; workers_labour += 3*(1-dissent); new_middle_labour += 3*(1-dissent); old_middle_labour += 2*(1-dissent); education_science += 0.2;
 view-if: school_boards = 0
 
-We have created local elected school boards, and delegated some of the decision-making for local schools to them.
+We think it might be good to convert the workhouse education facilities into regular public schools allowing children from poor backgrounds to receive a standardised education alongside other kids their age.
 
 
 @curriculum
