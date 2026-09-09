@@ -1,0 +1,22 @@
+title: Labour Officially recognises Soviet Union  
+new-page: true
+subtitle: The press predictably have a field day.
+view-if: year = 1924 and month = 2
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= Labour recognises Soviet Union 
+
+Within a few weeks of taking office. The Labour government has formally recognised the Soviet Government as the de jure Russian government. Opening the door to the governemnt perhaps resolving Tsarist-era debt in exchange for a better trade deal.
+
+
+- @step_forward
+
+@step_forward
+title: This is just the pragmatic thing to do.
+on-arrival: unemployed_labour += 3; workers_labour += 1; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
+
+Russia is resource rich and it is ridiculous to not engage in further trade with them, regardless of their government ideology.
+
