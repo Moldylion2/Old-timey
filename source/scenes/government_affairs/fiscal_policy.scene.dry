@@ -37,7 +37,7 @@ subtitle: This does not change overall revenue. [? if lower_tax_rates < -5 : Low
 choose-if: lower_tax_rates >= -5 and upper_tax_rates <= 5
 on-arrival: workers_labour += 6*(1-dissent); old_middle_labour -= 4; new_middle_labour -= 4; coalition_dissent += 1 if in_grand_coalition; dvp_relation -= 4; finance_goal_completed += 1; upper_tax_rates += 1; lower_tax_rates -= 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; new_middle_labour -= 2 if upper_tax_rates > 1; old_middle_labour -= 2 if upper_tax_rates > 1
 
-Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.
+Making the tax system more progressive is popular among our base, but it upsets the bourgeois parties, as well as our minimal number of bourgeois voters.
 
 @raise_rich
 subtitle: +2 budget
@@ -64,7 +64,7 @@ unavailable-subtitle: -3 budget - [? if upper_tax_rates < -5 or lower_tax_rates 
 choose-if: budget >= 3 and upper_tax_rates >= -5 and lower_tax_rates >= -5
 on-arrival: budget -= 3; upper_tax_rates -= 1; lower_tax_rates -= 1; new_middle_labour += 5*(1-dissent); old_middle_labour += 4*(1-dissent); workers_labour += 3*(1-dissent); dvp_relation += 5*(1-dissent); tories_relation += 5*(1-dissent); unemployed -= 1.5 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 1; economic_growth += 0.6;
 
-Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are happy at our orthodox economic course.
+Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. The other parties are happy at our orthodox economic course.
 
 @cut_poor
 title: Cut consumption taxes for the poor.
@@ -73,7 +73,7 @@ unavailable-subtitle: -2 budget - [? if lower_tax_rates < -5: Tax rates are alre
 choose-if: budget >= 2 and lower_tax_rates >= -5
 on-arrival: budget -= 2; lower_tax_rates -= 1; workers_labour += 5*(1-dissent); unemployed -= 0.7 if unemployed >= 5; inflation += 0.6; economic_growth += 0.4; finance_goal_completed += 1; labor_dissent -= 3; left_dissent -= 3;
 
-Our tax cuts disproportionately benefit the poor and working class.
+Our tax cuts benefit the poor and working class.
 
 
 @cut_rich
@@ -100,7 +100,7 @@ subtitle: This does not change overall revenue. [? if upper_tax_rates < -5 : Ric
 choose-if: lower_tax_rates <= 5 and upper_tax_rates >= -5
 on-arrival: workers_labour -= 6; new_middle_labour += 5*(1-dissent); old_middle_labour += 5*(1-dissent); dvp_relation += 5; tories_relation += 4; coalition_dissent -= 1 if in_grand_coalition and coalition_dissent > 0; kpd_coalition_dissent += 1; upper_tax_rates -= 1; lower_tax_rates += 1; workers_labour -= 5 if lower_tax_rates >= 2; capital_strike_progress -= 1 if upper_tax_rates < 0; labor_dissent += 5; left_dissent += 5
 
-Our regressive taxation policy benefits the rich while hurting the poor and working-class. Our bourgeois coalition partners approve of this orthodox economic course.
+Our regressive taxation policy benefits the rich while hurting the poor and working-class. The bourgeois parties approve of this orthodox economic course.
 
 
 @tariffs
