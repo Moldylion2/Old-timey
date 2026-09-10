@@ -15,7 +15,7 @@ Labour are torn between many different ideological currents. What should be our 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
 - @class_struggle: The millitant's Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @centrist: The way of the ILP remains the best way to resolve our internal contradictions.
+- @centrist: Maybe all of them are good, but only a little of each.
 - @labour: We should work with the trade unions to improve the lives of workers.
 - @reform: Following Fabian Socialism, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
 - @easy_discard
@@ -29,7 +29,7 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; tories_relation -= 3; dvp_relation -= 5; nationalization_support += 1; cpgb_relation += 3
 
-The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+The radical left of the party supports a course of class struggle, and openly sympathise with communists and communist states.
 
 @centrist
 on-arrival: {!
@@ -40,7 +40,7 @@ if (Q.ideology && Q.ideology != "centrist") {
 go-to: changed if changed = 1
 on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
 
-The values of the Independent Labour Party, the old guard of the party, who support a middle course of rejecting revolution but staying true to the parties socialist roots.
+The value of Pure Centrism, no way one way is correct. they support a middle course of rejecting revolution but 'staying true' to the parties socialist roots.
 
 @labour
 on-arrival: {!
@@ -51,7 +51,7 @@ if (Q.ideology && Q.ideology != "labour") {
 go-to: changed if changed = 1
 on-departure: ideology = "labour"; labour_strength += 10; wtb_support += 1; labour_dissent -= 5; cpgb_relation -= 3
 
-The labour wing of the party supports continued particpation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The trade union focused wing of the party supports lasered in emphasis on policy that provides benefits to the workers, workers rights, and the state of trade unionism in the country.
 
 @reform
 on-arrival: {!
