@@ -205,14 +205,14 @@ go-to: rm_main
 
 Seydewitz has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_siemsen
-title: Remove Siemsen
-view-if: siemsen_advisor = 1
+@remove_wilkinson
+title: Remove Wilkinson
+view-if: wilkinson_advisor = 1
 tags: remove_advisor
-on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: wilkinson_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Wilkinson has been removed as an advisor. The Leftist faction disapproves.
 
 
 
@@ -510,17 +510,17 @@ tags: left_advisor
 
 Max Seydewitz is now an advisor.
 
-@add_siemsen
-title: Anna Siemsen
-subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+@add_wilkinson
+title: Ellen Wilkinson
+subtitle: Ellen Wilkinson is a joint member of Labour and the British Communist Party. Previously a member of the NUWSS suffrage group, the AUCE trade union, being involved in activism and strike organising since university. A vocal critic of British imperialism. Being the party's left wing, she believes big socialist reforms are the way forward and opposes gradualist incrementalism {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
-card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/ellen_wilkinson.jpg
+view-if: wilkinson_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: wilkinson_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Anna Siemsen is now an advisor.
+Ellen Wilkinson is now an advisor.
 
 
 
