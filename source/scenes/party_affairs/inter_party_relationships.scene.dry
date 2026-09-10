@@ -14,7 +14,7 @@ Labour cannot govern by itself yet. Because we do not have an electoral majority
 
 - @liberals: Strengthen our bonds with the Liberals.
 - @tories: Strengthen our bonds with the Conservative Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
+- @kpd: Strengthen our bond with the Communist Party.
 - @labour_alone: Labour can stand alone for now.
 - @easy_discard
 
@@ -29,7 +29,7 @@ go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_succes
 @kpd_1
 on-arrival: cpgb_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; tories_relation -= 2; dvp_relation -= 3
 
-The communists are suspicious of our overtures, especially the Leninist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
+The communists are suspicious of our overtures, especially the Leninist leadership, who persist in calling us "social fascists". However, they have no electoral motion.
 
 @cpgb_rectification_of_history
 
@@ -94,18 +94,6 @@ go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 an
 
 The Liberals has been allies through the course of the last few decades.Though, though they don't take too kindly to us becoming the opposition.
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
-
-
-@dvp_loss
-
-@dvp_moribund
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
 @labour_alone
 
