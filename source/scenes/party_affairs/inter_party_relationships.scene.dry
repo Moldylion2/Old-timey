@@ -90,7 +90,6 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; liberals_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
 
 The Liberals has been allies through the course of the last few decades.Though, though they don't take too kindly to us becoming the opposition.
 
