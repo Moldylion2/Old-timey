@@ -1,0 +1,39 @@
+title: Ellen Wilkinson
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/ellen_wilkinson.jpg
+view-if: wilkinson_advisor = 1
+new-page: true 
+
+= Ellen Wilkinson
+
+Ellen Wilkinson is a joint member of Labour and the British Communist Party. Previously a member of the NUWSS suffrage group, the AUCE trade union, being involved in activism and strike organising since university. A vocal critic of British imperialism. Being the party's left wing, she believes big socialist reforms are the way forward and opposes gradualist incrementalism.
+
+- @campaign_pacifism
+- @structure_
+- @curriculum_
+- @root: Return to main
+
+@campaign_pacifism
+title: Rally for pacifism.
+subtitle: Campaign for internationalism and against militarism.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6;
+go-to: rally.pacifism
+
+
+@curriculum_
+title: Change the educational curriculum.
+choose-if: advisor_action_timer = 0 and spd_in_government and prime_minister_party = "Labour" and labour_prussia and curriculum_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not labour_in_government : Labour is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: education_science.curriculum
+
+
+@structure_
+title: Change the structure and funding of education.
+choose-if: advisor_action_timer = 0 and labour_in_government and prime_minister_party = "Labour" and labour_prussia
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not labour_in_government : Labour is not currently in government. ?][? if prime_minister_party != "Labour": Labour must control the government. ?][? if not labour_prussia: Labour must control the Prussian government. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+go-to: education_science.structure
