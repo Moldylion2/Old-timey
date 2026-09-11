@@ -16,6 +16,6 @@ MI5 has informed the Home Office of a letter intercepted upon entry to the count
 
 @step_forward
 title: This plot is foiled.
-on-arrival: 
+on-arrival: zinoviev_foiled = 1
 
 
