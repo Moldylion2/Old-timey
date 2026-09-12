@@ -158,14 +158,14 @@ go-to: rm_main
 Wissell has been removed as an advisor. The Labor faction disapproves.
 
 
-@remove_woytinsky
-title: Remove Woytinsky
-view-if: woytinsky_advisor = 1
+@remove_mond
+title: Remove Mond
+view-if: mond_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: mond_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Mond has been removed as an advisor. The Labor faction disapproves.
 
 # left
 
@@ -575,17 +575,17 @@ go-to: advisor_menu
 Rudolf Wissell is now an advisor.
 
 
-@add_woytinsky
-title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+@add_mond
+title: Alfred Mond
+subtitle: Alfred Mond is a member of the liberals. Though formerly an advocate of the parties 'new liberalism' he has been drifting away from that as of late. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
-card-image: img/portraits/WoytinskyWladimir.jpg
+card-image: img/portraits/Alfred_Mond.jpg
 tags: labor_advisor
-view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
+view-if: mond_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: mond_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Wladimir Woytinsky is now an advisor.
+Alfred Mond is now an advisor.
 
 
 # neorevisionist leaders
