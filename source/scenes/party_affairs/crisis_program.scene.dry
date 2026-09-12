@@ -1,4 +1,4 @@
-title: The Economic Crisis
+title: Trade Union Reform
 new-page: true
 is-card: true
 view-if: crisis_urgency >= 1 and crisis_program_timer = 0 and economic_plan = 0 and black_thursday_seen == 1
@@ -7,26 +7,26 @@ on-arrival: month_actions += 1; crisis_program_timer = 5
 card-image: img/bankrun.jpg
 tags: party_affairs, govt_affairs
 
-= Addressing the Economic Crisis
+= Options for Trade Union Reform
 
-Our party is wracked as to how to deal with the economic crisis. From the centrist faction, Hilferding argues that the economic crisis must be allowed to play out, because it is simply a part of the cyclic nature of capitalism.
+Some in the party believe action should be taken to reform trade unionism in the country. The centrist perspective is that they should be left as they are, though others feel they need reform. 
 
-From labor, the economist Wladimir Woytinsky argues that we must pursue a massive public works program to reduce unemployment and stimulate demand, perhaps including deficit spending. His opponents, like Hilferding, argue that this plan will cause a return to hyper-inflation, and that it would not even help the economy. In addition, according to Hilferding, Woytinsky's strategy is opposed to Marxist principles.
+Reform oriented Union leaders like Ernest Bevin propose humouring talks with industrialist Alfred Mond to set up a means for unions and capital to work closer together, hashing out disputes in a formal legalised way to minimise strikes and maximise union gains. 
 
-The so-called WTB plan, after its chief supporters Woytinsky, Tarnow, and Baade, is receiving more attention within the party.
+This is an unorthadox idea, working with big business like this. But maybe it can work out.
 
 However, leftists in the party argue that the WTB plan is merely a bandage over the fundamental flaws of capitalism. They argue that the crisis is an opportunity to end capitalism through massive nationalizations of industry, and finally bring our country to socialism.
 
-Meanwhile, moderates and reformists draw up proposals for a limited plan of job creation through public works, funded through taxes, that does not involve deficit spending or large-scale restructuring of the economy. Labor argues that the plan is inadequate in its scale and ambition.
+Meanwhile, Some moderates believe that limitations or rules on strike action should be implemented instead, to try to solve the eventual issue of union reform before anything pushes the Tories to aggresively crack down on them.
 
-- @support_centrist: Support the Centrist view.
-- @support_labor: Support the Labor view.
+- @support_centrist: The unions should be left as they are
+- @support_labor: Persue Mond Turner Talks
 - @support_left: Support the Left view.
-- @support_moderate: Support the Reformist view.
+- @support_moderate: Maybe some restriction is neccessary 
 - @defer: Defer making a decision until we have more information.
 
 @support_centrist
-subtitle: Let the depression play itself out.
+subtitle: The current way of things is good enough for now.
 on-arrival: center_strength += 5; center_dissent -= 5; labor_dissent += 10; wtb_support -= 1; left_dissent += 10;
 
 Woytinsky and the trade unions vehemently criticize the centrists for their policy. The workers are starving; are we going to callously abandon them and side with bourgeois austerity? On the other hand, the centrists criticize Woytinsky for promising the workers false hope; their position is that nothing can be done to alleviate the depression. They also speak of the fear of another round of hyperinflation that may result from deficit spending.
@@ -35,7 +35,7 @@ Our policy course is currently that nothing can be done to alleviate the depress
 
 
 @support_labor
-subtitle: Call for increased public works and fiscal stimulus.
+subtitle: Alfred Mond's ideas of union-business co-operation are interesting.
 unavailable-subtitle: The Labor faction is not strong enough.
 choose-if: historical_mode == 0 or (labor_strength >= left_strength and labor_strength >= center_strength and labor_strength >= reformist_strength)
 on-arrival: center_dissent += 10; left_dissent += 5; labor_strength += 5; wtb_support += 1;
@@ -71,7 +71,7 @@ on-arrival: left_strength += 15; left_dissent -= 10; reformist_dissent += 10; ne
 With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?] Bourgeois opposition is likely to be fierce. [? if spd_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 
 @support_moderate
-subtitle: Call for a limited program of job creation without deficit spending.
+subtitle: If we can get the jump on union regulation, it might spare them what the tories have in mind.
 unavailable-subtitle: The Reformist faction is not strong enough.
 choose-if: historical_mode == 0 or (reformist_strength >= left_strength and reformist_strength >= center_strength and reformist_strength >= labor_strength)
 on-arrival: moderate_plan_support += 1; reformist_strength += 8; reformist_dissent -= 5; left_dissent += 6; labor_dissent += 5
