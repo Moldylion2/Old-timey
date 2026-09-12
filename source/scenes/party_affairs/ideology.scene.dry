@@ -40,7 +40,7 @@ if (Q.ideology && Q.ideology != "centrist") {
 go-to: changed if changed = 1
 on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
 
-The value of Pure Centrism, no way one way is correct. they support a middle course of rejecting revolution but 'staying true' to the parties socialist roots.
+The value of Pure Centrism, no one way is correct. they support a middle course of rejecting revolution but 'staying true' to the parties socialist roots.
 
 @labour
 on-arrival: {!
