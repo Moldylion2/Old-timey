@@ -1,9 +1,9 @@
 title: Select Committee Called  
 new-page: true
 subtitle: Parliament wants answers...
-view-if: year = 1924 and (month = 10)
+view-if: year = 1924 and (month = 10) and select_committee_called = 1
 max-visits: 1
-on-arrival: select_committee_called = 1; 
+on-arrival: zinoviev_letter = 1
 tags: event
 #face-image: img/portraits/StresemannGustav.jpg
 
