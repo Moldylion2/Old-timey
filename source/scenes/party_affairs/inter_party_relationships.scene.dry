@@ -70,6 +70,8 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; tories_relation += 2 if tories_party_leader == "Joos"
 go-to: tories_op if tories_in_government = 1 and labour_in_government = 0 and chancellor != "Brüning"; tories_coalition if labour_in_government = 1 and tories_in_government = 1; tories_bruning if chancellor = "Brüning"
 
+The tories are our ops, but maybe we should be friends.
+
 @tories_op
 on-arrival: tories_relation += 5*(1 - dissent)
 
@@ -91,7 +93,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; liberals_relation += 5*(1 - dissent)
 
-The Liberals has been allies through the course of the last few decades.Though, though they don't take too kindly to us becoming the opposition.
+The Liberals has been allies through the course of the last few decades. Though, though they don't take too kindly to us becoming the opposition.
 
 
 @labour_alone
