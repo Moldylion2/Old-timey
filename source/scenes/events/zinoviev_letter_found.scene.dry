@@ -1,7 +1,7 @@
 title: A Strange letter intercepted by MI5  
 new-page: true
 subtitle: And to try to discredit the government no less
-view-if: interior_police_loyalty >= 0.5 and zinoviev_letter = 1
+view-if: interior_police_loyalty > 0.5 and zinoviev_letter = 1
 max-visits: 1
 on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
 tags: event
