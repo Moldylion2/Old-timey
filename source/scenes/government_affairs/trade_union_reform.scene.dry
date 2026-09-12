@@ -24,7 +24,7 @@ We have already formulated an economic plan. Now we have to implement it.
 - @easy_discard
 - @cancel_advisor_action
 
-@wtb_2
+@mond_turner
 title: Continue the implementation of the WTB-Plan.
 subtitle: -3 budget
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
@@ -165,7 +165,7 @@ go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_defici
 #######################################
 # Moderate economic plan
 
-@moderate_plan
+@in_place_of_strife
 title: Implement the Reformists' job-creation plan.
 subtitle: -2 budget.
 unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
