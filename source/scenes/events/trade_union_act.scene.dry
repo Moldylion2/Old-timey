@@ -1,7 +1,7 @@
 title: The Trade Disputes and Trade Unions Act  
 new-page: true
 subtitle: Baldwin clamps down on the unions.
-view-if: year = 1927 and month = 7
+view-if: year = 1927 and month = 7 and tories_in_government
 max-visits: 1
 on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
 tags: event
