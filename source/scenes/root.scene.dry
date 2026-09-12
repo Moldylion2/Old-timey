@@ -584,7 +584,7 @@ Q.bevin_advisor = 0; // Ernest Bevin
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
 Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
+Q.mond_advisor = 0; // Alfred Mond (post-1930)
 Q.wissell_advisor = 0; // Rudolf Wissell
 
 // Revisionist advisors
