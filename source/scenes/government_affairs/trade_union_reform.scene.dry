@@ -1,11 +1,11 @@
-title: Health Policy
+title: Trade Union Reform
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: economic_policy_timer += 12; month_actions += 1; nationalize_budget = 4; nationalize_budget -= 1 if works_councils >= 2; nationalize_budget -= 1 if works_councils >= 3; nationalize_budget -= 1 if socializations + nationalization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or socializations >= 1 or pro_labor >= 2
 view-if: labour_in_government = 1 and (economic_minister_party == "Labour" or finance_minister_party == "Labour") and economic_policy_timer <= 0 and economic_plan > 0
 card-image: img/portraits/John_Wheatley.jpg
-#subtitle: Policies to address the economic crisis.
+#subtitle: How should we try to reform industrial relations within the country.
 
 = economic Policy
 
@@ -20,7 +20,7 @@ We have already formulated an economic plan. Now we have to implement it.
 - @nationalize_2
 - @moderate_plan
 - @moderate_plan_limited_budget
-- @root: Do not implement the economic plan.
+- @root: Do not reform the unions.
 - @easy_discard
 - @cancel_advisor_action
 
