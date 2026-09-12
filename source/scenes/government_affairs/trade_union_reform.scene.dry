@@ -86,7 +86,7 @@ We have entered the realm of deficit spending. Our coalition partners are disgus
 
 ####################### left economic policies (socializations)
 
-@nationalize_1
+@left_plan
 title: Implement the Left plan for the transformation of the economy.
 subtitle: -[+ nationalize_budget +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
 view-if: nationalization_adopted == 1 and nationalization_progress == 0
