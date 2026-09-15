@@ -1,0 +1,21 @@
+title: Black Thursday
+subtitle: The great stock market crash...
+new-page: true
+view-if: year = 1929 and month >= 10 
+on-arrival: hindenburg_dead = 1
+max-visits: 1
+tags: event
+face-image: img/Hindenburg_head.jpg
+go-to: game_over_1934
+
+= Black Thursday
+
+The stock market in America has had its biggest crash in history. It is too early to tell what the international effects will be, but it cannot be good. The economy is already feeling the effects - despite our efforts, unemployment will rise once more, and wages will fall. As always, capitalists' crisis, is the workers' burden.
+
+
+- @cap: One chapter ends...
+
+@cap
+
+and another begins...
+
