@@ -1,6 +1,6 @@
 title: Conservative Party Conference
 subtitle: The Conservative Party chooses their new leader...
-view-if: labour_in_government and general_strike_over tories_party_leader = "Baldwin"
+view-if: labour_in_government and general_strike_over and tories_party_leader = "Baldwin"
 max-visits: 1
 tags: event
 new-page: true
