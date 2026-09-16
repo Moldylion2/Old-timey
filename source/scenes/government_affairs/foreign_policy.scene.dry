@@ -62,6 +62,10 @@ on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_g
 
 The Soviets are pleased that we have sent them aid, hopefully they reward our kindness.
 
+@soviet_economic_aid_no
+
+We don't need to do anything now.
+
 
 @customs_union
 title: Form a customs union with Austria?
