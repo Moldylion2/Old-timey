@@ -1,0 +1,40 @@
+title: Conservative Party Conference
+subtitle: The Conservative Party chooses their new leader...
+view-if: labour_in_government and general_strike_over tories_party_leader = "Baldwin"
+max-visits: 1
+tags: event
+new-page: true
+
+= Conservative Party Conference
+
+
+Following his failire to get the party re-elected following his disasterous snap election Stanley Baldwin is pressured to resign. Senior members of the party have convened a meeting to discuss the future leadership of the party.
+
+The consensus candidate for a successor is Austen Chamberlain, the elder statesman on the right wing who was theorised to be Bonar Law's orginal planned successor. On the other hand, Maybe Baldwin could be given another chance to try to win, he has managed to unite the different factions behind him thus far.
+
+- @kaas: The Tories choose Austen Chamberlain to be the party leader.
+- @joos: What about Mond?
+- @joos_campaign: Pull some strings to help Baldwin keep control.
+
+
+@kaas
+on-arrival: tories_party_leader = "A.Chamberlain"; elation -= 5
+
+Austen Chamberlain is now Tory party leader. This represents a turn away from the modern one nation conservatism of Baldwin towards a more old school traditional conservatism.  
+
+@joos
+unavailable-subtitle: Our relations are not good enough.
+subtitle: Alfred Mond could be the dark horse.
+choose-if: elation >= 70
+on-arrival: tories_party_leader = "Mond"; catholics_labour += 5; workers_tories += 3
+
+Following Mr Mond's successes at brokering the industrial peace amid the general strike. He could help us to win the support of the working men and women. He may have only only recently crossed the floor, but so has Mr Churchill, and he has his supporters.
+
+@joos_campaign
+choose-if: elation >= 62 and resources >= 1 
+view-if: elation < 70
+unavailable-subtitle: [? if elation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
+subtitle: -1 resource. We love you Baldwin!
+on-arrival: resources -= 1; tories_party_leader = "Baldwin"; catholics_labour += 5; workers_tories += 3
+
+By utilising some back alley connections in parliament, we are able to pull some strings and help Baldwin keep hold of the leadership.
