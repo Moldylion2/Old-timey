@@ -19,7 +19,6 @@ We have already formulated an economic plan. Now we have to implement it.
 - @left_plan
 - @nationalize_2
 - @in_place_of_strife
-- @moderate_plan_limited_budget
 - @root: Do not reform the unions.
 - @easy_discard
 - @cancel_advisor_action
@@ -166,39 +165,13 @@ go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_defici
 # Moderate economic plan
 
 @in_place_of_strife
-title: Implement the Reformists' job-creation plan.
-subtitle: -2 budget.
-unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
+title: Implement some restrictions on union activity.
+subtitle: This will anger the TUC.
 view-if: moderate_plan_adopted == 1
-choose-if: budget >= 2 and unemployed >= 8
-on-arrival: budget -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; cpgb_relation -= 5 if in_popular_front or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
+on-arrival: unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_labour -= 6*(1-dissent); unemployed_labour -= 4*(1-dissent); new_middle_labour += 3*(1-dissent); old_middle_labour += 2*(1-dissent); rural_labour += 2*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; cpgb_relation -= 5 if in_popular_front or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]
+[? if moderate_plan_progress == 1 : We have announced our plans to demand secret ballots on strike action to be considered legal and to criminalise secondary trikes. This won't go down well, but we must weather the storm.  ?]
 
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Germany. ?]
+[? if moderate_plan_progress > 1 : We have implemented our restrictions, hopefully nothing like this happens again. The unions should learn to accept reformist solutions to their issues.  ?]
 
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Germany's economy. ?]
-
-[? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
-
-[? if in_popular_front or in_left_front: The KPD opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
-
-@moderate_plan_limited_budget
-title: Partially implement the Reformists' job-creation plan, with a lower cost.
-subtitle: -1 budget.
-unavailable-subtitle: -1 budget. [? if budget < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
-view-if: moderate_plan_adopted == 1
-choose-if: budget >= 1 and unemployed >= 8
-on-arrival: budget -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_spd += 4*(1-dissent); unemployed_spd += 2*(1-dissent); new_middle_spd += 2*(1-dissent); old_middle_spd += 1*(1-dissent); rural_spd += 1*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; cpgb_relation -= 5 if in_popular_front or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
-achievement: wirtschaftspolitik
-
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]
-
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Germany. ?]
-
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Germany's economy. ?]
-
-[? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
-
-[? if in_popular_front or in_left_front: The KPD opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
