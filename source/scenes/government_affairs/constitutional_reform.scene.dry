@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: spd_in_government = 1 and justice_minister_party = "SPD" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_weimar_coalition) or (in_spd_majority) or (in_left_front) or (in_popular_front)) and constitutional_reform < 3
+view-if: labour_in_government = 1 and attorney_general_party = "Labour" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_weimar_coalition) or (in_spd_majority) or (in_left_front) or (in_popular_front)) and constitutional_reform < 3
 frequency: 25
 on-arrival: month_actions += 1; constitutional_reform_timer += 12; pass_threshold = 0.51; pass_threshold = 0.6 if pro_republic < 65;
 card-image: img/portraits/RadbruchGustav.jpg
@@ -17,49 +17,38 @@ tags: govt_affairs, cabinet
 
 # the ideas for constitutional reform here are based on the bundesrepublik basic law... I'm not sure if it's totally realistic to what someone like Mierendorff would've wanted.
 
-Many neorevisionists consider the Weimar Constitution to be inadequate. They believe that the clauses of the constitution are in part responsible for the instability of the country, and must change in order to build a more stable democratic republic. Ideas from both socialists and liberals
+Constitutional reform is something we have spoken about for years in opposition, but felt wasn't immediately important upon our ascedence to power. However, now that we have governed for a few years and demonstrated our ability to avert crisis. We believe it is now the time to make some major changes.
 
-A constitutional reform requires either a two-thirds supermajority in the Reichstag, or a constitutional referendum with support from a majority of the electorate. If we do not have a supermajority in the Reichstag, we must be assured of strong support from the other parties for the constitutional referendum.
+There are a few thinsg we have in mind to implement. However, due to the Parliament Act, while the lords cannot veto bills anymore. They can stall the passing of any such bill for up to 2 years. So while we only need a simple majority in the Commons to make any such reform. We will need to remain in power for 2 full years after to be able to invoke the Parliament Act and overide the lords. So we be careful not to be too divisive.
 
 @reforms_menu
 
-- @vote_threshold: Change the vote threshold.
-- @constructive_vonc: Ban non-constructive votes of no confidence.
-- @presidential_powers: Reduce presidential powers.
+- @vote_threshold: Abolish the House of Lords
+- @constructive_vonc: Set up regional parliaments for the Welsh and Scottish.
+- @presidential_powers: Adopting preportional representation.
 - @as_is: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
 #- @constitutional_bans: Allow the banning of anti-constitutional parties.
 
 @vote_threshold
-subtitle: Change the vote threshold to 5% for parties to be represented in the Reichstag.
-on-arrival: {!
-Q.reform_support = Q.spd_normalized;
-if (Q.z_relation > 30) {
-    Q.reform_support += Q.z_normalized - 0.03;
-}
-if (Q.cpgb_relation > 50 && Q.kpd_normalized >= 0.1) {
-    Q.reform_support += Q.kpd_normalized;
-}
-if (Q.nsdap_normalized >= 0.2 ) {
-    Q.reform_support += Q.nsdap_normalized;
-}
-!}
+subtitle: It is an undemocratic tool of the establishment to delay progress!
 view-if: electoral_threshold = 0
 
 # The left is opposed to this.
 
-Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation, a gift to regional parties such as the BVP. 
+We are now faced with a choice. Do we abolish the lords wholesale and have the House of Commons as a unicameral parliament?
 
-The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if cpgb_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the KPD supports this reform. ?] [? if nsdap_normalized >= 0.2 : The NSDAP supports this reform, as they believe they have something to gain. ?]
+Or should we simply replace the lords with a democratically elected senate?
 
-The SPD Left opposes this change, as they believe it to be anti-democratic.
+Both would be a massive shakeup, but the latter is at least less dramatic. And another elected body just means more democracy...right?
 
-- @vote_threshold_2: Call a constitutional referendum to pass the reform!
+- @unicameral: The commons shall be the only authority!
+- @create_senate: The lords will be turned into a senate!
 - @reforms_menu: See other reform options.
 
 
-@vote_threshold_2
+@unicameral
 choose-if: reform_support >= pass_threshold
 unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if z_relation <= 30 : The Center Party does not trust us enough to support this policy. ?]
 on-arrival: constitutional_reform += 1; electoral_threshold = 5; liberals_relation -= 25; dvp_relation -= 25; left_dissent += 20; workers_dnvp += workers_other*0.4; workers_nsdap += workers_other*0.4; workers_other *= 0.1; new_middle_dvp += new_middle_other*0.3; new_middle_nsdap += new_middle_other*0.3; new_middle_other *= 0.1; old_middle_dvp += 0.3*old_middle_other; old_middle_nsdap += 0.3*old_middle_other; old_middle_dnvp += 0.3*old_middle_other; old_middle_other *= 0.1; rural_dnvp += 0.5*rural_other; rural_nsdap += 0.4*rural_other; rural_other *= 0.1; unemployed_nsdap += 0.3*unemployed_other; unemployed_kpd += 0.4*unemployed_other; unemployed_other *= 0.2; catholics_z += 0.6*catholics_other; catholics_other *= 0.1;
@@ -67,62 +56,46 @@ achievement: verfassungsreform
 
 # this should result in a redistribution of votes - other parties should not get so many votes anymore. maybe ddp and dvp get a recovery of middle-class votes? or maybe they flow to the others.
 
-We have passed a constitutional amendment to increase the electoral threshold to 5%. This is likely to benefit the larger parties and harm the smaller ones.
+We have passed a bill to abolish the House of Lords!!! Finally this dragon of bourgeois influence has been slayed! Now the Commons are king, as it should be.
 
+@create_senate
+choose-if: reform_support >= pass_threshold
+unavailable-subtitle: We do not have enough support for this policy. We need a majority.
+on-arrival: constitutional_reform += 1
 
+We have passed a bill to offically reform the House of Lords into a democratically elected senate! This large bastion of bourgeois power is vanquished! If they want power in an upper house now. They will need the peoples will. I wish them good luck, they'll need it!
 
 @constructive_vonc
-subtitle: Votes of no confidence can only be called if an alternative plan for government formation can be passed, greatly reducing their incidence.
-on-arrival: {!
-Q.reform_support = Q.spd_normalized + Q.ddp_normalized;
-if (Q.z_relation >= 30) {
-    Q.reform_support += Q.z_normalized - 0.03;
-}
-if (!Q.stresemann_dead) {
-    Q.reform_support += Q.dvp_normalized;
-}
-!}
+subtitle: Regional parliaments will finally give the Scots and Welsh autonomy
 view-if: constructive_vonc = 0
 
-[? if z_relation >= 30 : The Weimar Coalition parties, the [+ ddp_name +] and Center Party, support this reform, which will greatly improve the stability of the government. ?] [? if z_relation < 30 : The [+ ddp_name +] supports this reform, but the Center Party does not trust us enough to support the constitutional referendum. ?] The more conservative and radical right-wing parties and the KPD are in opposition, as they seem to relish in the republican system's instability.
-
-- @constructive_vonc_2: Call a constitutional referendum to pass the reform!
+- @constructive_vonc_2: We pass the bill!
 - @reforms_menu: See other reform options.
 
 @constructive_vonc_2
 choose-if: reform_support >= pass_threshold
-unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if z_relation <= 30 : The Center Party does not trust us enough to support this policy. ?]
 on-arrival: constitutional_reform += 1; constructive_vonc = 1
 achievement: verfassungsreform
 
-We have successfully passed a constitutional amendment to ban votes of no confidence when a new government cannot be formed. Hopefully this increases the stability of our governments.
+We've passed the bill. Once the bill passes the lords, we will get work setting up those regional parliaments.
 
 @presidential_powers
-subtitle: The president can no longer dissolve the Reichstag at will, or call a *Reichsexekution* on state governments.
-on-arrival: {!
-Q.reform_support = Q.spd_normalized + Q.ddp_normalized + Q.kpd_normalized;
-if (Q.z_relation > 49 && (Q.president == "Hindenburg" || Q.president == "Eckener")) {
-    Q.reform_support += Q.z_normalized;
-} else if (Q.president == "Braun") {
-    Q.reform_support += Q.z_normalized - 0.03;
-}
-!}
+subtitle: It would just make our elections more democratic.
 view-if: presidential_powers = 0
 
-The wide-ranging presidential powers promised by the constitution are a potential gateway to authoritarianism. Thus, we can support reforms that limit the powers of the president, ending his power to unilaterally terminate an elected government and to remove state governments.
+Preportional Representation would allow each Brit's vote to matter. Currently if you vote labour in a tory area, you vote is meaningless, and vice versa.
 
-The KPD is in favor of this reform, having been victims of the *Reichsexekution* in the past (when KPD-supported state governments in Thuringia and Saxony were removed). The democrats of the [+ ddp_name +] also support this. [? if president == "Hindenburg": However, the opposition from conservatives is vehement, as they see a reduction in presidential powers as disrespectful to Hindenburg. ?] [? if z_relation <= 49 and president == "Hindenburg" : Thus, the Center Party has been influenced to oppose these reforms. ?] [? if z_relation > 49 and president == "Hindenburg" : Despite this, the Center Party supports the proposed reform. ?] [? if president == "Braun" : The Center Party supports this reform. ?]
+While this will make it much more difficult to achieve a majority again. We believe it is worth implementing a more fair system.
 
-- @presidential_powers_2: Call a constitutional referendum to pass the reform!
+- @presidential_powers_2: Pass the bill!
 - @reforms_menu: See other reform options.
 
 @presidential_powers_2
 choose-if: reform_support >= pass_threshold
-unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if z_relation <= 49 and president != "Braun" : The Center Party does not trust us enough to support this policy. ?]
 on-arrival: constitutional_reform += 1; presidential_powers = 1
 achievement: verfassungsreform
 
-We have successfully passed a constitutional amendment to limit presidential powers! Hopefully this results in a less authoritarian Germany.
+We have passed the bill. Once it passes the lords. Thats it. The election after will be under Preportional Representation.
 
 
 
