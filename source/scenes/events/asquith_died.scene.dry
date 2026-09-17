@@ -1,0 +1,21 @@
+title: Herbert Asquith has Died  
+new-page: true
+subtitle: The former liberal leader and prime minister has passed the other day.
+view-if: year = 1928 and month = 2
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= Herbert Asquith's Death 
+
+It has been announced that the former prime miniser Herbert Asquith has passed due to another stroke. He leaves behind his second wife Margot and 6 children.  
+
+While we weren't always politcally aligned, we appreciate his support for us over the years. And for the contributions to the wellbeing of regular men and women in this country through the introduction of unemployment insurance, and elderly pension payments. 
+
+- @step_forward
+
+@step_forward
+title: This is a tragic day.
+
+We wish his family the best.
