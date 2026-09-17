@@ -1,0 +1,21 @@
+title: Herbert Asquith Resigns
+subtitle: Following a recent stroke
+view-if: year = 1926 and month = 10
+max-visits: 1
+tags: event
+new-page: true
+
+= Asquith Resigns
+
+
+After months of internal clashing within the liberal party, there was to be a motion to determine which of the two senior liberal figures would be party leader but tragedy occurs.
+
+Days before the conference, Mr Asquith suffered a stroke, preventing him from attending. Leading to David Lloyd Goerge to claim victory be crowned party leader.
+  
+- @lloyd_george: Lloyd George is now the Liberal Party Leader
+
+
+@lloyd_george
+on-arrival: liberals_party_leader = "Lloyd George"; elation -= 5
+  
+
