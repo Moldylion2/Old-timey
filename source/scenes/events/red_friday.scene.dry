@@ -9,9 +9,9 @@ tags: event
 
 = Red Friday 
 
-The Mine owner's 'Mining Association' has announced that  [? if tories_in_government = 1 : following Mr Churchill's return to the gold standard's impact on coal export profits. That they plan to make cuts to miner's wages and to increase their work hours. ?] [? if labour_in_government = 1 : they plan to make cuts to employee wages and to increase their workhours. !]
+The Mine owner's 'Mining Association' has announced that  [? if tories_in_government = 1 : following Mr Churchill's return to the gold standard's impact on coal export profits. That they plan to make cuts to miner's wages and to increase their work hours. ?] [? if labour_in_government = 1 : they plan to make cuts to employee wages and to increase their workhours. ?]
 
-[? if tories_in_government = 1 : The Prime Minister has announced that for the time being, the government shall subsidise the miner's wages and to talk with the mine owners to delay their work hour icnreases. !]
+[? if tories_in_government = 1 : The Prime Minister has announced that for the time being, the government shall subsidise the miner's wages and to talk with the mine owners to delay their work hour icnreases. ?]
 
 
 - @step_forward
