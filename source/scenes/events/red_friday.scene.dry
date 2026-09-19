@@ -15,11 +15,25 @@ The Mine owner's 'Mining Association' has announced that  [? if tories_in_govern
 
 
 - @step_forward
-
+- @do_subsidy
+- @don_do_subsidy
 
 @step_forward
 title: Stay Here's hoping those cuts don't end up happening...
+view-if: tories_in_government
 on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
 
 
+@do_subsidy
+title: Subsidise their wages for the time being.
+view-if: labour_in_government 
+on-arrival:  budget -= 1; workers_labour += 6*(1-dissent); unemployed_labour += 6*(1-dissent); welfare += 1; reformist_dissent -= 5; labor_dissent -= 5; center_dissent -= 5; left_dissent -= 5; neorevisionist_dissent -= 5; coalition_dissent += 1 if welfare > 1; welfare_goal_completed += 1; inflation += 0.3; unemployed -= 0.4; economic_growth += 0.2;
 
+This might not work forever, and will likely get more expensive, so we must find a way to resolve this.
+
+@don_do_subsidy
+title: We cannot be expected to pick up the bill...
+view-if: labour_in_government 
+on-arrival: workers_labour -= 6; unemployed_labour -= 6; workers_cpgb += 3; welfare -= 1; reformist_dissent += 10; left_dissent += 10; labor_dissent += 10; center_dissent += 5; neorevisionist_dissent += 5; dvp_relation += 5; tories_relation += 3; pro_republic -= 3; coalition_dissent -= 1 if in_grand_coalition and coalition_dissent > 0; kpd_coalition_dissent += 1; cpgb_relation -= 8; inflation -= 0.3; unemployed += 0.4; economic_growth -= 0.2;
+
+This will likely irritate many of our working class supporters. But in economic times like these, it is simply unrealistic to subsidise an entire industry's wages like this.
