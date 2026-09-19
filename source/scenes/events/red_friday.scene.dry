@@ -1,0 +1,25 @@
+title: Red Friday  
+new-page: true
+subtitle: Mine owners plan to cut wages and increase hours.
+view-if: year = 1925 and month = 6
+max-visits: 1
+on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
+tags: event
+#face-image: img/portraits/StresemannGustav.jpg
+
+= Red Friday 
+
+The Mine owner's 'Mining Association' has announced that  [? if tories_in_government = 1: following Mr Churchill's return to the gold standard's impact on coal export profits. That they plan to make cuts to miner's wages and to increase their work hours. ?] [? if labour_in_government = 1: they plan to make cuts to employee wages and to increase their workhours. !]
+
+[? if tories_in_government = 1: The Prime Minister has announced that for the time being, the government shall subsidise the miner's wages and to talk with the mine owners to delay their work hour icnreases. !]
+
+
+- @step_forward: 
+
+
+@step_forward
+title: Stay Here's hoping those cuts don't end up happening...
+on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
+
+
+
