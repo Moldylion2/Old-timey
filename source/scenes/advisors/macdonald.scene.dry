@@ -7,7 +7,7 @@ view-if: macdonald_advisor = 1
 
 = Ramsay MacDonald
 
-MacDonald is the current [? if prime_minister = "MacDonald": and current ?] Labour Party leader, he's a long-time Socialist leader.
+MacDonald is the current [? if prime_minister = "MacDonald": and current ?] [? if labour_in_government = 0 : Leader of the Opposition and current ?] Labour Party leader, he's a long-time Socialist leader.
 
 - @macdonald_international
 - @macdonald_foreign
