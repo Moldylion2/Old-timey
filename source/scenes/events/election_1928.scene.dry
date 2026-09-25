@@ -363,10 +363,10 @@ achievement: majority_party
 
 Labour has won enough seats to govern alone. A historic victory!
 
-- @macdonald_prime_minister: Ramsay MacDonald is Prime Minister.
+- @macdonald_prime_minister
 
 @macdonald_prime_minister
-subtitle: [? if labour_in_government = 1 : Ramsay MacDonald continues as prime minister ?] [? if labour_in_government = 0 : Ramsay Macdonald returns as prime minister ?]
+title: [? if labour_in_government = 1 : Ramsay MacDonald continues as prime minister ?] [? if labour_in_government = 0 : Ramsay Macdonald returns as prime minister ?]
 on-arrival: prime_minister = "MacDonald"
 
 @liberal_vonc
