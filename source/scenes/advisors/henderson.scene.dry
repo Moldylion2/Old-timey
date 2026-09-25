@@ -23,10 +23,10 @@ go-to: prussian_affairs
 
 
 @police_affairs
-title: Police affairs 
-subtitle: We can set our police policy. 
-choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister_party == "SPD"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if interior_minister_party != "SPD": The SPD does not have the Interior ministry. ?]
+title: Home Office 
+subtitle: We can set Home Office policy 
+choose-if: advisor_action_timer == 0 and labour_in_government and home_secretary_party == "Labour"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not labour_in_government : Labour is not in government. ?][? if home_secretary_party != "Labour": Labour does not have the Home Office. ?]
 on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
-go-to: police
+go-to: home_office
 
