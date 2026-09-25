@@ -204,35 +204,19 @@ if (Q.sa_strength) {
 }
 !}
 
-= Paramilitaries
+= Trade Unions
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Trade Union Congress is the beating heart of the Trade Union movement in the UK. While not centralisised it represents the masses of unions across the country">TUC</span>!} Strength: [+ rb_strength_2 +] thousand
+ 
+TUC Militarization: [+ rb_militancy : militancy +]
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+= The British Military
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD.">RFB</span>!} Strength: [+ rfb_strength_2 +] thousand
+British Military: [+ reichswehr_strength +] thousand troops.
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+Military Loyalty: [+ reichswehr_loyalty : loyalty +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] thousand
-
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
-
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary.">SA</span>!} Strength: [+ sa_strength_2 +] thousand
-
-SA Militarization: [+ sa_militancy : militancy +]
-
-= Official military/paramilitaries
-
-Reichswehr: [+ reichswehr_strength +] thousand troops.
-
-Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
-
-Prussian police: [+ prussian_police_strength +] thousand members.
-
-Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
-
-[? if labour_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+[? if labour_in_government : Home Office loyalty: [+ home_secretary_loyalty : loyalty +] ?]
 
 @polls
 on-arrival: {!
