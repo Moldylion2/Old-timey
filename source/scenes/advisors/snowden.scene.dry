@@ -27,9 +27,10 @@ We have reduced the strength of the dissident factions in the party.
 
 @toleration
 title: Defending Toleration
-subtitle: Snowden supports cooperation with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The SPD is not in toleration. ?]
-choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
+subtitle: Snowden supports cooperation with the liberals.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not labour_toleration: Labour is not in toleration. ?]
+view-if: liberals_in_government = 1
+choose-if: labour_in_government = 0 and labour_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; center_dissent -= 5
 
 We have reduced dissent among the anti-toleration factions.
@@ -37,15 +38,15 @@ We have reduced dissent among the anti-toleration factions.
 @chancellor_of_the_exchequer_
 title: Fiscal Policy
 subtitle: Chancellor, Snowden can enact tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if finance_minister_party != "SPD" : The SPD does not control the finance ministry. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if labour_in_government = 0 : Labour isn't in government: ?] [? if chancellor_of_the_exchequer_party != "Labour" : Labour doesn't control the Treasury. ?]
+choose-if: advisor_action_timer == 0 and labour_in_government == 1 and chancellor_of_the_exchequer_party == "Labour"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
 go-to: fiscal_policy
 
 @economic_democracy_
 title: Radical Agenda
 subtitle: Enact Labour's major Policy Platform.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if labour_in_government = 0 : Labour not in government: ?] [? if labor_minister_party != "Labour" or (finance_minister_party != "Labour" and economic_minister_party != "Labour") : We do not have the necessary government ministers. ?]
-choose-if: advisor_action_timer == 0 and labour_in_government == 1 and (economic_minister_party == "Labour" or finance_minister_party == "Labour") and (labor_minister_party == "Labour")
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if labour_in_government = 0 : Labour not in government: ?] [? if labor_minister_party != "Labour" or (chancellor_of_the_exchequer_party != "Labour" and economic_minister_party != "Labour") : We do not have the necessary government ministers. ?]
+choose-if: advisor_action_timer == 0 and labour_in_government == 1 and (economic_minister_party == "Labour" or chancellor_of_the_exchequer_party == "Labour") and (labor_minister_party == "Labour")
 on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
 go-to: radical_agenda
