@@ -356,7 +356,6 @@ on-arrival: prime_minister = "Baldwin"; prime_minister_party = "Tory"; tories_in
 
 @labour_majority_option
 title: Labour majority
-subtitle: Labour: Labour have won a majority!
 choose-if: labour_r >= 50
 unavailable-subtitle: Labour did not win a majority.
 on-arrival: prime_minister = "MacDonald"; prime_minister_party = "Labour"; labour_in_government = 1; in_labour_majority = 1; pro_republic += 5; foreign_minister_party = "Labour"; foreign_minister = "MacDonald"; home_secretary_party = "Labour"; home_secretary = "Henderson"; attorney_general_party = "Labour"; attorney_general = "Hastings"; labour_minister_party = "Labour"; labour_minister = "Shaw"; secretary_of_state_for_war_party = "Labour"; secretary_of_state_for_war = "Walsh"; health_minister_party = "Labour"; health_minister = "Wheatley"; chancellor_of_the_exchequer_party = "Labour"; chancellor_of_the_exchequer = "Snowden"; agriculture_minister_party = "Labour"; agriculture_minister = "Buxton";
@@ -367,7 +366,7 @@ Labour has won enough seats to govern alone. A historic victory!
 - @macdonald_prime_minister: Ramsay MacDonald is Prime Minister.
 
 @macdonald_prime_minister
-subtitle: Ramsay MacDonald is the next Prime Minister
+subtitle: [? if labour_in_government = 1 : Ramsay MacDonald continues as prime minister ?] [? if labour_in_government = 0 : Ramsay Macdonald returns as prime minister ?]
 on-arrival: prime_minister = "MacDonald"
 
 @liberal_vonc
