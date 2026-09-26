@@ -119,7 +119,6 @@ Q.cpgb_ideology = "Leninism"
 Q.tories_party_leader = "Baldwin";
 Q.tories_ideology = "One Nation Conservatism"
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.tories_party_leader = "Baldwin";
 Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
