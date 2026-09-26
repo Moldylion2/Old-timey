@@ -1,6 +1,6 @@
 title: The Samuel Commission  
 new-page: true
-subtitle: The Prime Minister 
+subtitle: What do they recommend?
 view-if: year = 1926 and (month = 3) and labour_in_government = 0
 max-visits: 1
 on-arrival: dawes_plan_negotiation = 1; dawes_plan_agreed = 1 
