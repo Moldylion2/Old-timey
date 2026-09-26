@@ -283,7 +283,6 @@ if (Q.month_actions >= 1) {
         if (Q.unemployed_labour_normalized > 10) {
             Q.unemployed_labour -= 4/12;
         }
-    }
 
     ////////////////////////// annual support changes
     if (Q.year == 1929) {
