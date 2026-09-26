@@ -19,7 +19,7 @@ The Mine owner's 'Mining Association' has announced that  [? if tories_in_govern
 - @don_do_subsidy
 
 @step_forward
-title: Stay Here's hoping those cuts don't end up happening...
+title: Here's hoping those cuts don't end up happening...
 view-if: tories_in_government
 on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
 
