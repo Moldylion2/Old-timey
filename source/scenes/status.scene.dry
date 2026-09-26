@@ -127,7 +127,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories**</span>: <span style="color: #0087DC;">One Nation Conservatism</span> ([+ tories_leader +])
 
-<span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals**</span>: <span style="color: #FAA61A;">New Liberalism</span> ([+ liberals_leader +])
+<span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals** [? if liberals_party_leader = "Asquith" : </span>: <span style="color: #FAA61A;">New Liberalism</span> ?] [? if liberals_party_leader = "Lloyd George" : </span>: <span style="color: #FAA61A;">Proto-Keynesianism</span> ?] ([+ liberals_leader +])  
 
 <span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB**</span>: <span style="color: #8B0000;">Leninism</span> ([+ cpgb_leader +])
 
