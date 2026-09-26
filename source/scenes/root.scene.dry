@@ -114,9 +114,9 @@ Q.labour_leader = "MacDonald";
 Q.labour_ideology = "Fabian Socialism"
 Q.liberals_party_leader = "Asquith";
 Q.liberals_ideology = "New Liberalism"
-Q.cpgb_leader = "Inkpin";
+Q.cpgb_party_leader = "Inkpin";
 Q.cpgb_ideology = "Leninism"
-Q.tories_leader = "Baldwin";
+Q.tories_party_leader = "Baldwin";
 Q.tories_ideology = "One Nation Conservatism"
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 Q.tories_party_leader = "Baldwin";
