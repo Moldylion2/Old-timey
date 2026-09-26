@@ -18,7 +18,7 @@ The consensus candidate for a successor is Austen Chamberlain, the elder statesm
 
 
 @kaas
-on-arrival: tories_party_leader = "A.Chamberlain"; elation -= 5
+on-arrival: tories_party_leader = "Chamberlain"; elation -= 5
 
 Austen Chamberlain is now Tory party leader. This represents a turn away from the modern one nation conservatism of Baldwin towards a more old school traditional conservatism.  
 
