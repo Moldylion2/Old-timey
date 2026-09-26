@@ -129,7 +129,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals** [? if liberals_party_leader = "Asquith" : </span>: <span style="color: #FAA61A;">New Liberalism</span> ?] [? if liberals_party_leader = "Lloyd George" : </span>: <span style="color: #FAA61A;">Proto-Keynesianism</span> ?] ([+ liberals_party_leader +])  
 
-<span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB** [? if cpgb_party_leader = "Inkpin" : </span>: <span style="color: #8B0000;">Leninism</span> ?] [? if cpgb_party_leader = "Campbell" : <span style="color: #8B0000;">United front Marxism</span> ?] [? if cpgb_party_leader = "Pollitt" : <span style="color: #8B0000;">Stalinism</span> ([+ cpgb_party_leader +])
+<span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB** [? if cpgb_party_leader = "Inkpin" : </span>: <span style="color: #8B0000;">Leninism</span> ?] [? if cpgb_party_leader = "Campbell" : <span style="color: #8B0000;">United front Marxism</span> ?] [? if cpgb_party_leader = "Pollitt" : <span style="color: #8B0000;">Stalinism</span> ?] ([+ cpgb_party_leader +])
 
 
 
