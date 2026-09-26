@@ -258,7 +258,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// Capping Labour's support after a certain amount of popularity
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
-    if (Q.labour_votes = 33 {
+    if (Q.labour_votes >= 33 {
         if (Q.new_middle_labour > 0) {
             Q.new_middle_labour -= 5/12;
             Q.new_middle_tories += 3/12;
@@ -283,6 +283,7 @@ if (Q.month_actions >= 1) {
         if (Q.unemployed_labour_normalized > 10) {
             Q.unemployed_labour -= 4/12;
         }
+}
 
     ////////////////////////// annual support changes
     if (Q.year == 1929) {
