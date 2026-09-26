@@ -2,8 +2,8 @@ title: Radical Agenda
 is-card: true
 new-page: true
 on-arrival: economic_democracy_timer += 10; month_actions += 1
-view-if: labour_in_government and (economic_minister_party == "Labour" or finance_minister_party == "Labour") and (labor_minister_party == "Labour") and economic_democracy_timer <= 0
-card-image: img/portraits/Sidney_Webb.jpg
+view-if: labour_in_government and (economic_minister_party == "Labour" or chancellor_of_the_exchequer_party == "Labour") and (labor_minister_party == "Labour") and economic_democracy_timer <= 0
+card-image: img/portraits/John_Wheatley.jpg
 max-visits: 15
 tags: govt_affairs, cabinet
 #subtitle: How can we give workers more control over the means of production?
@@ -12,6 +12,7 @@ tags: govt_affairs, cabinet
 
 Labour have been running in the last few elections on a platform with some lofty policy proposals. From the capital levy, to the nationalisation of the mines and electric sectors. The liberals and conservatives oppose most of them. But maybe they could support a few of the smaller policies.
 
+- @subsidise_housing
 - @capital_levy
 - @land_value_tax
 - @equalise_women_vote
@@ -21,6 +22,15 @@ Labour have been running in the last few elections on a platform with some lofty
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
+
+@subsidise_housing
+title: Housing Subsidy
+subtitle: The upstart Health Minister Mr Wheatley has plans to subsidise social housing construction.
+on-arrival: economic_democracy += 1; budget -= 1; workers_labour += 6*(1-dissent); unemployed_labour += 3*(1-dissent); unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+
+Wheatley envisages social housing bigger and more fitted out than any the tories or liberals provided in the past. 
+
+Imagine this, the working class all having access to a full bathroom within their home. Every worker a king in their shower and tub.
 
 @capital_levy
 title: Capital Levy
