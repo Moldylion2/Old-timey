@@ -125,11 +125,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="The Labour Party" style="color: #E4003B;">**Labour**</span>: <span style="color: #E4003B;">Fabian Socialism</span> ([+ labour_leader +])
 
-<span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories**</span>: <span style="color: #0087DC;">One Nation Conservatism</span> ([+ tories_leader +])
+<span class="tooltip-text" title="The Conservative Party" style="color: #0087DC;">**Tories** [? if tories_party_leader = "Baldwin" : </span>: <span style="color: #0087DC;">One Nation Conservatism</span> ?] [? if tories_party_leader = "Chamberlain" : #0087DC;">Tory Unionism</span> ?] [? if tories_party_leader = "Mond" : #0087DC;">Liberal Corporatism</span> ?]  ([+ tories_leader +])
 
 <span class="tooltip-text" title="The Liberal Party" style="color: #FAA61A;">**Liberals** [? if liberals_party_leader = "Asquith" : </span>: <span style="color: #FAA61A;">New Liberalism</span> ?] [? if liberals_party_leader = "Lloyd George" : </span>: <span style="color: #FAA61A;">Proto-Keynesianism</span> ?] ([+ liberals_party_leader +])  
 
-<span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB**</span>: <span style="color: #8B0000;">Leninism</span> ([+ cpgb_leader +])
+<span class="tooltip-text" title="Communist Party of Great Britain" style="color: #8B0000;">**CPGB** [? if cpgb_party_leader = "Inkpin" : </span>: <span style="color: #8B0000;">Leninism</span> ?] [? if cpgb_party_leader = "Campbell" : <span style="color: #8B0000;">United front Marxism</span> ?] [? if cpgb_party_leader = "Pollitt" : <span style="color: #8B0000;">Stalinism</span> ([+ cpgb_leader +])
 
 
 
