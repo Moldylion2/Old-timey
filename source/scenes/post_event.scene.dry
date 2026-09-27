@@ -286,7 +286,7 @@ if (Q.month_actions >= 1) {
 }
 
 ///////////////////////////// Creating base support Liberals will bounce back to
-    if (Q.liberals_votes =< 25) {
+    if (Q.liberals_votes <= 25) {
         if (Q.new_middle_liberals > 0) {
             Q.new_middle_liberals += 8/12;
             Q.new_middle_tories -= 2/12;
@@ -314,7 +314,7 @@ if (Q.month_actions >= 1) {
 }
 
 ///////////////////////////// Creating base support Tories will try to bounce back to
-    if (Q.tories_votes =< 30) {
+    if (Q.tories_votes <= 30) {
         if (Q.new_middle_tories > 0) {
             Q.new_middle_tories += 8/12;
             Q.new_middle_liberals -= 2/12;
