@@ -4,7 +4,6 @@ subtitle: Warning of potential Soviet espionage.
 tags: event
 view-if: year = 1927 and month = 5
 max-visits: 1
-on-arrival: if labour_in_government or if tories_in_government or if liberals_in_government
 #face-image: img/portraits/StresemannGustav.jpg
 
 = The Arcos Affair
