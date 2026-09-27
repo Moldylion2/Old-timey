@@ -78,7 +78,7 @@ Parliament composition:
 {!<span class="tooltip-text" title="The Labour Party"style="color: #E4003B;">!}**Labour**{!</span>!}: [+ labour_seats +] ([+ labour_r +]%)   
 {!<span class="tooltip-text" title="The Conservative Party"style="color: #0087DC;">!}**Tories**{!</span> !}: [+ tories_seats +] ([+ tories_r +]%)
 {!<span class="tooltip-text" title="The Liberal Party"style="color: #FFBF00;">!}**Liberals**{!</span>!}: [+ liberals_seats +] ([+ liberals_r +]%)
-{!<span class="tooltip-text" title="Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_seats +] ([+ cpgb_r +]%)
+{!<span class="tooltip-text" title="The Communist Party of Great Britain"style="color: #8B0000;">!}**CPGB**{!</span>:!}: [+ cpgb_seats +] ([+ cpgb_r +]%)
 <span style="color: #909090;">**Others**</span>: [+ other_seats +] ([+ other_r +]%)
 
 [? if labour_in_government == 1 : Budget: [+ budget +] ?]
