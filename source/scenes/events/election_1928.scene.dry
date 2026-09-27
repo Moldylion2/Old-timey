@@ -284,6 +284,8 @@ on-arrival: opposition_party = "Labour";
 title: There is a hung Parliament.
 view-if: hung_parliament == 1 and labour_r <= 50 and tories_r <= 50 and liberals_r <= 50
 
+Its a hung parliament. No party has won a majority, so deals will have to be made to decide the government.
+
 - @no_majority_conservative_one: Conservative Minority
 - @no_majority_Labour_one: Labour Minority
 - @no_majority_liberal_one: Liberal Minority
@@ -329,7 +331,7 @@ achievement: majority_party
 title: There is a hung Parliament.
 view-if: hung_parliament == 1 and labour_r <= 50 and tories_r <= 50 and liberals_r <= 50
 
-No party won a majority in the Commons, maybe a minority government could govern.
+No party won a majority in the Commons, maybe a minority government could be supported?
 
 - @no_majority_labour: Labour Minority
 - @no_majority_liberals: Liberal Minority
