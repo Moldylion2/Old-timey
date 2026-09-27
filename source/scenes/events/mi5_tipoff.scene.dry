@@ -17,13 +17,13 @@ The other day, the home secretary, Mr Joynson-Hicks informed the prime minister 
 
 The Prime Minister cites his intent to sever ties with the Soviets following the incident. 
 
-- @step_forward 
-- @not_enough
+- @step_forward_tories 
+- @not_enough_tories
 
-@step_forward
+@step_forward_tories
 title: Theres something suspicious about this...
 
-@not_enough
+@not_enough_tories
 title: This is how they repay our good will...
 
 [? if labour_in_government = 1: ?]
@@ -53,14 +53,11 @@ The other day, the home secretary, Mr Samuel informed the prime minister of his 
 
 The Prime Minister cites his intent to sever ties with the Soviets following the incident. 
 
-- @step_forward
-- @not_enough
+- @step_forward_liberal 
+- @not_enough_liberal
 
-- @step_forward 
-- @not_enough
-
-@step_forward
+@step_forward_liberal
 title: Theres something suspicious about this...
 
-@not_enough
+@not_enough_liberal
 title: This is how they repay our good will...
