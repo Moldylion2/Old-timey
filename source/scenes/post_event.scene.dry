@@ -285,6 +285,63 @@ if (Q.month_actions >= 1) {
         }
 }
 
+///////////////////////////// Creating base support Liberals will bounce back to
+    if (Q.liberals_votes =< 25) {
+        if (Q.new_middle_liberals > 0) {
+            Q.new_middle_liberals += 8/12;
+            Q.new_middle_tories -= 2/12;
+            Q.new_middle_labour -= 6/12;
+        }
+        if (Q.old_middle_liberals > 0) {
+            Q.old_middle_liberals += 8/12;
+            Q.old_middle_tories -= 2/12;
+            Q.old_middle_labour -= 6/12;
+        }
+        if (Q.rural_liberals > 0) {
+            Q.rural_liberals += 8/12;
+            Q.rural_tories -= 2/12;
+            Q.rural_labour -= 6/12;
+        }
+        if (Q.workers_liberals_normalized > 30) {
+            Q.workers_liberals -= 4/12;
+        }
+        if (Q.catholics_liberals > 0) {
+            Q.catholics_liberals -= 4/12;
+        }
+        if (Q.unemployed_liberals_normalized > 10) {
+            Q.unemployed_liberals -= 4/12;
+        }
+}
+
+///////////////////////////// Creating base support Tories will try to bounce back to
+    if (Q.tories_votes =< 30) {
+        if (Q.new_middle_tories > 0) {
+            Q.new_middle_tories += 8/12;
+            Q.new_middle_liberals -= 2/12;
+            Q.new_middle_labour -= 6/12;
+        }
+        if (Q.old_middle_tories > 0) {
+            Q.old_middle_tories += 8/12;
+            Q.old_middle_liberals -= 2/12;
+            Q.old_middle_labour -= 6/12;
+        }
+        if (Q.rural_tories > 0) {
+            Q.rural_tories += 8/12;
+            Q.rural_liberals -= 2/12;
+            Q.rural_labour -= 6/12;
+        }
+        if (Q.workers_tories_normalized > 30) {
+            Q.workers_tories -= 4/12;
+        }
+        if (Q.catholics_tories > 0) {
+            Q.catholics_tories -= 4/12;
+        }
+        if (Q.unemployed_tories_normalized > 10) {
+            Q.unemployed_tories -= 4/12;
+        }
+}
+
+
     ////////////////////////// annual support changes
     if (Q.year == 1929) {
         Q.unemployed += 3/12;
