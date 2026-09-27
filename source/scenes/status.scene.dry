@@ -43,7 +43,7 @@ Resources available: [+ resources +]
 
 [? if labour_in_government = 1 and in_labour_majority != 1: <span style="color: #FAA61A;">**Liberal**</span> dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if labour_in_government and (in_left_front or in_popular_front): CPGB coalition dissent: [+ cpgb_coalition_dissent : coalition_dissent +] ?]
+[? if labour_in_government and (in_left_front or in_popular_front): <span style="color: #8B0000;">!}**CPGB**{!</span> dissent: [+ cpgb_coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
