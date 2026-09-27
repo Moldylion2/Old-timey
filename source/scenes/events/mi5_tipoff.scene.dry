@@ -11,7 +11,7 @@ on-arrival: if labour_in_government if tories_in_government if liberals_in_gover
 
 
 
-[? if tories_in_government = 1: ?] 
+[? if tories_in_government = 1 ?] 
 
 The other day, the home secretary, Mr Joynson-Hicks informed the prime minister of his intent to authorise a raid on the ARCOS building in London that facilitates Anglo-Soviet Trade. After testimony was given that ARCOS had illegally procured and copied a classified document from one of our military bases. Baldwin approved the raid and police soon found numerous classified documents in the building's basement.
 
@@ -26,7 +26,7 @@ title: Theres something suspicious about this...
 @not_enough_tories
 title: This is how they repay our good will...
 
-[? if labour_in_government = 1: ?]
+[? if labour_in_government = 1 ?]
 
 The other day, home secretary Mr Henderson informed the prime minister that MI5 has obtained testimony that the ARCOS Facility handling Anglo - Soviet Trade had illegally procured and copied a classified document from one of our military bases. They reccommend the government authorise a raid on the ARCOS building. 
 
@@ -47,7 +47,7 @@ title: Refuse to Authorise the raid.
 
 The secret service are being hysterical. Likely hopped up on their own anti communist propaganda. We can trust the Russians.
 
-[? if liberals_in_government = 1: ?] 
+[? if liberals_in_government = 1 ?] 
 
 The other day, the home secretary, Mr Samuel informed the prime minister of his intent to authorise a raid on the ARCOS building in London that facilitates Anglo-Soviet Trade. After testimony was given that ARCOS had illegally procured and copied a classified document from one of our military bases. Baldwin approved the raid and police soon found numerous classified documents in the building's basement.
 
