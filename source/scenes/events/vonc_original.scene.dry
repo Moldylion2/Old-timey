@@ -2,7 +2,7 @@ title: The Liberals call a vote of no confidence against our Government!
 subtitle: We've annoyed them too much...
 new-page: true
 on-arrival: tried_supporting_kpd = 0
-view-if: labour_in_government = 1 and coalition_dissent >= 3) and labour_r < 50 and not constructive_vonc
+view-if: labour_in_government = 1 and coalition_dissent >= 3) and labour_r < 50
 tags: event
 go-to: vonc_menu
 
