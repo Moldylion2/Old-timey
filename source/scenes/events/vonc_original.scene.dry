@@ -44,7 +44,7 @@ on-arrival: resources -= 3; coalition_dissent -= 1;
 While not a very socialist thing to do. Granting a liberal a lordship should get them off our back... for now
 
 @support_kpd
-choose-if: cpgb_party_leader = "Campbell";
+choose-if: cpgb_party_leader = "Campbell"
 on-arrival: tried_supporting_kpd = 1
 unavailable-subtitle: [? if kpd_relation < 50 : The CPGB are not on good terms with us ?] [? if (in_grand_coalition and kpd_r < liberals_r) or (in_weimar_coalition and kpd_r < liberals_r): The Communists don't have enough votes. ?]
 
