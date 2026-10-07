@@ -2,7 +2,7 @@ title: General Strike
 audio: music/communist/A_las_barricadas.ogg
 on-arrival: general_strike_fever = 1
 view-if: strike_triggered = 1
-tag: event
+tags: event
 
 {!
 // general strike strength
