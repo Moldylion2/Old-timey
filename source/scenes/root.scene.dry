@@ -465,6 +465,7 @@ Q.tariffs = 0;
 
 Q.electoral_threshold = 0;
 Q.strike_triggered = 0;
+Q.general_strike_conclusion = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the SPD vote against the previous government in a vote of no confidence?
