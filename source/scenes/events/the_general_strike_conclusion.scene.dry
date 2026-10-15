@@ -2,7 +2,7 @@ title: May Day, 1929
 new-page: true
 subtitle: A Communist demonstration
 tags: event
-view-if:
+view-if: general_strike_conclusion = 1
 max-visits: 1
 face-image: img/redfront.jpg
 
