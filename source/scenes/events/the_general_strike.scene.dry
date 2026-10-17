@@ -23,11 +23,13 @@ On the striking side, The TUC have [+ rb_strength +] thousand members. [? if dis
 
 @stay_out_of_it
 subtitle: The left of the party will think us cowards.
+on-arrival: general_strike_conclusion = 1 += 0 if rb_strength == "weak" or general_strike_conclusion = 1 += 3 if rb_strength == "moderate" or general_strike_conclusion = 1 += 6 if rb_strength == "strong" or general_strike_conclusion = 1 += 9 if rb_strength == "very strong" general_strike_conclusion = 1 += 12 if rb_strength == "dominant"
 
 We refuse to get involved with the strike.
 
 @side_with_strike
 subtitle: This could alienate the liberal's support
+on-arrival: general_strike_conclusion = 1 += 0 if rb_strength == "weak" or general_strike_conclusion = 1 += 3 if rb_strength == "moderate" or general_strike_conclusion = 1 += 6 if rb_strength == "strong" or general_strike_conclusion = 1 += 9 if rb_strength == "very strong" general_strike_conclusion = 1 += 12 if rb_strength == "dominant"
 
 We stand with the strike!
 
@@ -42,17 +44,20 @@ The mass strike occurring under a Labour government, does put us in a pickle. Wh
 
 @attempt_to_negotiate
 title: Strike a compromise
-on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4;
+on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4; on-arrival: general_strike_conclusion = 1 += 0 if rb_strength == "weak" or general_strike_conclusion = 1 += 3 if rb_strength == "moderate" or general_strike_conclusion = 1 += 6 if rb_strength == "strong" or general_strike_conclusion = 1 += 9 if rb_strength == "very strong" general_strike_conclusion = 1 += 12 if rb_strength == "dominant"
+
 
 It might be best to try and broker a compromise between the two sides. 
 
 @side_with_strikers
 title: Side with strikers
+on-arrival: general_strike_conclusion = 1 += 0 if rb_strength == "weak" or general_strike_conclusion = 1 += 3 if rb_strength == "moderate" or general_strike_conclusion = 1 += 6 if rb_strength == "strong" or general_strike_conclusion = 1 += 9 if rb_strength == "very strong" general_strike_conclusion = 1 += 12 if rb_strength == "dominant"
 
 Given our position in power, we could use state to pressure the mine owners to concede to the strikers demands.
 
 @send_in_military
 title: Send in the military
+on-arrival: general_strike_conclusion = 1 += 0 if rb_strength == "weak" or general_strike_conclusion = 1 += 3 if rb_strength == "moderate" or general_strike_conclusion = 1 += 6 if rb_strength == "strong" or general_strike_conclusion = 1 += 9 if rb_strength == "very strong" general_strike_conclusion = 1 += 12 if rb_strength == "dominant"
 
 While we support the right to strike, this is too much. We must use the state to restore order.
 
