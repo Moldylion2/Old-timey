@@ -60,7 +60,11 @@ Parliament composition:
 <div>{!<svg id="status_parliament" style="width: 100%; height: 195px; display: block;"></svg></div>
 <script>
 Q.parliament_diagram = data; 
-window.westminster('status_parliament', false);
+window.westminster('status_parliament',);
+
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+<svg id='westminster_legislature' viewBox="-80 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" ></svg>
+</div>
 </script>!}
 
 {!<span class="tooltip-text" title="The Labour Party"style="color: #E4003B;">!}**Labour**{!</span>!}: [+ labour_seats +] ([+ labour_r +]%)   
