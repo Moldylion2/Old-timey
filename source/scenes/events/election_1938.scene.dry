@@ -212,6 +212,9 @@ data = [
     },
 ];
 
+Q.parliament_diagram = data; 
+window.westminster('reichstag', true);
+
 if (Q.year == 1923 && Q.month == 12) {
     Q.first_election = 1;
 } else {
