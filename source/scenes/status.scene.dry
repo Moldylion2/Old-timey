@@ -48,7 +48,7 @@ data = [
 ];
 
 Q.parliament_diagram = data; 
-window.westminster('reichstag', true);
+window.westminster('status_parliament', true);
 !}
 
 = Status
