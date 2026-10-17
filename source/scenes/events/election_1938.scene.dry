@@ -226,7 +226,7 @@ go-to: tories_menu if first_election = 1; coalition_menu if first_election = 0
 
 = Election results
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="reichstag" style="width: 500px; height: 250px;"  viewBox="-100 50 1050 150"  > </svg>!}
 
 {!<table>!}
 {!<tr><td>Party</td><td>Vote Share</td><td>% Change</td><td>Seats Won</td><td>Seats Change</td></tr>!}
