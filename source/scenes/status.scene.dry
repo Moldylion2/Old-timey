@@ -19,31 +19,31 @@ data = [
         "id": "cpgb",
         "legend": "CPGB",
         "name": "CPGB",
-        "seats": Math.round(Q.cpgb_seats  0),
+        "seats": Math.round(||Q.cpgb_seats||  0),
     },
     {
         "id": "labour",
         "legend": "Labour",
         "name": "Labour",
-        "seats": Math.round(Q.labour_seats  0),
+        "seats": Math.round(Q||.labour_seats||  0),
     },
     {
         "id": "liberals",
         "legend": "Liberals",
         "name": "Liberals",
-        "seats": Math.round(Q.liberals_seats  0),
+        "seats": Math.round(||Q.liberals_seats||  0),
     },
     {
         "id": "tories",
         "legend": "Tories",
         "name": "Tories",
-        "seats": Math.round(Q.tories_seats  0),
+        "seats": Math.round(||Q.tories_seats||  0),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_seats || 0),
+        "seats": Math.round(||Q.other_seats || 0),
     },
 ];
 
