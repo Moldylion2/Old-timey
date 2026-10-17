@@ -267,9 +267,9 @@
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    Q.brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
-    Q.sask_mode = true; // This will create paired seats like in most Canadian Assemblies graphics
-    var house_width = 3; 
+    Q.brit_mode = true; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
+    Q.sask_mode = false; // This will create paired seats like in most Canadian Assemblies graphics
+    var house_width = 10; 
     var container = document.getElementById(container_id);
 
     // Make sure to remove units such as 'em' or 'px' if using brit_mode which uses circle element -> unit-less numbers for radius
