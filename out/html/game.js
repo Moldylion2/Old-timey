@@ -279,7 +279,7 @@
     var data = Q.parliament_diagram; // This may not be applicable to base game
     // If you are seeking to use this function yourself, find all instances of the 'var data' variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
     
-    var parties_list = Q.parties || ['labour', 'tories', 'liberals', 'cpgb', 'other']; // Replace as you wish
+    var parties_list = Q.parties || ['labour', 'tories', 'liberals', 'cpgb', 'others']; // Replace as you wish
 
     var governing_parties_list = [];
     var governing_seats = 0; 
