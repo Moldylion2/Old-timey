@@ -187,6 +187,7 @@
       dendryUI.dendryEngine._runActions(scene.onArrival);
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+      dendryUI.dendryEngine._runActions(scene.onDisplay);
   };
 
   window.changeTab = function(newTab, tabId) {
