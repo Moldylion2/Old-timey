@@ -5,6 +5,7 @@ tags: event
 view-if: general_strike_conclusion = 1
 max-visits: 1
 face-image: img/redfront.jpg
+set-bg: img/Map_Eng_Wales.png 
 
 = May Day, 1929
 
