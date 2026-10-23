@@ -3,6 +3,7 @@ audio: music/communist/A_las_barricadas.ogg
 on-arrival: general_strike_fever = 1
 view-if: strike_triggered = 1
 tags: event
+max-visits: 1
 
 = The General Strike
 
