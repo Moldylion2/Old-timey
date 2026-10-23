@@ -16,7 +16,7 @@ On the striking side, The TUC have [+ rb_strength +] thousand members. [? if dis
 
 [? if rb_militancy < 0.25 : Unfortunately, the TUC are poorly manned and equipped, and will most likely not be able to hold out for long. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : The TUC are coming into this somewhat prepared, having build up a modest warchest to hold out off of.We'll see how long they can persist. ?][? if rb_militancy >= 0.5 : The TUC have are coming into this as prepared as they could ever be. With a hefty warchest, they could go for several months at least! Let's see how this goes down. ?]
 
-[? if labour == "opposition": Do we get involved? ?]
+[? if opposition_party == "Labour": Do we get involved? ?]
 
 - @stay_out_of_it: We have to keep out of it
 - @side_with_strike: We should stand with the strike!
