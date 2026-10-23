@@ -3,7 +3,7 @@ audio: music/communist/A_las_barricadas.ogg
 on-arrival: general_strike_fever = 1
 view-if: strike_triggered = 1
 tags: event
-set-bg: Strike1926.jpg.webp
+set-bg: general_strike_1926.jpeg
 max-visits: 1
 
 = The General Strike
