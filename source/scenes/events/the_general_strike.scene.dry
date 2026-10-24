@@ -22,6 +22,9 @@ On the striking side, The TUC have [+ rb_strength +] thousand members. [? if dis
 
 - @stay_out_of_it: We have to keep out of it
 - @side_with_strike: We should stand with the strike!
+- @attempt_to_negotiate: Strike a compromise
+- @side_with_strikers: Side with strikers
+- @send_in_military: Send in Military
 
 @stay_out_of_it
 subtitle: The left of the party will think us cowards.
@@ -41,10 +44,6 @@ We stand with the strike!
 [? if labour_in_government == 1: The strike has broken out, how do we proceed ?]
 
 The mass strike occurring under a Labour government, does put us in a pickle. While we do want to maintain our image as a serious non extreme party, going as far as to sending in the military could massively hurt our support. That being said, we could leverage our position to try to get the mine owners to concede, but whether the liberals will go with it. We need to pick carefully.
-
-- @attempt_to_negotiate: Strike a compromise
-- @side_with_strikers: Side with strikers
-- @send_in_military: Send in Military
 
 @attempt_to_negotiate
 title: Strike a compromise
