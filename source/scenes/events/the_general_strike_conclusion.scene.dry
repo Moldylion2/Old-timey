@@ -1,0 +1,34 @@
+title: The General Strike Ends
+new-page: true
+subtitle: The dust has finally settled
+tags: event
+view-if: general_strike_conclusion = 1
+max-visits: 1
+face-image: img/redfront.jpg
+set-bg: img/Map_Eng_Wales.png 
+
+= General Strike Conclusion
+
+After 8 days of strike action. First British Genral strike has ended. The TUC running with their tail between their legs
+
+Many non-communists are afraid of the possibility of another violent uprising, and our allies in the Prussian coalition are asking the Prussian Interior Ministry to ban the demonstrations.
+
+- @ban: They got what they deserved
+- @allow_police: It didn't need to end this way...
+- @strike_succeeded: A victory for the people!
+
+@ban
+on-arrival: blutmai = 1; cpgb_relation -= 25; z_relation += 5; dvp_relation += 5; workers_spd -= 3; unemployed_spd -= 3; workers_kpd += 3; unemployed_kpd += 3; communist_coalition -= 3; strife += 1
+face-image: img/blutmai.jpg
+
+We issued the order to ban the demonstrations, and sent police to enforce the ban. There was a confrontation between the police and Communists, and violence erupted. Reports say that the Berlin police killed dozens of demonstrators and innocent bystanders. The Communists are already calling this incident *Blutmai*, "Bloody May".
+
+This may end any attempt at reconciliation with the KPD, but the Center and People's parties approve of our action.
+
+
+@allow_police
+on-arrival: cpgb_relation += 5; workers_kpd += 5; unemployed_kpd += 5
+
+The demonstration proceeds peacefully under the watchful eyes of the police. Onlookers admire the strength of the Communist workers, and perhaps some of our supporters have been peeled off.
+
+
