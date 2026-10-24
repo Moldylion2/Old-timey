@@ -25,12 +25,14 @@ On the striking side, The TUC have [+ rb_strength +] thousand members. [? if dis
 
 @stay_out_of_it
 subtitle: The left of the party will think us cowards.
+view-if: opposition_party = "Labour"
 on-arrival: general_strike_conclusion = 1; general_strike_conclusion += 0 if rb_strength <= 0.14; general_strike_conclusion += 3 if rb_strength <= 0.24; general_strike_conclusion += 6 if rb_strength <= 0.69; general_strike_conclusion += 9 if rb_strength <= 1; general_strike_conclusion += 12 if rb_strength < 1;
 
 We refuse to get involved with the strike.
 
 @side_with_strike
 subtitle: This could alienate the liberal's support
+view-if: opposition_party = "Labour"
 on-arrival: general_strike_conclusion = 1; general_strike_conclusion += 0 if rb_strength <= 0.14; general_strike_conclusion += 3 if rb_strength <= 0.24; general_strike_conclusion += 6 if rb_strength <= 0.69; general_strike_conclusion += 9 if rb_strength <= 1; general_strike_conclusion += 12 if rb_strength < 1;
 
 We stand with the strike!
@@ -46,6 +48,8 @@ The mass strike occurring under a Labour government, does put us in a pickle. Wh
 
 @attempt_to_negotiate
 title: Strike a compromise
+view-if: labour_in_government = 1
+
 on-arrival: unemployed_labour -= 3; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 4; general_strike_conclusion = 1; general_strike_conclusion += 0 if rb_strength <= 0.14; general_strike_conclusion += 3 if rb_strength <= 0.24; general_strike_conclusion += 6 if rb_strength <= 0.69; general_strike_conclusion += 9 if rb_strength <= 1; general_strike_conclusion += 12 if rb_strength < 1;
 
 
@@ -53,12 +57,14 @@ It might be best to try and broker a compromise between the two sides.
 
 @side_with_strikers
 title: Side with strikers
+view-if: labour_in_government = 1
 on-arrival: general_strike_conclusion = 1; general_strike_conclusion += 0 if rb_strength <= 0.14; general_strike_conclusion += 3 if rb_strength <= 0.24; general_strike_conclusion += 6 if rb_strength <= 0.69; general_strike_conclusion += 9 if rb_strength <= 1; general_strike_conclusion += 12 if rb_strength < 1;
 
 Given our position in power, we could use state to pressure the mine owners to concede to the strikers demands.
 
 @send_in_military
 title: Send in the military
+view-if: labour_in_government = 1
 on-arrival: general_strike_conclusion = 1; general_strike_conclusion += 0 if rb_strength <= 0.14; general_strike_conclusion += 3 if rb_strength <= 0.24; general_strike_conclusion += 6 if rb_strength <= 0.69; general_strike_conclusion += 9 if rb_strength <= 1; general_strike_conclusion += 12 if rb_strength < 1;
 
 While we support the right to strike, this is too much. We must use the state to restore order.
