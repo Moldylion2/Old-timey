@@ -65,8 +65,5 @@ card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @trade_union_reform
-view-if: time >= 6
-card-image: img/houses_of_parliament.jpeg
-is-deck: true
 
 
