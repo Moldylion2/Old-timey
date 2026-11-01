@@ -61,7 +61,7 @@ view-if: labour_in_government = 1
 
 @eco
 title: Trade Union Reform
-view-if: labour_in_government = 1
+view-if: labour_in_government = 1 and general_strike_conclusion = 1
 card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
