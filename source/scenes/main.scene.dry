@@ -55,7 +55,7 @@ is-deck: true
 
 @govt
 title: Government Affairs
-card-image: houses_of_parliament.jpeg
+card-image: img/houses_of_parliament.jpeg
 view-if: labour_in_government
 is-deck: true
 
