@@ -2,9 +2,9 @@ title: Trade Union Reform
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: economic_policy_timer += 12; month_actions += 1; nationalize_budget = 4; nationalize_budget -= 1 if works_councils >= 2; nationalize_budget -= 1 if works_councils >= 3; nationalize_budget -= 1 if socializations + nationalization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or socializations >= 1 or pro_labor >= 2
-view-if: labour_in_government = 1 and (labour_minister_party == "Labour" ) and economic_policy_timer <= 0 and economic_plan > 0
-card-image: img/portraits/John_Wheatley.jpg
+on-arrival: trade_union_reform_timer += 8; month_actions += 1; 
+view-if: labour_in_government = 1 and (labour_minister_party == "Labour" ) and trade_union_reform_timer = 0
+card-image: img/portraits/Tom_Shaw.jpg
 #subtitle: How should we try to reform industrial relations within the country.
 
 = economic Policy
