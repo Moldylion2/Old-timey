@@ -3,15 +3,15 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: labor_rights_timer += 10; month_actions += 1
-view-if: spd_in_government = 1 and labor_minister_party = "SPD" and labor_rights_timer <= 0 and labor_affairs_seen = 1
-card-image: img/portraits/WissellRudolf.jpg
+view-if: labour_in_government = 1 and labour_minister_party = "Labour" and labor_rights_timer <= 0 and labor_affairs_seen = 1
+card-image: img/portraits/Tom_Shaw.jpg
 max-visits: 6
 go-to: labor_rights_menu
 #subtitle: Working hours, safety regulations, and unemployment insurance.
 
-= Labor Rights
+= Labour Rights
 
-With control of the Labor Ministry, we can set national standards for labor. Our supporters expect us to enforce a 40-hour work week and enforce safety regulations, as well as fully fund the unemployment insurance program.
+With control of the Labour Ministry, we can set national standards for labour. Our supporters expect us to enforce a 40-hour work week and enforce safety regulations, as well as fully fund the unemployment insurance program.
 
 # enforce a 40-hour work week
 # develop and enforce safety regulations in mines and industries
