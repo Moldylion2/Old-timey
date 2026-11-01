@@ -1,7 +1,7 @@
 title: Trade Union Reform
 new-page: true
 is-card: true
-tags: govt_affairs, cabinet
+tags: cabinet
 on-arrival: trade_union_reform_timer += 8; month_actions += 1; 
 view-if: labour_in_government = 1 and (labour_minister_party == "Labour" ) and trade_union_reform_timer = 0
 card-image: img/portraits/Tom_Shaw.jpg
