@@ -55,7 +55,6 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: labour_in_government = 1
 card-image: houses_of_parliament.jpeg
 is-deck: true
 
@@ -63,7 +62,7 @@ is-deck: true
 
 @eco
 title: Trade Union Reform
-view-if: labour_in_government = 1 and general_strike_conclusion = 1
+view-if: general_strike_conclusion = 1
 card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
