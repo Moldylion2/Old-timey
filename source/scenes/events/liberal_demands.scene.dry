@@ -1,0 +1,34 @@
+title: The Liberals present demands for further support!
+view-if: liberal_goals_seen = 0 and labour_in_government = 1 and year = 1925 and month >= 1
+on-arrival: kpd_goals_seen = 1; welfare_goal = 1; foreign_goal = 0; agriculture_goal = 1 if agriculture_minister_party != "KPD"; economy_goal = 1 if economic_minister_party != "KPD"; finance_goal = 1 if finance_minister_party != "KPD"; labor_goal = 1 if labor_minister_party != "KPD"; reichswehr_goal = 1 if reichswehr_minister_party != "KPD"; kpd_ultimatum_timer = 12; kpd_ultimatum_timer = 16 if kpd_relation >= 60; kpd_ultimatum_timer = 24 if kpd_party_leader == "Conciliators" or constructive_vonc; kpd_ultimatum_timer = next_election_time - time - 1 if next_election_time - time <= 12;
+new-page: true
+tags: event
+
+= Liberal Demands
+
+  The Liberals are surprised to see the Labour government survive a year in office. They believed it would have crashed by now, whether to infighting or through a vote of no confidence. However, seeing now that Labour can hold it together. They feel some demands are in order. After all, why support a socialist party for nothing. In exchange for further toleration, the liberals ask that Labour fulfill a certain amount of their demands every year. Or else face a vote of no confidence. 
+
+  - @cap: Let's hope they're not unreasonable...
+
+
+@cap
+
+The Liberals presents us with a list of demands, and a few of their red lines.
+
+[? if capital_levy = 0 : - No capital Levy!!!! ?]
+
+[? if tax_goal = 1 : - Cut taxes ?]
+
+[? if agricultural_goal = 1 : - Persue some agricultural nationalisation ?]
+
+[? if communists_goal = 1 : - Persecute Communists ?]
+
+[? if labor_goal = 1 : - Seek compromise in labor disputes. ?]
+
+[? if electoral_goal = 1 : - Pass bill for Preportional Representation ?]
+
+#[? if womens_goal = 1 : - Equalise voting rights for men and women ?]
+
+[? if reichswehr_goal = 1 : - Reduce funding for the Military. ?]
+
+They say 4 of these are to be fulfilled in a year. Otherwise, they will call a vote of no confidence on our government
