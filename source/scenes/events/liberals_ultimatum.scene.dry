@@ -1,44 +1,44 @@
 title: The Liberals check upon our progress in accomplishing their targets...
-view-if: (in_popular_front or in_left_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and labour_in_government
+view-if: (in_popular_front or in_left_front) and (liberals_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and liberals_goals_seen = 1 and liberals_ultimatum_seen = 0 and labour_in_government
 on-arrival: {!
-Q.kpd_ultimatum_seen = 1;
-Q.kpd_goals_completed = 1;
-Q.kpd_score = 6;
+Q.liberals_ultimatum_seen = 1;
+Q.liberals_goals_completed = 1;
+Q.liberals_score = 6;
 if (Q.welfare_goal && !Q.welfare_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.agriculture_goal && !Q.agriculture_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.economy_goal && !Q.economy_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.finance_goal && !Q.finance_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.labor_goal && !Q.labor_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.foreign_goal && !Q.foreign_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 if (Q.interior_goal && !Q.interior_goal_completed) {
-    Q.kpd_goals_completed = 0;
+    Q.liberals_goals_completed = 0;
 }
 if (Q.reichswehr_goal && !Q.reichswehr_goal_completed) {
-    Q.kpd_goals_completed = 0;
-    Q.kpd_score -= 1;
+    Q.liberals_goals_completed = 0;
+    Q.liberals_score -= 1;
 }
 !}
 new-page: true
 tags: event
-go-to: goals_success if kpd_goals_completed; goals_failed if not kpd_goals_completed
+go-to: goals_success if liberals_goals_completed; goals_failed if not liberals_goals_completed
 
 = KPD Goals
 
@@ -67,9 +67,9 @@ Unfortunately, we have failed to accomplish all of the goals the KPD set out. Th
 - @no_vonc: They cannot call a vote of no confidence due to the constitutional reforms, but they can obstruct our government at every opportunity.
 
 @appeal
-choose-if: (kpd_score >= 4 and cpgb_relation > 50 and kpd_appeal_seen = 0) or kpd_party_leader = "Conciliators"
-unavailable-subtitle: [? if kpd_score < 4: They do not see us as serious in trying to achieve the goals of the coalition. ?] [? if cpgb_relation < 50: Our relations are too poor. ?] [? if kpd_appeal_seen = 1: we do not have any more time. ?]
-on-arrival: kpd_ultimatum_seen = 0; kpd_ultimatum_timer += 6; kpd_appeal_seen = 1
+choose-if: (liberals_score >= 4 and cpgb_relation > 50 and kpd_appeal_seen = 0) or kpd_party_leader = "Conciliators"
+unavailable-subtitle: [? if liberals_score < 4: They do not see us as serious in trying to achieve the goals of the coalition. ?] [? if cpgb_relation < 50: Our relations are too poor. ?] [? if kpd_appeal_seen = 1: we do not have any more time. ?]
+on-arrival: liberals_ultimatum_seen = 0; liberals_ultimatum_timer += 6; kpd_appeal_seen = 1
 
 We argue that we are working hard to achieve the coalition's goals, and in the name of proletarian solidarity, we must make this coalition function. Surprisingly, the KPD hears our pleas, and is willing to give us six more months before the coalition goals must be achieved.
 
