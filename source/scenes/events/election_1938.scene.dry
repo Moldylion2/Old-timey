@@ -29,7 +29,7 @@ Since we are currently ruling as part of an emergency government, we may use qua
 - @election_algorithm: No, let's hold the elections.
 
 @cancel_elections_2
-on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; elation -= 8; liberals_relation -= 10; cpgb_relation -= 8; coup_progress += 2; workers_labour -= 4; new_middle_labour -= 5; old_middle_labour -= 5; rural_labour -= 5; catholics_labour -= 5; unemployed_labour -= 5;
+on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; dvp_relation -= 8; elation -= 8; liberals_relation -= 10; cpgb_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5;
 achievement: ausnahmezustand
 
 Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].

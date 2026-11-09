@@ -16,8 +16,8 @@ A preivious Labour party leader, Henderson is popular within the party and well 
 @prussian_bulwark
 title: Prussian Bulwark
 subtitle: Henderson has influence over Prussian politics.
-choose-if: advisor_action_timer <= 0 and labour_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not labour_prussia : The labour is not in control of Prussia. ?]
+choose-if: advisor_action_timer <= 0 and spd_prussia = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_prussia : The SPD is not in control of Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs
 

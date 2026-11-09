@@ -6,9 +6,9 @@ on-arrival: cpgb_policy_timer = 5
 #tags: event
 #max-choices: 1
 
-# disable this event for now - the KPD is abstentionist in government. This position is loosely based on Paul Levi's ideas during the Kapp Putsch. A KPD that is willing to support an labour government would necessarily have some different policy ideas from the Thälmann Stalinist line, so I looked to the earlier Paul Levi KPD as well as the French popular front for ideas.
+# disable this event for now - the KPD is abstentionist in government. This position is loosely based on Paul Levi's ideas during the Kapp Putsch. A KPD that is willing to support an SPD government would necessarily have some different policy ideas from the Thälmann Stalinist line, so I looked to the earlier Paul Levi KPD as well as the French popular front for ideas.
 
-# ironically the hypothetical KPD position towards the Popular Front is basically analogous to the labour position towards the Brüning government (i.e. toleration).
+# ironically the hypothetical KPD position towards the Popular Front is basically analogous to the SPD position towards the Brüning government (i.e. toleration).
 
 # Sources: Gaido, Daniel. “Paul Levi and the Origins of the United-Front Policy in the Communist International.” Historical Materialism 25, no. 1 (2017): 131–74. https://doi.org/10.1163/1569206x-12341515.
 # LaPorte, Norman H. “The German Communist Party in Saxony, 1924-1933 : Factionalism, Fratricide and Political Failure,” 1998. http://dspace.stir.ac.uk/handle/1893/3259.
@@ -63,12 +63,12 @@ Do we support this policy?
 @economy_support
 on-arrival: nationalization_progress += 1; capital_strike_progress += 4; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= 3; works_program += 1; workers_labour += 4*(1-dissent); workers_cpgb += 8*(1-dissent); unemployed_cpgb += 4*(1-dissent); coalition_dissent += 2; dvp_relation -= 6; tories_relation -= 4; new_middle_labour -= 3; old_middle_labour -= 3; economy_goal_completed += 1; cpgb_influence += 2
 
-The KPD has gained credit with the workers for enabling many to keep their jobs. Meanwhile, the bourgeois parties and middle-class voters blame the labour for enabling the nationalizations.
+The KPD has gained credit with the workers for enabling many to keep their jobs. Meanwhile, the bourgeois parties and middle-class voters blame the SPD for enabling the nationalizations.
 
 @economy_oppose
 on-arrival: cpgb_coalition_dissent += 1; workers_labour -= 5; workers_cpgb += 5; cpgb_relation -= 6
 
-After opposing the nationalization policy, the KPD has commenced a propaganda campaign against us, accusing the labour of yet another perfidy.
+After opposing the nationalization policy, the KPD has commenced a propaganda campaign against us, accusing the SPD of yet another perfidy.
 
 @finance
 title: Finance Ministry

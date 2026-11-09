@@ -240,9 +240,9 @@ if (Q.month_actions >= 1) {
             Q.economic_expansion += Q.economic_growth;
         }
     }
-    if (Q.economic_growth > 0 && Q.reparations <= -2 && Q.labour_in_government) {
+    if (Q.economic_growth > 0 && Q.reparations <= -2 && Q.spd_in_government) {
         Q.economic_expansion += Q.economic_growth;
-    } else if (Q.economic_growth > 0 && Q.labour_in_government) {
+    } else if (Q.economic_growth > 0 && Q.spd_in_government) {
         Q.economic_expansion += Q.economic_growth/2;
     }
     /////////////////////////////// update opinions based on economy
@@ -257,7 +257,7 @@ if (Q.month_actions >= 1) {
     }
 
     ///////////////////////////// Capping Labour's support after a certain amount of popularity
-    // if pro_republic is less than the support of the Weimar coalition, reduce labour support...
+    // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.labour_votes >= 33) {
         if (Q.new_middle_labour > 0) {
             Q.new_middle_labour -= 5/12;
@@ -482,30 +482,30 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 2/12;
             Q.old_middle_nsdap += 2/12;
             Q.new_middle_nsdap += 2/12;
-            if (Q.labour_in_government) {
-                Q.workers_labour -= 4/12;
+            if (Q.spd_in_government) {
+                Q.workers_spd -= 4/12;
             }
         }
     }
     // prevent forever support if the economy is bad
-    if (Q.year >= 1934 && (Q.inflation >= 8 || Q.unemployed >= 20) && Q.pro_republic <= 45 && Q.labour_in_government) {
-        if (Q.workers_labour_normalized > 40) {
-            Q.workers_labour -= 6/12;
+    if (Q.year >= 1934 && (Q.inflation >= 8 || Q.unemployed >= 20) && Q.pro_republic <= 45 && Q.spd_in_government) {
+        if (Q.workers_spd_normalized > 40) {
+            Q.workers_spd -= 6/12;
         }
-        if (Q.unemployed_labour_normalized > 20) {
-            Q.unemployed_labour -= 6/12;
+        if (Q.unemployed_spd_normalized > 20) {
+            Q.unemployed_spd -= 6/12;
         }
-        if (Q.new_middle_labour_normalized > 20) {
-            Q.new_middle_labour -= 6/12;
+        if (Q.new_middle_spd_normalized > 20) {
+            Q.new_middle_spd -= 6/12;
         }
-        if (Q.old_middle_labour_normalized > 20) {
-            Q.old_middle_labour -= 6/12;
+        if (Q.old_middle_spd_normalized > 20) {
+            Q.old_middle_spd -= 6/12;
         }
-        if (Q.rural_labour_normalized > 20) {
-            Q.rural_labour -= 6/12;
+        if (Q.rural_spd_normalized > 20) {
+            Q.rural_spd -= 6/12;
         }
-        if (Q.catholics_labour_normalized > 20) {
-            Q.catholics_labour -= 6/12;
+        if (Q.catholics_spd_normalized > 20) {
+            Q.catholics_spd -= 6/12;
         }
     }
 }

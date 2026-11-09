@@ -2,13 +2,13 @@ title: Cabinet
 is-pinned-card: true
 tags: advisor
 card-image: img/macdonald_cabinet.jpg
-view-if: difficulty < 0 and labour_in_government and chancellor_party = "labour"
+view-if: difficulty < 0 and spd_in_government and chancellor_party = "SPD"
 on-arrival: last_cabinet_action = 1
 new-page: true 
 
 = Cabinet
 
-With an labour chancellor and labour cabinet members, we can direct the affairs of the national government.
+With an SPD chancellor and SPD cabinet members, we can direct the affairs of the national government.
 
 - #cabinet
 - @back: Return to main

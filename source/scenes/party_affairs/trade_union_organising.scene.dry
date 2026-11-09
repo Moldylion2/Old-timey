@@ -12,7 +12,7 @@ max-visits: 6
 
 The Trades Union Congress is a national trade union group, a federation of trade unions that collectively represent most unionised workers in the UK. While not linked to the Labour party, In 1899, the TUC wanted to establish a voice for working people within parliament. And the Labour Representation Committee formed the next year, the original name for the Labour party. While not offcially linked, most Labour MPs are tied to TUC unions. 
 
-[? if workers_labour < 46 or workers_labour < workers_nsdap or workers_labour < workers_cpgb : The Reichsbanner is having a more difficult time recruiting, as the labour is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_labour < 46 or workers_labour < workers_nsdap or workers_labour < workers_cpgb : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Fund more military-style training and equipment for the TUC.
 - @militant_2: Use our existing resources to support more training for the TUC.
