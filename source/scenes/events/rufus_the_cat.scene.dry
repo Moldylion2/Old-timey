@@ -1,13 +1,13 @@
 title: Rufus Rex Appointed
-subtitle: The treasury have aanounced the appointment of Rufus the cat as their official mouse-catcher
+subtitle: The treasury have announced the appointment of Rufus the cat as their official mouse-catcher
 new-page: true
 on-arrival: rufus_the_cat_advisor = 1
 tags: event
 view-if: year = 1928 and month = 6
 max-visits: 1
-face-image: img/bankrun.jpg
+face-image: img/rufus_the_cat.jpg
 
-= Votes are cast!
+= Our Glorious Prince!
 
 The other day, the news outlet the weekly herald released a paper unveiling the appointment of a purebred ginger Persian to be the nations current government rat catcher.
 
