@@ -24,7 +24,7 @@ We have already formulated an economic plan. Now we have to implement it.
 title: Persue the Mond-Turner Talks
 subtitle: Is not guaranteed to succeed. 
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
-view-if: mond_turner_progress >= 1 > 2  
+view-if: mond_turner_progress >= 1 
 on-arrival: mond_turner_progress += 1; workers_labour += 7*(1-dissent); 
 
 
