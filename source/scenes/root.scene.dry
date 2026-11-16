@@ -279,6 +279,7 @@ Q.n = 2;
 
 Q.zinoviev_letter = 0;
 Q.zinoviev_foiled = 0;
+Q.mond_turner_finished = 0
 
 // Current Parliament composition
 // % of Parliament in July 1923
