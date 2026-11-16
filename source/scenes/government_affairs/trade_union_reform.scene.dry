@@ -31,7 +31,7 @@ on-arrival: mond_turner_progress += 1; workers_labour += 7*(1-dissent);
 @wtb_continuation
 title: Continue the Mond-Turner Talks
 view-if: mond_turner_progress = 1 
-on-arrival: mond_turner_progress += 1; 
+on-arrival: mond_turner_progress += 1; mond_turner_finished = 1
 
 We have shall soon see the conclusion of the talks.
 
