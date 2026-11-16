@@ -24,14 +24,14 @@ We have already formulated an economic plan. Now we have to implement it.
 title: Persue the Mond-Turner Talks
 subtitle: Is not guaranteed to succeed. 
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
-view-if: wtb_implemented > 2 and budget >= 3 
-on-arrival: works_program += 1; workers_labour += 7*(1-dissent); workers += 1 if works_program <= 4;
+view-if: mond_turner_progress >= 1 > 2  
+on-arrival: mond_turner_progress += 1; workers_labour += 7*(1-dissent); 
 
 
 @wtb_continuation
 title: Continue the Mond-Turner Talks
-view-if: wtb_implemented >= 1 and wtb_implemented <= 2
-on-arrival: if works_program <= 2; unemployed -= 5 if (works_program <= 2 and unemployed > 15) else unemployed -= 3; 
+view-if: mond_turner_progress = 1 
+on-arrival: mond_turner_progress += 1; 
 
 We have shall soon see the conclusion of the talks.
 
