@@ -2,7 +2,7 @@ title: Mond-Turner Talks Failed...
 subtitle: It seems the big business union refused to concede
 new-page: true
 tags: event
-view-if: mond_turner_finished = 2
+view-if: mond_turner_finished = 1
 max-visits: 1
 face-image: img/bankrun.jpg
 
